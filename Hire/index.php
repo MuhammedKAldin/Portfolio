@@ -35,7 +35,7 @@
     
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed;width: 100%; top: 0px;z-index: 999999; background-color: #fff !important;" >
-        <a class="navbar-brand" href="index.html" style="color: #222;font-variant: all-small-caps; margin-top: -8px;" >
+        <a class="navbar-brand" href="../index.php" style="color: #222;font-variant: all-small-caps; margin-top: -8px;" >
           <<span>MK
             </span>
   
