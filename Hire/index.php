@@ -368,7 +368,11 @@
                             </textarea> </br> </br>
 
                             <label >Project Intended Quality *</label> </br>
-                            <select name="quality" required>
+                            <select name="quality" style="border-width: 3px;
+				border-radius: 7px;
+				border-color:
+				#c06750;
+				padding: 5px;" required>
                                 <option value="low" >Low-level</option>
                                 <option value="middle" selected>Mid-level</option>
                                 <option value="high" >High-level</option>
