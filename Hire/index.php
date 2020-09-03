@@ -215,7 +215,19 @@
                           <div class="col-lg-9 mx-auto">
                             <!-- Accordion -->
                             <div id="accordionExample" class="accordion shadow">
-                      
+                      		<style>
+					.collapsible-link::before {
+					    content: '';
+					    width: 0;
+					    height: 0;
+					    background: #333;
+					    position: absolute;
+					    top: 0;
+					    right: 0rem;
+					    display: none;
+					    transition: all 0.3s;
+					}
+				</style>
                               <!-- Accordion item 1 -->
                               <div class="card">
                                 <div id="headingTwo" class="card-header bg-white shadow-sm border-0">
@@ -232,12 +244,12 @@
                                   </div>
                                 </div>
                               </div>
-                      
+                      		
                               <!-- Accordion item 2 -->
                               <div class="card">
                                 <div id="headingTwo" class="card-header bg-white shadow-sm border-0">
                                   <h6 class="mb-0 font-weight-bold"><a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2">
-                                  What do I to get your service?
+                                  What should i do to get your service?
                                   </a></h6>
                                 </div>
                                 <div id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordionExample" class="collapse">
@@ -306,19 +318,40 @@
                           <div class="col-md-6 text-center" style="">
 
                             <label >Name *</label> </br>
-                            <input placeholder="John Doe" type="text" name="name" required/> </br> </br>
+                            <input placeholder="John Doe" type="text" name="name" style="border-width: 3px;
+				border-radius: 7px;
+				border-color:
+				#c06750;
+				padding: 5px;" 
+				   required/> </br> </br>
 
                             <label >Email *</label> </br>
-                            <input placeholder="john@example.com" type="text" name="email" required/> </br> </br>
+                            <input placeholder="john@example.com" type="text" name="email" style="border-width: 3px;
+				border-radius: 7px;
+				border-color:
+				#c06750;
+				padding: 5px;" required/> </br> </br>
 
                             <label >Phone *</label> </br>
-                            <input placeholder="john@example.com" type="text" name="phone" required/> </br> </br>
+                            <input placeholder="john@example.com" type="text" name="phone" style="border-width: 3px;
+				border-radius: 7px;
+				border-color:
+				#c06750;
+				padding: 5px;" required/> </br> </br>
 
                             <label >From where *</label> </br>
-                            <input placeholder="Country" type="text" name="country" /> </br> </br>
+                            <input placeholder="Country" type="text" name="country" style="border-width: 3px;
+				border-radius: 7px;
+				border-color:
+				#c06750;
+				padding: 5px;" /> </br> </br>
 
                             <label >Project max budget *</label> </br>
-                            <input placeholder="700" type="text"  name="budget" required/> </br>
+                            <input placeholder="700" type="text"  name="budget" style="border-width: 3px;
+				border-radius: 7px;
+				border-color:
+				#c06750;
+				padding: 5px;" required/> </br>
                             <label>in USD ($)</label>
                                 
                           </div>
@@ -326,7 +359,11 @@
                           <div class="col-md-6 text-center" style="">
 
                             <label >Project details *</label> </br>
-                            <textarea rows="3" cols="50" name="details" required>
+                            <textarea rows="3" cols="50" name="details" style="border-width: 3px;
+				border-radius: 7px;
+				border-color:
+				#c06750;
+				padding: 5px;" required>
                               
                             </textarea> </br> </br>
 
