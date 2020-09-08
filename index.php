@@ -893,21 +893,7 @@
                 </div>
               </div>
 
-              <div class="col-sm-12 col-md-6 col-lg-3 hideGameDev">
-                <div class="icoHolder card previewBoxImg" >
-                  <div class="overlay-viewer" >
-                    <i class="overlay-ico fas fa-coffee"></i>
-                  </div>
-                </div>
-                <div class="newCard previewBoxImg" >
-                  <img id="showMe_15" class="previewImg" src="app15.png" />
-                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
-                    <li>Unity</li>
-                    <li>PC</li>
-                    <li>2.5D</li>
-                  </lu>
-                </div>
-              </div>
+
 
               <div class="col-sm-12 col-md-6 col-lg-3 hideGameDev">
                 <div class="icoHolder card previewBoxImg" >
