@@ -808,7 +808,7 @@
                   </div>
                 </div>
                 <div class="newCard previewBoxImg" >
-                  <img id="showMe_9" class="previewImg" src="app9.PNG" />
+                  <img id="showMe_9" class="previewImg" src="app9.png" />
                   <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
                     <li>Unity</li>
                     <li>Android</li>
@@ -900,39 +900,7 @@
                   </div>
                 </div>
                 <div class="newCard previewBoxImg" >
-                  <img id="showMe_14" class="previewImg" src="app14.PNG" />
-                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
-                    <li>Unity</li>
-                    <li>PC</li>
-                  </lu>
-                </div>
-              </div>
-
-
-              <div class="col-sm-12 col-md-6 col-lg-3 hideGameDev">
-                <div class="icoHolder card previewBoxImg" >
-                  <div class="overlay-viewer" >
-                    <i class="overlay-ico fas fa-coffee"></i>
-                  </div>
-                </div>
-                <div class="newCard previewBoxImg" >
-                  <img id="showMe_14" class="previewImg" src="app14.PNG" />
-                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
-                    <li>Unity</li>
-                    <li>PC</li>
-                  </lu>
-                </div>
-              </div>
-
-
-              <div class="col-sm-12 col-md-6 col-lg-3 hideGameDev">
-                <div class="icoHolder card previewBoxImg" >
-                  <div class="overlay-viewer" >
-                    <i class="overlay-ico fas fa-coffee"></i>
-                  </div>
-                </div>
-                <div class="newCard previewBoxImg" >
-                  <img id="showMe_15" class="previewImg" src="app15.PNG" />
+                  <img id="showMe_15" class="previewImg" src="app15.png" />
                   <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
                     <li>Unity</li>
                     <li>PC</li>
@@ -948,7 +916,7 @@
                   </div>
                 </div>
                 <div class="newCard previewBoxImg" >
-                  <img id="showMe_16" class="previewImg" src="app16.PNG" />
+                  <img id="showMe_16" class="previewImg" src="app16.png" />
                   <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
                     <li>Unity</li>
                     <li>Android</li>
