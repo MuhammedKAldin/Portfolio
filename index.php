@@ -813,6 +813,8 @@
                     <li>Unity</li>
                     <li>Android</li>
                     <li>VR</li>
+                    <li>UI/UX</li>
+                    <li>Google Play</li>
                   </lu>
                 </div>
               </div>
