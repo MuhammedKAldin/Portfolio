@@ -1,7 +1,7 @@
 
 
 body{
-    
+
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -9,7 +9,7 @@ body{
 .sec_1{
 
     background-image: url("wall4.jpg"); /* wall3.png , phone is wall2.png Best wal !! */
-    
+
     background-position: center;
 
     overflow-x: hidden;
@@ -19,10 +19,10 @@ body{
     animation: walllScaling 5s ;
     animation-fill-mode: backwards;
     height: 100%;
-   
+
 }
 
-@keyframes walllScaling { 
+@keyframes walllScaling {
     0% { background-size: 60%; }
     100% {background-size: 100%; }
 
@@ -71,7 +71,7 @@ body{
 
 
 .caveDoor {
-    
+
     height: 100%;
     animation: doorScene 5s ;
     animation-fill-mode: backwards;
@@ -85,7 +85,7 @@ body{
 }
 
 .caveDoor_2 {
-    
+
     height: 100%;
     animation: walkInto 5s ;
     animation-fill-mode: backwards;
@@ -100,7 +100,7 @@ body{
   @keyframes walkInto  { /* When selecting a Stone */
     0% { transform: scale(1); }
     100% { transform: scale(10);}
-    
+
   }
 
 
@@ -117,26 +117,26 @@ body{
     .sec_1{
 
         background-image: url("wall4.jpg");
-        
+
         background-position: center;
-    
+
         overflow-x: hidden;
         background-size: 720px;
-    
+
         animation: walllScaling 5s ;
         animation-fill-mode: backwards;
-    
-       
+
+
     }
-    
-    
-    @keyframes walllScaling { 
+
+
+    @keyframes walllScaling {
         0% { background-size: 460px; }
         100% {background-size: 720px; }
-    
-    }   
-       
-    
+
+    }
+
+
     .caveDoor{
 
         position: fixed;
@@ -172,30 +172,30 @@ body{
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bold;
   }
-  
+
   .js-count-particles{
     font-size: 1.1em;
   }
-  
+
   #stats,
   .count-particles{
     -webkit-user-select: none;
     margin-top: 5px;
     margin-left: 5px;
   }
-  
+
   #stats{
     border-radius: 3px 3px 0 0;
     overflow: hidden;
   }
-  
+
   .count-particles{
     border-radius: 0 0 3px 3px;
   }
-  
-  
+
+
   /* ---- particles.js container ---- */
-  
+
   #particles-js{
     width: 100%;
     height: 100%;
@@ -205,7 +205,7 @@ body{
     background-position: 50% 50%;
     background-repeat: no-repeat;
   }
-  
+
   /* ART Settings */
 
   .Art_1{
@@ -241,7 +241,7 @@ body{
   /*  top: 133px; */
 
   /* box-shadow: 29px 40px 79px 48px aliceblue; */
-  
+
 }
 
 /*
@@ -252,10 +252,10 @@ body{
   height: 90%;
   top: -358px;
 
-  box-shadow: 20px 20px 79px 20px aliceblue;  
+  box-shadow: 20px 20px 79px 20px aliceblue;
 
   border-radius: 34%;
-  
+
 }
 */
 
@@ -292,7 +292,7 @@ margin: 19px auto;;
 
   width: 100%;
   height: 100%;
-  
+
 
 }
 
@@ -323,7 +323,7 @@ margin: 19px auto;;
 
 .gtVXfI path {
   fill: rgb(240, 240, 240);
-  
+
 }
 
 .Art_2{
@@ -369,7 +369,7 @@ margin: 19px auto;;
   height: 100%;
   object-fit: cover;
 
-  
+
 }
 
 ul.skills li img {
@@ -420,7 +420,7 @@ ul>li:hover{
   #999;
   color:
   #313131;
-  
+
 }
 
 .imgHeader{
@@ -496,7 +496,7 @@ ul>li:hover{
   }
 
   .previewBoxImg{
-    
+
   }
 
   .lostPosSec{
@@ -565,11 +565,11 @@ ul>li:hover{
   border-radius: 0px;
   border:0px;
   background-color:transparent;
-  
+
 }
 
 .btn-outline-light {
-  color: 
+  color:
 #f8f9fa;
 border-color:
   #38f2d2;
@@ -715,7 +715,7 @@ border-color:
   background: #ece8e1;
 }
 
-/* proposal */ 
+/* proposal */
 
 .loginContainer {
   display: -webkit-box;
@@ -863,7 +863,7 @@ border-color:
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 .ordinarySkin {
-  color: 
+  color:
 #fff;
 background-color:
 transparent;
@@ -873,7 +873,7 @@ border-color:
 }
 
 .ordinarySkin:hover{
-  color: 
+  color:
   black;
 background-color:
 #FFF289;
@@ -890,24 +890,24 @@ border-color:
   display: block;
 
   width: 92%;
-  
 
-  
+
+
   position: fixed;
-  
+
   top: 13.5%;
-  
+
   left: 4%;
-  
+
   background-color:
   #fdfdfd;
-  
+
   z-index: 999999999999999999999999999999999999999;
-  
+
   border-radius: 7px;
   box-shadow: 0px 8px 10px 2px
   #313131;
-  
+
 
 }
 
@@ -943,7 +943,7 @@ border-color:
   filter: blur(3px);
   opacity: 0.2;
   position: relative;
-  
+
 }
 
 .icoHolder {
@@ -955,7 +955,7 @@ border-color:
 .overlay-viewer{
   text-align: center;
   height: 100%;
-  width: 100%; 
+  width: 100%;
   background-color: #0DF0C5;
 }
 
@@ -973,7 +973,7 @@ border-color:
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: 
+  background-color:
 #fff;
 background-clip: border-box;
 border: 1px solid
@@ -1035,6 +1035,41 @@ border: 1px solid
   transition: all 0.3s;
 }
 
+.categorySelection {
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    border-color:
+    #66000000;
+    background-color:
+    white;
+    border-radius: 4px;
+    font-weight: bolder;
+    font-size: 14px;
+    color:
+    black;
+    width: 173px;
+    height: 50px;
+    margin-bottom: 8px;
+
+}
+
+.categorySelection:hover {
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    border-color:
+    #66000000;
+    background-color:
+    white;
+    border-radius: 4px;
+    font-weight: bolder;
+    font-size: 14px;
+    color:
+    black;
+    width: 300px;
+    height: 50px;
+
+}
+
 
 
 /*
@@ -1044,4 +1079,3 @@ border: 1px solid
 * ==========================================
 *
 */
-

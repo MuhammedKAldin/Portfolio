@@ -1,5 +1,5 @@
 <html>
-    
+
     <head>
         <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
         <meta name="theme-color" content="black" />
@@ -15,9 +15,9 @@
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/5.14.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="css/all.css" rel="stylesheet"> <!--load all styles -->
         <link rel="stylesheet" href="style.css" />
-        
+
     </head>
-    
+
     <body
     style="
     overflow-y: visible;
@@ -28,30 +28,30 @@
     >
 
     <header>
-      
+
       <div width="100%" height="55" style="/*! background-color: #0a2128; */padding: 2%;background: linear-gradient(90deg, rgb(0, 0, 0) 16%, rgb(17, 56, 68) 86%);"  >
 
       </div>
-    
+
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed;width: 100%; top: 0px;z-index: 999999; background-color: #1e1e1e !important;" >
         <a class="navbar-brand" href="index.php" style="color: #1ae9c6;font-variant: all-small-caps; margin-top: -8px;" >
           <<span>MK
             </span>
-  
+
             />
         </a>
         <a class="navbar-toggler" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
 
           <div class="icon-tab" style="background: #50ecbd;border-radius: 59px;border-width: 5px;height: 43px;width: 44px;margin-top: -9px;" >
-                
+
             <div class="s-code" style="padding-top: 11px;font-weight: 500;margin-left: 15%;color: white;" >
               <<span></span>/>
               </div>
           </div>
 
         </a>
-      
+
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02" style="margin-right: 3%;" >
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           </ul>
@@ -64,7 +64,7 @@
                 <i class="fas fa-file-download"></i>
                 Resume/CV
               </a>
-              
+
             </div>
           </form>
         </div>
@@ -72,9 +72,9 @@
 
 
       <!-- myLogin -->
-        
-      <section class="wow fadeInLeft" id="panel" style="display: none; position: fixed;width: 100%; height: 100%; 
-      
+
+      <section class="wow fadeInLeft" id="panel" style="display: none; position: fixed;width: 100%; height: 100%;
+
       /* background: linear-gradient(90deg, rgb(111, 159, 148) 16%, rgb(17, 56, 68) 86%); z-index: 99999; */
       background: #1e1e1e;
       z-index: 99999;
@@ -82,7 +82,7 @@
         <div class="logMobile" style="background-color: #FFF289; position: fixed;width: 100%; " >
         </div>
 
- 
+
         <form action="./Admin/dbconManager.php"  method="POST" >
           <div class="text-center" style="margin-top: 194px;"  >
             <h2 style="color:white; " >Admin Panel</h2>
@@ -96,7 +96,7 @@
         </form>
 
 
-        
+
       </section>
 
       <!-- ngIf: Main.page.previous -->
@@ -104,13 +104,13 @@
           <div class="burger">
             <span class="top" style="width: 100%;">
             </span>
-            
+
             <span class="center" style="width: 100%;">
             </span>
-            
+
             <span class="bottom" style="width: 100%;">
             </span>
-          
+
           </div>
         </div><!-- end ngIf: Main.page.previous -->
 
@@ -126,18 +126,18 @@
     <!-- Welcome my Art Section -->
 
       <main style="background: linear-gradient(90deg, rgb(0, 0, 0) 16%, rgb(17, 56, 68) 86%); " >
-        
+
         <h1 class="text-left font_presenter myTitle wow fadeInDown" style="color: white; font-weight: bold;
         position: absolute;
         top: 87px;
 
         " >
-          Full-Stack 
-          
+          Full-Stack
+
           <span style="color:#21FFA1" > <!--#2BA99E--> <!--21FFA1-->
           /
           </span>
-          
+
           Freelancer
         </h1>
 
@@ -145,7 +145,7 @@
       <!-- ============================================================================= -->
         <div class="logIcon" style="  z-index: 999999;
               width: 25vw;
-              height: 93px; 
+              height: 93px;
               display: block;
               position: absolute;
               position: fixed;
@@ -166,7 +166,7 @@
         </a>
         </div>
       <!-- ============================================================================= -->
-        
+
         <section class="Art_2 text-left">
           <div class='row'>
             <div class="col-md-12" style="padding-bottom: 5%;" >
@@ -180,12 +180,12 @@
 
 
             <div class='row' >
-              
-              
+
+
                 <div class="container">
                   <div class="row text-center">
                       <div class="col-md-6" style="text-align: left;" >
-                        
+
 
                           <p style="position:absolute;
                           margin:0 auto;
@@ -196,10 +196,10 @@
 
                             Hi, Im Muhammed,Im a self-taught and passionate Fullstack Web & Game developer.
                             I Create
-            
-                            <span  href="" class="typewrite" 
-                            style="color:#fff289 ; font-weight: 700; font-size: 2.9vmin; font-size: 2.2vmax; " 
-                            data-period="2000" 
+
+                            <span  href="" class="typewrite"
+                            style="color:#fff289 ; font-weight: 700; font-size: 2.9vmin; font-size: 2.2vmax; "
+                            data-period="2000"
                             data-type='[ "Awesome , responsive branding page websites.",
                             "Full-stack web sites from scratch.",
                             "Responsive applications using modern technologies.",
@@ -210,11 +210,11 @@
                             "Educational Mobile Games targeting Android & IOS.",
                             "Single-Player or Multi-Player Games development." ]'>
                           </span>
-            
-                            <!-- 
-                              <span href="" class="typewrite" 
-                                style="color:#B7C8F2; font-weight: 700; font-size: 2.9vmin; font-size: 2.2vmax; " 
-                                data-period="2000" 
+
+                            <!--
+                              <span href="" class="typewrite"
+                                style="color:#B7C8F2; font-weight: 700; font-size: 2.9vmin; font-size: 2.2vmax; "
+                                data-period="2000"
                                 data-type='[ "Awesome Websites and a Visually appealing Front End .",
                                 "Tailored Back End Secure website Database and Microservices.",
                                 "Smart Mobile Applications With Back End & Database implementations.",
@@ -224,41 +224,41 @@
                                     "Solutions for Code problems you wish to solve" ]'>
                               </span>
                             -->
-            
-            
+
+
                           </p>
 
                           <ul class="skillList" style="margin-left: -15%;" >
                             <!--
                             <li class="" title="Show All Projects">
                               <span>Show All</span>
-                            </li> 
+                            </li>
                             -->
                             <!-- Filter by -->
                               <li class="">
                                 <span>BACK-END</span>
                               </li>
-              
+
                               <li class="active">
                                 <span>FRONT-END</span>
                               </li>
-              
+
                               <li class="">
                                 <span>HTML5</span>
                               </li>
-              
+
                               <li class="">
                                 <span>CSS3</span>
                               </li>
-                              
+
                               <li class="">
                                 <span>SASS</span>
                               </li>
-              
+
                               <li class="">
                                 <span>JAVASCRIPT</span>
                               </li>
-                              
+
                               <li class="">
                                 <span>WOW.JS</span>
                               </li>
@@ -266,76 +266,76 @@
                               <li class="">
                                 <span>FontAwesome</span>
                               </li>
-                              
+
                               <li class="">
                                 <span>VUE.JS</span>
                               </li>
-              
+
                               <li class="">
                                 <span>BOOTSTRAP</span>
                               </li>
-                              
+
                               <li class="">
                                 <span>JQUERY</span>
                               </li>
-                              
+
                               <li class="">
                                 <span>CHART.JS</span>
                               </li>
-                              
+
                               <li class="">
                                 <span>SPA ANGULAR.JS</span>
                               </li>
-                              
+
                               <li class="">
                                 <span>PHP</span>
                               </li>
-              
+
                               <li class="">
                                 <span>AJAX</span>
                               </li>
-              
+
                               <li class="">
                                 <span>MYSQL</span>
                               </li>
-              
+
                               <li class="">
                                 <span>FIREBASE</span>
                               </li>
-              
+
                               <li class="">
                                 <span>UI/UX DESIGN</span>
                               </li>
-                              
+
                               <li class="">
                                 <span>C#</span>
                               </li>
-              
+
                               <li class="">
                                 <span>UNITY NATIVE APPS</span>
                               </li>
-              
+
                               <li class="">
                                 <span>AUGMENTED REALITY</span>
                               </li>
-                              
+
                               <li class="">
                                 <span>MULTIPLAYER GAMES</span>
                               </li>
-              
+
                               <li class="">
                                 <span>Git</span>
                               </li>
-              
+
                               <li class="">
                                 <span>AfterEffect</span>
                               </li>
-              
+
                               <li class="">
                                 <span>Photoshop</span>
                               </li>
                             </ul>
-              
+
 
                       </div>
 
@@ -344,28 +344,28 @@
                         <!-- <a href='https://www.freepik.com/vectors/people'></a> -->
                       </div>
                   </div>
-                  
-              </div>
-              
-              
 
-            
+              </div>
+
+
+
+
             </div>
 
             </br>
             </br>
-            
-            
+
+
 
           </div>
         </section>
 
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 14" height="70" preserveAspectRatio="none" aria-hidden="true" focusable="false" 
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 14" height="70" preserveAspectRatio="none" aria-hidden="true" focusable="false"
       class="ka8fj sc-1qsp046-2 gtVXfI ">
         <path>
-          <animate attributeName="d" 
-        values="M 27 10C 21 8 14 3 0 3L 0 0L 54 0L 54 14C 40 14 33 12 27 10Z;M 27 14C 12 14 5 7 0 7L 0 0L 54 0L 54 7C 49 7 42 14 27 14Z;M 27 10C 21 12 14 14 0 14L 0 0L 54 0L 54 3C 40 3 33 8 27 10Z;M 27 10C 21 12 14 14 0 14L 0 0L 54 0L 54 3C 40 3 33 8 27 10Z;M 27 14C 12 14 5 7 0 7L 0 0L 54 0L 54 7C 49 7 42 14 27 14Z;M 27 10C 21 8 14 3 0 3L 0 0L 54 0L 54 14C 40 14 33 12 27 10Z" 
-        repeatCount="indefinite" 
+          <animate attributeName="d"
+        values="M 27 10C 21 8 14 3 0 3L 0 0L 54 0L 54 14C 40 14 33 12 27 10Z;M 27 14C 12 14 5 7 0 7L 0 0L 54 0L 54 7C 49 7 42 14 27 14Z;M 27 10C 21 12 14 14 0 14L 0 0L 54 0L 54 3C 40 3 33 8 27 10Z;M 27 10C 21 12 14 14 0 14L 0 0L 54 0L 54 3C 40 3 33 8 27 10Z;M 27 14C 12 14 5 7 0 7L 0 0L 54 0L 54 7C 49 7 42 14 27 14Z;M 27 10C 21 8 14 3 0 3L 0 0L 54 0L 54 14C 40 14 33 12 27 10Z"
+        repeatCount="indefinite"
         dur="10s">
           </animate>
         </path>
@@ -380,7 +380,7 @@
                   Online Quiz App
                 </p>
             </div>
-            
+
             <div class="row">
               <div class="col-xs-12 col-md-6" >
                 <img src="app1.PNG" style="width: 100%; border-radius: 0px 6px 6px 0px;" />
@@ -401,9 +401,9 @@
                   <i class="far fa-check-square" style="color:#4ED0B8"></i> MediaQueries </br>
                 </ul>
               </div>
-              
+
             </div>
-            
+
             <div  class="closeAppPrev" id="closure_1" style="width: 100%;height: 50px; border-radius: 0px 0px 7px 7px;"  >
               <p style="text-align:center; padding-top: 10px;">
                 Close
@@ -442,10 +442,10 @@
                   <i class="far fa-check-square" style="color:#4ED0B8"></i> Php </br>
                   <i class="far fa-check-square" style="color:#4ED0B8"></i> Ajax </br>
 
-                  
+
                 </ul>
               </div>
-              
+
             </div>
             <div  class="closeAppPrev" id="closure_2" style="width: 100%;height: 50px; border-radius: 0px 0px 7px 7px;"  >
               <p style="text-align:center; padding-top: 10px;">
@@ -484,7 +484,7 @@
                   <i class="far fa-check-square" style="color:#4ED0B8"></i> C# </br>
                 </ul>
               </div>
-              
+
             </div>
             <div  class="closeAppPrev" id="closure_3" style="width: 100%;height: 50px; border-radius: 0px 0px 7px 7px;"  >
               <p style="text-align:center; padding-top: 10px;">
@@ -521,7 +521,7 @@
                   <i class="far fa-check-square" style="color:#4ED0B8"></i> JQuery </br>
                 </ul>
               </div>
-              
+
             </div>
             <div  class="closeAppPrev" id="closure_4" style="width: 100%;height: 50px; border-radius: 0px 0px 7px 7px;"  >
               <p style="text-align:center; padding-top: 10px;">
@@ -558,7 +558,7 @@
                   <i class="far fa-check-square" style="color:#4ED0B8"></i> Angular SPA Routing </br>
                 </ul>
               </div>
-              
+
             </div>
             <div  class="closeAppPrev" id="closure_5" style="width: 100%;height: 50px; border-radius: 0px 0px 7px 7px;"  >
               <p style="text-align:center; padding-top: 10px;">
@@ -597,7 +597,7 @@
                   <i class="far fa-check-square" style="color:#4ED0B8"></i> Sphere.Js </br>
                 </ul>
               </div>
-              
+
             </div>
             <div  class="closeAppPrev" id="closure_6" style="width: 100%;height: 50px; border-radius: 0px 0px 7px 7px;"  >
               <p style="text-align:center; padding-top: 10px;">
@@ -631,7 +631,7 @@
                   <i class="far fa-check-square" style="color:#4ED0B8"></i> C# </br>
                 </ul>
               </div>
-              
+
             </div>
             <div  class="closeAppPrev" id="closure_7" style="width: 100%;height: 50px; border-radius: 0px 0px 7px 7px;"  >
               <p style="text-align:center; padding-top: 10px;">
@@ -643,10 +643,10 @@
       <!-- Seven 7 (last) Done-->
 
 
-      
 
-      
-      
+
+
+
         <!-- <hr class="Liner" /> +++++++++++++++++++ -->
         <section id="Projects_area" class="Art_3 text-left">
           <div class='row wow fadeInUp'>
@@ -656,11 +656,22 @@
               <h2 >My Projects</h2>
 
 
-              <p class="FonterSmaller">Click on the image to see the project description.</p>
+              <p class="FonterSmaller">
+                  Click on the image to see the project description.
+              </p>
+              <button id="showAllDev" class="categorySelection">
+                  All
+              </button>
+              <button id="hideGameDev_Btn" class="categorySelection">
+                  Web development
+              </button>
+              <button id="hideWebDev_Btn" class="categorySelection">
+                  Game development
+              </button>
             </div>
             <div class="row">
-
-              <div class="col-sm-12 col-md-6 col-lg-3">
+<!------------------------------------------------------------------------------------------->
+              <div class="col-sm-12 col-md-6 col-lg-3 hideWebDev">
                 <div class="icoHolder card previewBoxImg" >
                   <div class="overlay-viewer" >
                     <i class="overlay-ico fas fa-coffee"></i>
@@ -676,7 +687,7 @@
               </div>
 
 
-              <div class="col-sm-12 col-md-6 col-lg-3">
+              <div class="col-sm-12 col-md-6 col-lg-3 hideWebDev">
                 <div class="icoHolder card previewBoxImg" >
                   <div class="overlay-viewer" >
                     <i class="overlay-ico fas fa-coffee"></i>
@@ -692,7 +703,7 @@
               </div>
 
 
-              <div class="col-sm-12 col-md-6 col-lg-3">
+              <div class="col-sm-12 col-md-6 col-lg-3 hideWebDev">
                 <div class="icoHolder card previewBoxImg" >
                   <div class="overlay-viewer" >
                     <i class="overlay-ico fas fa-coffee"></i>
@@ -710,8 +721,8 @@
               </div>
 
 
-              
-              <div class="col-sm-12 col-md-6 col-lg-3">
+
+              <div class="col-sm-12 col-md-6 col-lg-3 hideWebDev">
                 <div class="icoHolder card previewBoxImg" >
                   <div class="overlay-viewer" >
                     <i class="overlay-ico fas fa-coffee"></i>
@@ -725,10 +736,10 @@
                   </lu>
                 </div>
               </div>
-              
 
-              
-              <div class="col-sm-12 col-md-6 col-lg-3">
+
+
+              <div class="col-sm-12 col-md-6 col-lg-3 hideWebDev">
                 <div class="icoHolder card previewBoxImg" >
                   <div class="overlay-viewer" >
                     <i class="overlay-ico fas fa-coffee"></i>
@@ -743,8 +754,8 @@
                 </div>
               </div>
 
-              
-              <div class="col-sm-12 col-md-6 col-lg-3">
+
+              <div class="col-sm-12 col-md-6 col-lg-3 hideWebDev">
                 <div class="icoHolder card previewBoxImg" >
                   <div class="overlay-viewer" >
                     <i class="overlay-ico fas fa-coffee"></i>
@@ -759,8 +770,8 @@
                 </div>
               </div>
 
-              
-              <div class="col-sm-12 col-md-6 col-lg-3">
+
+              <div class="col-sm-12 col-md-6 col-lg-3 hideGameDev">
                 <div class="icoHolder card previewBoxImg" >
                   <div class="overlay-viewer" >
                     <i class="overlay-ico fas fa-coffee"></i>
@@ -775,6 +786,7 @@
                 </div>
               </div>
 
+<!----------------------------------------------------------------------------------------------------->
 
             </div>
           </div>
@@ -782,15 +794,15 @@
 
         <!-- END PHASE -->
 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 14" height="70" preserveAspectRatio="none" aria-hidden="true" focusable="false" 
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 14" height="70" preserveAspectRatio="none" aria-hidden="true" focusable="false"
         class="ka8fjb sc-1qsp046-2 gtVXfI ">
           <path>
-            <animate attributeName="d" 
+            <animate attributeName="d"
           values="M 27 10C 21 8 14 3 0 3L 0 0L 54 0L 54 14C 40 14 33 12 27 10Z;M 27 14C 12 14 5 7 0 7L 0 0L 54 0L 54 7C 49 7 42 14 27 14Z;M 27 10C 21 12 14 14 0 14L 0 0L 54 0L 54 3C 40 3 33 8 27 10Z;M 27 10C 21 12 14 14 0 14L 0 0L 54 0L 54 3C 40 3 33 8 27 10Z;M 27 14C 12 14 5 7 0 7L 0 0L 54 0L 54 7C 49 7 42 14 27 14Z;M 27 10C 21 8 14 3 0 3L 0 0L 54 0L 54 14C 40 14 33 12 27 10Z" repeatCount="indefinite" dur="25s">
             </animate>
           </path>
         </svg>
-      
+
         <section id="Hire_area" class="Art_2 text-left" style="padding-top: 24%;">
             <div class='row' style="justify-content: center;" >
 
@@ -805,29 +817,29 @@
                 </div>
 
             </div>
-            
+
             <div class='row'>
                 <div class="col-md-12">
                       <p class="FonterSmaller" style="color:white; font-weight: 500; " >
                         lets build your awesome project together now
 
-                        
+
                       </p>
 
-                <div 
+                <div
                 style="z-index: 9999999999999999999999999999999999999999999;
                 width: 250px;
-                height: 93px; 
+                height: 93px;
                 margin-left: auto;
                 margin-right: auto;
                 " >
                 <a class="fresh-button" href="./Hire/index.php">
                   <p>
                     <span class="bg">
-        
+
                     </span>
                     <span class="base">
-        
+
                     </span>
                     <span class="text">
                       Hire
@@ -854,7 +866,7 @@
               </div>
 
           </div>
-          
+
           <div class='row'>
               <div class="col-md-12">
                     <p class="FonterSmaller" style="color:white; font-weight: 500; " >
@@ -874,16 +886,16 @@
                         </p>
                       </br>
 
-                          <img id="showDiscordLogo" class="outSideLinks" src="disc11.png" /> 
+                          <img id="showDiscordLogo" class="outSideLinks" src="disc11.png" />
                           <div class="alert alert-primary showDiscord" role="alert">
                             MuhammedK.Aldin#7520
                           </div>
 
                         <a href="https://www.youtube.com/channel/UCTshwAMQrIRTUQvuhfKjZxA/videos">
-                          <img class="outSideLinks" src="disc22.png" /> 
+                          <img class="outSideLinks" src="disc22.png" />
                         </a>
                         <a href="https://github.com/MuhammedKAldin">
-                          <img class="outSideLinks" src="disc33.png" /> 
+                          <img class="outSideLinks" src="disc33.png" />
                         </a>
                     </div>
 
@@ -904,7 +916,7 @@
                                 to.parentNode.insertBefore(s, to);
                               })();</script><a href="https://1map.com/map-embed">1 Map</a>
                           </div>
-  
+
                   </div>
 
 
