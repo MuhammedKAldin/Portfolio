@@ -766,6 +766,23 @@
                   </div>
                 </div>
                 <div class="newCard previewBoxImg" >
+                  <img id="showMe_18" class="previewImg" src="app18.PNG" />
+                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
+                    <li>BACK-END</li>
+                    <li>E-Commerce</li>
+                    <li>FRONT-END</li>
+                  </lu>
+                </div>
+              </div>
+
+
+              <div class="col-sm-12 col-md-6 col-lg-3 hideWebDev">
+                <div class="icoHolder card previewBoxImg" >
+                  <div class="overlay-viewer" >
+                    <i class="overlay-ico fas fa-coffee"></i>
+                  </div>
+                </div>
+                <div class="newCard previewBoxImg" >
                   <img id="showMe_6" class="previewImg" src="app6.PNG" />
                   <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
                     <li>FRONT-END</li>
