@@ -831,7 +831,7 @@
                   </div>
                 </div>
                 <div class="newCard previewBoxImg" >
-                  <img id="showMe_17" class="previewImg" src="app17.png" />
+                  <img id="showMe_17" class="previewImg" src="app17.PNG" />
                   <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
                     <li>Unity</li>
                     <li>Android</li>
