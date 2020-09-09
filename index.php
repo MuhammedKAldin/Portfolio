@@ -519,6 +519,9 @@
                   <i class="far fa-check-square" style="color:#4ED0B8"></i> Bootstrap</br>
                   <i class="far fa-check-square" style="color:#4ED0B8"></i> JavaScript </br>
                   <i class="far fa-check-square" style="color:#4ED0B8"></i> JQuery </br>
+                  <i class="far fa-check-square" style="color:#4ED0B8"></i> Mediaquery </br>
+                  <i class="far fa-check-square" style="color:#4ED0B8"></i> Php </br>
+                  <i class="far fa-check-square" style="color:#4ED0B8"></i> MySql </br>
                 </ul>
               </div>
 
@@ -731,6 +734,7 @@
                 <div class="newCard previewBoxImg" >
                   <img id="showMe_4" class="previewImg" src="app4.PNG" />
                   <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
+                    <li>BACK-END</li>
                     <li>FRONT-END</li>
                     <li>BOOTSTRAP</li>
                   </lu>
