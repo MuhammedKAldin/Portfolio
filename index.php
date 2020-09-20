@@ -282,11 +282,7 @@
                               <li class="">
                                 <span>CHART.JS</span>
                               </li>
-
-                              <li class="">
-                                <span>SPA ANGULAR.JS</span>
-                              </li>
-
+				  
                               <li class="">
                                 <span>PHP</span>
                               </li>
