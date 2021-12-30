@@ -60,7 +60,7 @@
               <div id="buzz_Proj" class="btn btn-outline-light my-2 my-sm-"  >Projects</div>
               <div id="buzz_Proj2" class="btn btn-outline-light my-2 my-sm-" >Hire me</div>
               <div id="buzz_Proj3" class="btn btn-outline-light my-2 my-sm-" >Contact</div>
-              <a href="Muhammed K.Aldin CV.pdf" class="btn btn-outline-light my-2 my-sm-0"  download>
+              <a href="https://drive.google.com/file/d/1RaQ3Yco18zKVucCuh7CiP4b6AcnNTd6j/view?usp=sharing" class="btn btn-outline-light my-2 my-sm-0"  download>
                 <i class="fas fa-file-download"></i>
                 Resume/CV
               </a>
