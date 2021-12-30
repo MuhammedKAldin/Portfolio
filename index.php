@@ -235,79 +235,15 @@
                             </li>
                             -->
                             <!-- Filter by -->
-                              <li class="">
+<!--                               <li class="">
                                 <span>BACK-END</span>
                               </li>
 
                               <li class="active">
                                 <span>FRONT-END</span>
                               </li>
-
-                              <li class="">
-                                <span>HTML5</span>
-                              </li>
-
-                              <li class="">
-                                <span>CSS3</span>
-                              </li>
-
-                              <li class="">
-                                <span>SASS</span>
-                              </li>
-
-                              <li class="">
-                                <span>JAVASCRIPT</span>
-                              </li>
-
-                              <li class="">
-                                <span>WOW.JS</span>
-                              </li>
-
-                              <li class="">
-                                <span>FontAwesome</span>
-                              </li>
-
-                              <li class="">
-                                <span>VUE.JS</span>
-                              </li>
-
-                              <li class="">
-                                <span>BOOTSTRAP</span>
-                              </li>
-
-                              <li class="">
-                                <span>JQUERY</span>
-                              </li>
-
-                              <li class="">
-                                <span>CHART.JS</span>
-                              </li>
-				  
-                              <li class="">
-                                <span>PHP</span>
-                              </li>
-
-                              <li class="">
-                                <span>AJAX</span>
-                              </li>
-
-                              <li class="">
-                                <span>MYSQL</span>
-                              </li>
-
-                              <li class="">
-                                <span>FIREBASE</span>
-                              </li>
-
-                              <li class="">
-                                <span>UI/UX DESIGN</span>
-                              </li>
-
-                              <li class="">
-                                <span>C#</span>
-                              </li>
-
-                              <li class="">
+				
+			      <li class="">
                                 <span>UNITY NATIVE APPS</span>
                               </li>
 
@@ -318,18 +254,81 @@
                               <li class="">
                                 <span>MULTIPLAYER GAMES</span>
                               </li>
+				   -->
+				  
+                              <li class="">
+                                <span>HTML5</span>
+                              </li>
+
+                              <li class="">
+                                <span>CSS3</span>
+                              </li>
+
+                              <li class="">
+                                <span>Javascript</span>
+                              </li>
+
+                              <li class="">
+                                <span>JQuery</span>
+                              </li>
+
+                              <li class="">
+                                <span>Bootstrap</span>
+                              </li>
+
+                              <li class="">
+                                <span>Vue</span>
+                              </li>
+
+                              <li class="">
+                                <span>PHP</span>
+                              </li>
+
+                              <li class="">
+                                <span>JQUERY</span>
+                              </li>
+
+                              <li class="">
+                                <span>Node.js</span>
+                              </li>
+				  
+                              <li class="">
+                                <span>Express.js</span>
+                              </li>
+
+                              <li class="">
+                                <span>OOP</span>
+                              </li>
+
+                              <li class="">
+                                <span>MYSQL</span>
+                              </li>
+
+                              <li class="">
+                                <span>SQL Server</span>
+                              </li>
+
+                              <li class="">
+                                <span>MongoDB</span>
+                              </li>
+				  
+			      <li class="">
+                                <span>Firebase</span>
+                              </li>
+				  
+                              <li class="">
+                                <span>C#</span>
+                              </li>
+
+ 			      <li class="">
+                                <span>Unity Engine</span>
+                              </li>
 
                               <li class="">
                                 <span>Git</span>
                               </li>
 
-                              <li class="">
-                                <span>AfterEffect</span>
-                              </li>
 
-                              <li class="">
-                                <span>Photoshop</span>
-                              </li>
                             </ul>
 
 
