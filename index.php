@@ -235,7 +235,7 @@
                             </li>
                             -->
                             <!-- Filter by -->
-<!--                               <li class="">
+                               <li class="">
                                 <span>BACK-END</span>
                               </li>
 
@@ -246,6 +246,10 @@
 			      <li class="">
                                 <span>UNITY NATIVE APPS</span>
                               </li>
+				
+			      <li class="active">
+                                <span>GAME DEVELOPER</span>
+                              </li>
 
                               <li class="">
                                 <span>AUGMENTED REALITY</span>
@@ -254,8 +258,7 @@
                               <li class="">
                                 <span>MULTIPLAYER GAMES</span>
                               </li>
-				   -->
-				  
+			
                               <li class="">
                                 <span>HTML5</span>
                               </li>
