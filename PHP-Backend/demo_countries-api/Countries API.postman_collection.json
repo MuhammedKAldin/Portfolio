@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "b142c48b-c89f-4f3a-b642-b02adba08c43",
+		"name": "Countries API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "8198940",
+		"_collection_link": "https://webenia-team.postman.co/workspace/e3b0e14e-d6c1-476d-a4c5-208481bfebc6/collection/8198940-b142c48b-c89f-4f3a-b642-b02adba08c43?action=share&source=collection_link&creator=8198940"
+	},
+	"item": [
+		{
+			"name": "Countries API WSDL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/countries?wsdl",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"countries"
+					],
+					"query": [
+						{
+							"key": "wsdl",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Display Countries",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiN2M4ZTY3MjkwNzdkZGE4NjA3M2JhOWU3YmE5ZmM1ZmUzZjc5NzdhMGE2ODdkYTg1ZGRhM2E0M2YxNmY1OGMxZGEwMGE4OTg4MTk2MzIyYzQiLCJpYXQiOjE3MzAzOTU1NzQuMTE3NTE0LCJuYmYiOjE3MzAzOTU1NzQuMTE3NTE2LCJleHAiOjE3NjE5MzE1NzQuMDE1MTE2LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.KTR348NGz6jWuQgWkIGuBZ4Qd8dZ6Aa2gZtD5GjZ1l5hqr86Gi3xgQ2Jw8DMg257SFo0rTOCbuxe9OpJfjb72vmCIdNgZLQNyqvUaFLdKqmhs2NoEHMBaa1bHo7E69V4gA33AjV7IstDvUdZwf6JvTEpqKi52cawr1_6wHvyu63vKV5JjTNodD8R__aVHlQ03AoDavYetgv2YPYllXVvnmwV-yO-dIZXMzXAGQAE15RvF3jZEo5o2_IOJbj38-K2xejpfgA0W3vYMYDOXbNKpB-Of1T_0axayB41cb9jV9Zxup5DGsxWsWP3m3HDiOnwY68YSQwU0wT8czkr98doxkjiwe9zWERU2Cq2RIi-y-_3ebmuBqp_NUdXNcLgf4J8C7T0ZHPwCsF5_QM19kr5Yyz0XkNg4Y8mQp2Wbo7Z_fGMBQCIzbx18iGsKO_aAkHgMGSnoTka3Z8E7gab1fQ4mHp-xtm7HA3sktcLT7r90JjSjcvX5Awgkey-yVBjCdKn8qWs8P5a8zPGwPbulqc-wlfNoMqFQXj6U6IUb1bDJm-rua3r8Ra9doyfDUPOjnyDMDA8kH66m6-aBSRrdmragEjTf-CM7-El_jLlc6poq5lN-dKO-SVQbcwZMMWtqc3zUltyPbRvZJuXN8SsZis54ndjik1BWSk4xCZhIY-ZfLw"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/countries"
+			},
+			"response": []
+		},
+		{
+			"name": "Display Countries by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/countries/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Country by Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\r\n    \"name\": {\r\n        \"ar\": \"الأمارات العربية المتحدة\",\r\n        \"en\": \"UAE\"\r\n    },\r\n    \"description\": {\r\n        \"ar\": \"طقس جميل\",\r\n        \"en\": \"Nice weather\"\r\n    }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/countries/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Country by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://127.0.0.1:8000/api/countries/19"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Country",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": {\r\n        \"ar\": \"اسم الدولة\",\r\n        \"en\": \"Country Name\"\r\n    },\r\n    \"description\": {\r\n        \"ar\": \"وصف الدولة\",\r\n        \"en\": \"Country Description\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/countries"
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\" : \"test\",\r\n  \"email\" : \"hello@gmail.com\",\r\n  \"password\" : \"12345\",\r\n  \"c_password\" : \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\" : \"hello@gmail.com\",\r\n  \"password\" : \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/login"
+			},
+			"response": []
+		}
+	]
+}

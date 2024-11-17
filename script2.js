@@ -1,15 +1,19 @@
-function myFunction() {
-             var x = document.getElementById("panel");
-             if(x.style.display === "none")
-            {
-              x.style.display = "block";
-            }
-              else {
-            x.style.display = "none";
-             }
+    // Default
+    resetingCategsParameters();
+    $('.hideGameDev').hide(600);
 
-          }
+    function myFunction() 
+    {
+      var x = document.getElementById("panel");
+      if(x.style.display === "none")
+      {
+        x.style.display = "block";
+      }
+        else {
+      x.style.display = "none";
+      }
 
+    }
 
     $("#buzz_Proj").click(function() {
     $('html, body').animate({
@@ -114,7 +118,8 @@ function myFunction() {
 
      /* -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ */
 
-    function resetingCategsParameters() {
+    function resetingCategsParameters() 
+     {
        $('.hideWebDev').show(600);
        $('.hideGameDev').show(600);
      }

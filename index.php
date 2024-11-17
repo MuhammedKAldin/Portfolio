@@ -660,18 +660,35 @@
               <p class="FonterSmaller">
                   Click on the image to see the project description.
               </p>
-              <button id="showAllDev" class="categorySelection">
+              <button id="hideWebDev_Btn" class="categorySelection">
                   All
               </button>
               <button id="hideGameDev_Btn" class="categorySelection">
                   Web development
               </button>
-              <button id="hideWebDev_Btn" class="categorySelection">
+              <button id="showAllDev" class="categorySelection">
                   Game development
               </button>
             </div>
             <div class="row">
 <!------------------------------------------------------------------------------------------->
+
+              <div class="col-sm-12 col-md-6 col-lg-3 hideWebDev">
+                <div class="icoHolder card previewBoxImg" >
+                  <div class="overlay-viewer" >
+                    <i class="overlay-ico fas fa-coffee"></i>
+                  </div>
+                </div>
+                <div class="newCard previewBoxImg" >
+                                    <img id="showMe_1" class="previewImg" src="app1.PNG" />
+                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.4;">
+                    <li>FRONT-END</li>
+                    <li>VUE.js</li>
+                  </lu>
+                </div>
+              </div>
+
+
               <div class="col-sm-12 col-md-6 col-lg-3 hideWebDev">
                 <div class="icoHolder card previewBoxImg" >
                   <div class="overlay-viewer" >
