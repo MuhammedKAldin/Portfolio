@@ -43,80 +43,17 @@
     $('.showDiscord').css('display','none');
   });
 
-    /* ================================== Projects Area ======================================= */
+  // Display project information
 
-    $( "#showMe_1" ).click(function() {
-      $('.preview-place-1').css('display','block');
-    });
+  $( "#showMe_" ).click(function() {
+    $('.preview-place-1').css('display','block');
+  });
 
-    $( "#closure_1" ).click(function() {
-      $('.preview-place-1').css('display','none');
-    });
- /* -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ */
-
-    $( "#showMe_2" ).click(function() {
-      $('.preview-place-2').css('display','block');
-    });
-
-    $( "#closure_2" ).click(function() {
-      $('.preview-place-2').css('display','none');
-    });
-     /* -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ */
-
-     $( "#showMe_3" ).click(function() {
-      $('.preview-place-3').css('display','block');
-    });
-
-    $( "#closure_3" ).click(function() {
-      $('.preview-place-3').css('display','none');
-    });
-     /* -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ */
-
-     $( "#showMe_4" ).click(function() {
-      $('.preview-place-4').css('display','block');
-    });
-
-    $( "#closure_4" ).click(function() {
-      $('.preview-place-4').css('display','none');
-    });
-     /* -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ */
-
-     $( "#showMe_5" ).click(function() {
-      $('.preview-place-5').css('display','block');
-    });
-
-    $( "#closure_5" ).click(function() {
-      $('.preview-place-5').css('display','none');
-    });
-     /* -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ */
-
-     $( "#showMe_6" ).click(function() {
-      $('.preview-place-6').css('display','block');
-    });
-
-    $( "#closure_6" ).click(function() {
-      $('.preview-place-6').css('display','none');
-    });
-     /* -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ */
-
-     $( "#showMe_7" ).click(function() {
-      $('.preview-place-7').css('display','block');
-    });
-
-    $( "#closure_7" ).click(function() {
-      $('.preview-place-7').css('display','none');
-    });
-     /* -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ */
-
-     $( "#showMe_8" ).click(function() {
-      $('.preview-place-8').css('display','block');
-    });
-
-    $( "#closure_8" ).click(function() {
-      $('.preview-place-8').css('display','none');
-    });
-
-     /* -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ */
+  $( "#closure_1" ).click(function() {
+    $('.preview-place-1').css('display','none');
+  });
+    
+  /* -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ */
 
     function resetingCategsParameters() 
      {

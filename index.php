@@ -194,37 +194,18 @@
 
                           right: 0;color:white; font-weight: 700; font-size: 2.9vmin; font-size: 2.2vmax; ">
 
-                            Hi, Im Muhammed,Im a self-taught and passionate Fullstack Web & Game developer.
-                            I Create
+                            Hi, Im Muhammed,Im a passionate Software Developer, specializing in PHP Backend development.
+                            I Do
 
                             <span  href="" class="typewrite"
                             style="color:#fff289 ; font-weight: 700; font-size: 2.9vmin; font-size: 2.2vmax; "
                             data-period="2000"
                             data-type='[ "Awesome , responsive branding page websites.",
                             "Full-stack web sites from scratch.",
-                            "Responsive applications using modern technologies.",
-                            "Customized microservies for websites.",
-                            "Smart Mobile Apps.",
-                            "Back End & Database Security.",
-                            "Augmented Reality (AR) Apps/Games/Simulations." ,
-                            "Educational Mobile Games targeting Android & IOS.",
-                            "Single-Player or Multi-Player Games development." ]'>
+                            "PHP development, with latest PHP Frameworks, Laravel, CodeIgniter.",
+                            "Backend microservies for websites.",
+                            "API development." ]'>
                           </span>
-
-                            <!--
-                              <span href="" class="typewrite"
-                                style="color:#B7C8F2; font-weight: 700; font-size: 2.9vmin; font-size: 2.2vmax; "
-                                data-period="2000"
-                                data-type='[ "Awesome Websites and a Visually appealing Front End .",
-                                "Tailored Back End Secure website Database and Microservices.",
-                                "Smart Mobile Applications With Back End & Database implementations.",
-                                  "Augmented Reality (AR) Apps for Mobile" ,
-                                  "Education Mobile Games targeting Android & IOS.",
-                                    "Creative Game projects with Single-Player or Multi-Player Mechanics for All Platforms.",
-                                    "Solutions for Code problems you wish to solve" ]'>
-                              </span>
-                            -->
-
 
                           </p>
 
@@ -235,36 +216,22 @@
                             </li>
                             -->
                             <!-- Filter by -->
-                               <li class="">
-                                <span>BACK-END</span>
-                              </li>
 
-                              <li class="active">
-                                <span>FRONT-END</span>
-                              </li>
-				
-			      <li class="">
-                                <span>UNITY NATIVE APPS</span>
-                              </li>
-				
-			      <li class="active">
-                                <span>GAME DEVELOPER</span>
+                            
+                            <li class="">
+                                <span>PHP</span>
                               </li>
 
                               <li class="">
-                                <span>AUGMENTED REALITY</span>
+                                <span>Laravel</span>
                               </li>
 
                               <li class="">
-                                <span>MULTIPLAYER GAMES</span>
-                              </li>
-			
-                              <li class="">
-                                <span>HTML5</span>
+                                <span>OOP</span>
                               </li>
 
                               <li class="">
-                                <span>CSS3</span>
+                                <span>MYSQL</span>
                               </li>
 
                               <li class="">
@@ -280,61 +247,26 @@
                               </li>
 
                               <li class="">
-                                <span>Vue</span>
+                                <span>React</span>
                               </li>
 
                               <li class="">
-                                <span>PHP</span>
+                                <span>Vue</span>
                               </li>
 
                               <li class="">
                                 <span>JQUERY</span>
                               </li>
-
+                  
                               <li class="">
-                                <span>Node.js</span>
-                              </li>
-				  
-                              <li class="">
-                                <span>Express.js</span>
-                              </li>
-
-                              <li class="">
-                                <span>OOP</span>
-                              </li>
-
-                              <li class="">
-                                <span>MYSQL</span>
-                              </li>
-
-                              <li class="">
-                                <span>SQL Server</span>
-                              </li>
-
-                              <li class="">
-                                <span>MongoDB</span>
-                              </li>
-				  
-			      <li class="">
                                 <span>Firebase</span>
                               </li>
 				  
                               <li class="">
-                                <span>C#</span>
-                              </li>
-
- 			      <li class="">
-                                <span>Unity Engine</span>
-                              </li>
-
-                              <li class="">
                                 <span>Git</span>
                               </li>
 
-
                             </ul>
-
-
                       </div>
 
                       <div class="col-md-6 imgHeaderP2 wow fadeInUp" >
@@ -412,242 +344,6 @@
       </div>
       <!-- One 1 Done -->
 
-      <div class="preview-place-2">
-        <div class="innerPreviewBox">
-          <div style="width: 100%;height: 50px;background-color: #1E1E1E; border-radius: 7px 7px 0px 0px;"  >
-                <p style="color:#0CFDD0; font-weight: 700; text-align:center; padding-top: 10px;">
-                  Coronica - Covid-19 virus Tracker
-                </p>
-            </div>
-            <div class="row">
-              <div class="col-xs-12 col-md-6" >
-                <img src="app2.PNG" style="width: 100%; border-radius: 0px 6px 6px 0px;" />
-              </div>
-
-              <div class="col-xs-12 col-md-6" >
-                <h5 style="padding-left: 20px;">Technologies used to create the project:
-                  <span style="font-size:small;" >
-                    (<a href="#">GitHub source code</a>)
-                  </span>
-                </h5>
-                <ul class="techsUsed" >
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> HTML </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> CSS </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> Bootstrap</br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> JavaScript </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> JQuery </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> Mediaquery </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> Php </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> Ajax </br>
-
-
-                </ul>
-              </div>
-
-            </div>
-            <div  class="closeAppPrev" id="closure_2" style="width: 100%;height: 50px; border-radius: 0px 0px 7px 7px;"  >
-              <p style="text-align:center; padding-top: 10px;">
-                Close
-              </p>
-          </div>
-        </div>
-      </div>
-      <!-- Two 2 Done-->
-
-      <div class="preview-place-3">
-        <div class="innerPreviewBox">
-          <div style="width: 100%;height: 50px;background-color: #1E1E1E; border-radius: 7px 7px 0px 0px;"  >
-                <p style="color:#0CFDD0; font-weight: 700; text-align:center; padding-top: 10px;">
-                  Fythagoras - Educational platform Native App
-                </p>
-            </div>
-            <div class="row">
-              <div class="col-xs-12 col-md-6" >
-                <img src="app3.PNG" style="width: 100%; border-radius: 0px 6px 6px 0px;" />
-              </div>
-
-              <div class="col-xs-12 col-md-6" >
-                <h5 style="padding-left: 20px;">Technologies used to create the project:
-                  <span style="font-size:small;" >
-                    (<a href="#">GitHub source code</a>)
-                  </span>
-                </h5>
-                <ul class="techsUsed" >
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> HTML </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> CSS </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> JavaScript </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> Php </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> MySql </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> Unity Engine </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> C# </br>
-                </ul>
-              </div>
-
-            </div>
-            <div  class="closeAppPrev" id="closure_3" style="width: 100%;height: 50px; border-radius: 0px 0px 7px 7px;"  >
-              <p style="text-align:center; padding-top: 10px;">
-                Close
-              </p>
-          </div>
-        </div>
-      </div>
-      <!-- Three 3 Done-->
-
-      <div class="preview-place-4">
-        <div class="innerPreviewBox">
-          <div style="width: 100%;height: 50px;background-color: #1E1E1E; border-radius: 7px 7px 0px 0px;"  >
-                <p style="color:#0CFDD0; font-weight: 700; text-align:center; padding-top: 10px;">
-                  My Protfolio Web Site
-                </p>
-            </div>
-            <div class="row">
-              <div class="col-xs-12 col-md-6" >
-                <img src="app4.PNG" style="width: 100%; border-radius: 0px 6px 6px 0px;" />
-              </div>
-
-              <div class="col-xs-12 col-md-6" >
-                <h5 style="padding-left: 20px;">Technologies used to create the project:
-                  <span style="font-size:small;" >
-                    (<a href="#">GitHub source code</a>)
-                  </span>
-                </h5>
-                <ul class="techsUsed" >
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> HTML </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> CSS </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> Bootstrap</br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> JavaScript </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> JQuery </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> Mediaquery </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> Php </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> MySql </br>
-                </ul>
-              </div>
-
-            </div>
-            <div  class="closeAppPrev" id="closure_4" style="width: 100%;height: 50px; border-radius: 0px 0px 7px 7px;"  >
-              <p style="text-align:center; padding-top: 10px;">
-                Close
-              </p>
-          </div>
-        </div>
-      </div>
-      <!-- Four 4 Done-->
-
-      <div class="preview-place-5">
-        <div class="innerPreviewBox">
-          <div style="width: 100%;height: 50px;background-color: #1E1E1E; border-radius: 7px 7px 0px 0px;"  >
-                <p style="color:#0CFDD0; font-weight: 700; text-align:center; padding-top: 10px;">
-                  Wisely Health Insurance SPA
-                </p>
-            </div>
-            <div class="row">
-              <div class="col-xs-12 col-md-6" >
-                <img src="app5.PNG" style="width: 100%; border-radius: 0px 6px 6px 0px;" />
-              </div>
-
-              <div class="col-xs-12 col-md-6" >
-                <h5 style="padding-left: 20px;">Technologies used to create the project:
-                  <span style="font-size:small;" >
-                    (<a href="#">GitHub source code</a>)
-                  </span>
-                </h5>
-                <ul class="techsUsed" >
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> HTML </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> CSS </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> JavaScript </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> Bootstrap</br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> Angular SPA Routing </br>
-                </ul>
-              </div>
-
-            </div>
-            <div  class="closeAppPrev" id="closure_5" style="width: 100%;height: 50px; border-radius: 0px 0px 7px 7px;"  >
-              <p style="text-align:center; padding-top: 10px;">
-                Close
-              </p>
-          </div>
-        </div>
-      </div>
-      <!-- Five 5 Done-->
-
-      <div class="preview-place-6">
-        <div class="innerPreviewBox">
-          <div style="width: 100%;height: 50px;background-color: #1E1E1E; border-radius: 7px 7px 0px 0px;"  >
-                <p style="color:#0CFDD0; font-weight: 700; text-align:center; padding-top: 10px;">
-                  Global Economy & Health Tracking
-                </p>
-            </div>
-            <div class="row">
-              <div class="col-xs-12 col-md-6" >
-                <img src="app6.PNG" style="width: 100%; border-radius: 0px 6px 6px 0px;" />
-              </div>
-
-              <div class="col-xs-12 col-md-6" >
-                <h5 style="padding-left: 20px;">Technologies used to create the project:
-                  <span style="font-size:small;" >
-                    (<a href="#">GitHub source code</a>)
-                  </span>
-                </h5>
-                <ul class="techsUsed" >
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> HTML </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> CSS </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> Bootstrap</br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> JavaScript </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> Mediaquery </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> Chart.Js </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> Sphere.Js </br>
-                </ul>
-              </div>
-
-            </div>
-            <div  class="closeAppPrev" id="closure_6" style="width: 100%;height: 50px; border-radius: 0px 0px 7px 7px;"  >
-              <p style="text-align:center; padding-top: 10px;">
-                Close
-              </p>
-          </div>
-        </div>
-      </div>
-      <!-- Six 6 Done-->
-
-      <div class="preview-place-7">
-        <div class="innerPreviewBox">
-            <div style="width: 100%;height: 50px;background-color: #1E1E1E; border-radius: 7px 7px 0px 0px;"  >
-                <p style="color:#0CFDD0; font-weight: 700; text-align:center; padding-top: 10px;">
-                  The Town's Sherif (3D Game)
-                </p>
-            </div>
-            <div class="row">
-              <div class="col-xs-12 col-md-6" >
-                <img src="app7.PNG" style="width: 100%; border-radius: 0px 6px 6px 0px;" />
-              </div>
-
-              <div class="col-xs-12 col-md-6" >
-                <h5 style="padding-left: 20px;">Technologies used to create the project:
-                  <span style="font-size:small;" >
-                    (<a href="#">GitHub source code</a>)
-                  </span>
-                </h5>
-                <ul class="techsUsed" >
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> Unity Engine </br>
-                  <i class="far fa-check-square" style="color:#4ED0B8"></i> C# </br>
-                </ul>
-              </div>
-
-            </div>
-            <div  class="closeAppPrev" id="closure_7" style="width: 100%;height: 50px; border-radius: 0px 0px 7px 7px;"  >
-              <p style="text-align:center; padding-top: 10px;">
-                Close
-              </p>
-          </div>
-        </div>
-      </div>
-      <!-- Seven 7 (last) Done-->
-
-
-
-
-
-
         <!-- <hr class="Liner" /> +++++++++++++++++++ -->
         <section id="Projects_area" class="Art_3 text-left">
           <div class='row wow fadeInUp'>
@@ -660,7 +356,7 @@
               <p class="FonterSmaller">
                   Click on the image to see the project description.
               </p>
-              <button id="showAllDev" class="categorySelection">
+              <!-- <button id="showAllDev" class="categorySelection">
                   All
               </button>
               <button id="hideGameDev_Btn" class="categorySelection">
@@ -668,303 +364,39 @@
               </button>
               <button id="hideWebDev_Btn" class="categorySelection">
                   Game development
-              </button>
+              </button> -->
             </div>
             <div class="row">
 <!------------------------------------------------------------------------------------------->
 
-              <div class="col-sm-12 col-md-6 col-lg-3 hideWebDev">
-                <div class="icoHolder card previewBoxImg" >
-                  <div class="overlay-viewer" >
-                    <i class="overlay-ico fas fa-coffee"></i>
-                  </div>
-                </div>
-                <div class="newCard previewBoxImg" >
-                                    <img id="showMe_1" class="previewImg" src="app1.PNG" />
-                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.4;">
-                    <li>FRONT-END</li>
-                    <li>VUE.js</li>
-                  </lu>
-                </div>
-              </div>
+            <?php
+            // Read and decode the JSON data
+            $jsonData = file_get_contents('data.json');
+            $projects = json_decode($jsonData, true)['projects'];
+            ?>
 
-
-              <div class="col-sm-12 col-md-6 col-lg-3 hideWebDev">
-                <div class="icoHolder card previewBoxImg" >
-                  <div class="overlay-viewer" >
-                    <i class="overlay-ico fas fa-coffee"></i>
-                  </div>
-                </div>
-                <div class="newCard previewBoxImg" >
-                                    <img id="showMe_1" class="previewImg" src="app1.PNG" />
-                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.4;">
-                    <li>FRONT-END</li>
-                    <li>VUE.js</li>
-                  </lu>
-                </div>
-              </div>
-
-
-              <div class="col-sm-12 col-md-6 col-lg-3 hideWebDev">
-                <div class="icoHolder card previewBoxImg" >
-                  <div class="overlay-viewer" >
-                    <i class="overlay-ico fas fa-coffee"></i>
-                  </div>
-                </div>
-                <div class="newCard previewBoxImg" >
-                  <img id="showMe_2" class="previewImg" src="app2.PNG" />
-                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.4;">
-                    <li>BACK-END</li>
-                    <li>FRONT-END</li>
-                  </lu>
-                </div>
-              </div>
-
-
-              <div class="col-sm-12 col-md-6 col-lg-3 hideWebDev">
-                <div class="icoHolder card previewBoxImg" >
-                  <div class="overlay-viewer" >
-                    <i class="overlay-ico fas fa-coffee"></i>
-                  </div>
-                </div>
-                <div class="newCard previewBoxImg" >
-                  <img id="showMe_3" class="previewImg" src="app3.PNG" />
-                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.4;">
-                    <li>BACK-END</li>
-                    <li>C#</li>
-                    <li>ANDROID</li>
-                    <li>IOS</li>
-                  </lu>
-                </div>
-              </div>
-
-
-
-              <div class="col-sm-12 col-md-6 col-lg-3 hideWebDev">
-                <div class="icoHolder card previewBoxImg" >
-                  <div class="overlay-viewer" >
-                    <i class="overlay-ico fas fa-coffee"></i>
-                  </div>
-                </div>
-                <div class="newCard previewBoxImg" >
-                  <img id="showMe_4" class="previewImg" src="app4.PNG" />
-                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
-                    <li>BACK-END</li>
-                    <li>FRONT-END</li>
-                    <li>BOOTSTRAP</li>
-                  </lu>
-                </div>
-              </div>
-
-
-
-              <div class="col-sm-12 col-md-6 col-lg-3 hideWebDev">
-                <div class="icoHolder card previewBoxImg" >
-                  <div class="overlay-viewer" >
-                    <i class="overlay-ico fas fa-coffee"></i>
-                  </div>
-                </div>
-                <div class="newCard previewBoxImg" >
-                  <img id="showMe_5" class="previewImg" src="app5.PNG" />
-                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.4;">
-                    <li>FRONT-END</li>
-                    <li>Angular SPA</li>
-                  </lu>
-                </div>
-              </div>
-
-
-              <div class="col-sm-12 col-md-6 col-lg-3 hideWebDev">
-                <div class="icoHolder card previewBoxImg" >
-                  <div class="overlay-viewer" >
-                    <i class="overlay-ico fas fa-coffee"></i>
-                  </div>
-                </div>
-                <div class="newCard previewBoxImg" >
-                  <img id="showMe_18" class="previewImg" src="app18.PNG" />
-                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
-                    <li>BACK-END</li>
-                    <li>E-Commerce</li>
-                    <li>FRONT-END</li>
-                  </lu>
-                </div>
-              </div>
-
-
-              <div class="col-sm-12 col-md-6 col-lg-3 hideWebDev">
-                <div class="icoHolder card previewBoxImg" >
-                  <div class="overlay-viewer" >
-                    <i class="overlay-ico fas fa-coffee"></i>
-                  </div>
-                </div>
-                <div class="newCard previewBoxImg" >
-                  <img id="showMe_6" class="previewImg" src="app6.PNG" />
-                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
-                    <li>FRONT-END</li>
-                    <li>Chart.js</li>
-                  </lu>
-                </div>
-              </div>
-
-
-              <div class="col-sm-12 col-md-6 col-lg-3 hideGameDev">
-                <div class="icoHolder card previewBoxImg" >
-                  <div class="overlay-viewer" >
-                    <i class="overlay-ico fas fa-coffee"></i>
-                  </div>
-                </div>
-                <div class="newCard previewBoxImg" >
-                  <img id="showMe_7" class="previewImg" src="app7.PNG" />
-                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
-                    <li>Unity</li>
-                    <li>PC</li>
-                  </lu>
-                </div>
-              </div>
-
-              <div class="col-sm-12 col-md-6 col-lg-3 hideGameDev">
-                <div class="icoHolder card previewBoxImg" >
-                  <div class="overlay-viewer" >
-                    <i class="overlay-ico fas fa-coffee"></i>
-                  </div>
-                </div>
-                <div class="newCard previewBoxImg" >
-                  <img id="showMe_8" class="previewImg" src="app8.PNG" />
-                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
-                    <li>Unity</li>
-                    <li>Android</li>
-                    <li>UI/UX</li>
-                  </lu>
-                </div>
-              </div>
-
-              <div class="col-sm-12 col-md-6 col-lg-3 hideGameDev">
-                <div class="icoHolder card previewBoxImg" >
-                  <div class="overlay-viewer" >
-                    <i class="overlay-ico fas fa-coffee"></i>
-                  </div>
-                </div>
-                <div class="newCard previewBoxImg" >
-                  <img id="showMe_9" class="previewImg" src="app9.png" />
-                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
-                    <li>Unity</li>
-                    <li>Android</li>
-                    <li>VR</li>
-                    <li>UI/UX</li>
-                  </lu>
-                </div>
-              </div>
-
-              <div class="col-sm-12 col-md-6 col-lg-3 hideGameDev">
-                <div class="icoHolder card previewBoxImg" >
-                  <div class="overlay-viewer" >
-                    <i class="overlay-ico fas fa-coffee"></i>
-                  </div>
-                </div>
-                <div class="newCard previewBoxImg" >
-                  <img id="showMe_17" class="previewImg" src="app17.PNG" />
-                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
-                    <li>Unity</li>
-                    <li>Android</li>
-                    <li>AR</li>
-                    <li>UI/UX</li>
-                  </lu>
-                </div>
-              </div>
-
-              <div class="col-sm-12 col-md-6 col-lg-3 hideGameDev">
-                <div class="icoHolder card previewBoxImg" >
-                  <div class="overlay-viewer" >
-                    <i class="overlay-ico fas fa-coffee"></i>
-                  </div>
-                </div>
-                <div class="newCard previewBoxImg" >
-                  <img id="showMe_10" class="previewImg" src="app10.PNG" />
-                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
-                    <li>Unity</li>
-                    <li>PC</li>
-                    <li>WebGL</li>
-                  </lu>
-                </div>
-              </div>
-
-              <div class="col-sm-12 col-md-6 col-lg-3 hideGameDev">
-                <div class="icoHolder card previewBoxImg" >
-                  <div class="overlay-viewer" >
-                    <i class="overlay-ico fas fa-coffee"></i>
-                  </div>
-                </div>
-                <div class="newCard previewBoxImg" >
-                  <img id="showMe_11" class="previewImg" src="app11.PNG" />
-                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
-                    <li>Unity</li>
-                    <li>PC</li>
-                  </lu>
-                </div>
-              </div>
-
-              <div class="col-sm-12 col-md-6 col-lg-3 hideGameDev">
-                <div class="icoHolder card previewBoxImg" >
-                  <div class="overlay-viewer" >
-                    <i class="overlay-ico fas fa-coffee"></i>
-                  </div>
-                </div>
-                <div class="newCard previewBoxImg" >
-                  <img id="showMe_12" class="previewImg" src="app12.PNG" />
-                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
-                    <li>Unity</li>
-                    <li>PC</li>
-                  </lu>
-                </div>
-              </div>
-
-              <div class="col-sm-12 col-md-6 col-lg-3 hideGameDev">
-                <div class="icoHolder card previewBoxImg" >
-                  <div class="overlay-viewer" >
-                    <i class="overlay-ico fas fa-coffee"></i>
-                  </div>
-                </div>
-                <div class="newCard previewBoxImg" >
-                  <img id="showMe_13" class="previewImg" src="app13.PNG" />
-                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
-                    <li>Unity</li>
-                    <li>Android</li>
-                  </lu>
-                </div>
-              </div>
-
-              <div class="col-sm-12 col-md-6 col-lg-3 hideGameDev">
-                <div class="icoHolder card previewBoxImg" >
-                  <div class="overlay-viewer" >
-                    <i class="overlay-ico fas fa-coffee"></i>
-                  </div>
-                </div>
-                <div class="newCard previewBoxImg" >
-                  <img id="showMe_14" class="previewImg" src="app14.PNG" />
-                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
-                    <li>Unity</li>
-                    <li>PC</li>
-                  </lu>
-                </div>
-              </div>
-
-              <div class="col-sm-12 col-md-6 col-lg-3 hideGameDev">
-                <div class="icoHolder card previewBoxImg" >
-                  <div class="overlay-viewer" >
-                    <i class="overlay-ico fas fa-coffee"></i>
-                  </div>
-                </div>
-                <div class="newCard previewBoxImg" >
-                  <img id="showMe_16" class="previewImg" src="app16.png" />
-                  <lu class="skillList" style=" position: absolute; bottom:0; left:0;opacity: 0.9;">
-                    <li>Unity</li>
-                    <li>Android</li>
-                  </lu>
-                </div>
-              </div>
-
-
-<!----------------------------------------------------------------------------------------------------->
+            <div class="row">
+                <?php foreach ($projects as $index => $project): ?>
+                    <div class="col-sm-12 col-md-6 col-lg-3 hideWebDev">
+                        <div class="icoHolder card previewBoxImg">
+                            <div class="overlay-viewer">
+                                <i class="overlay-ico fas fa-coffee"></i>
+                            </div>
+                        </div>
+                        <div class="newCard previewBoxImg">
+                            <!-- Display project screenshot -->
+                            <img id="showMe_<?php echo $index + 1; ?>" class="previewImg" src="<?php echo "./".$project['screenshot']; ?>" />
+                            
+                            <!-- Display skill list at the bottom -->
+                            <ul class="skillList" style="position: absolute; bottom: 0; left: 0; opacity: 0.4;">
+                                <?php foreach ($project['skills'] as $skill): ?>
+                                    <li><?php echo $skill; ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
 
             </div>
           </div>
