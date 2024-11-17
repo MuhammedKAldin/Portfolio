@@ -660,13 +660,13 @@
               <p class="FonterSmaller">
                   Click on the image to see the project description.
               </p>
-              <button id="hideWebDev_Btn" class="categorySelection">
+              <button id="showAllDev" class="categorySelection">
                   All
               </button>
               <button id="hideGameDev_Btn" class="categorySelection">
                   Web development
               </button>
-              <button id="showAllDev" class="categorySelection">
+              <button id="hideWebDev_Btn" class="categorySelection">
                   Game development
               </button>
             </div>
