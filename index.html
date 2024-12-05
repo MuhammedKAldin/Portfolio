@@ -1,21 +1,23 @@
 <html>
 
     <head>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
         <meta name="theme-color" content="black" />
-        <title>Website Developer Portfolio | Muhammed K.Aldin </title>
+        <title> Muhammed K.Aldin | Software Developer </title>
         <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
         <meta name="author" content="Muhammed K.Aldin" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-         <!-- Bootstrap CSS -->
+    
+        <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet"/>
         <link href="css/fontawesome.min.css" rel="stylesheet"> <!--load all styles -->
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/5.14.0/css/font-awesome.min.css" rel="stylesheet">
         <link href="css/all.css" rel="stylesheet"> <!--load all styles -->
         <link rel="stylesheet" href="style.css" />
-
+    
+        <!-- Favicon -->
+        <link rel="icon" href="mk.ico" type="image/x-icon">
     </head>
 
     <body
@@ -186,35 +188,39 @@
                   <div class="row text-center">
                       <div class="col-md-6" style="text-align: left;" >
 
-
-                          <p style="position:absolute;
-                                    margin:0 auto;
-                                    left: 0;
-                                    top: 6%;
-                                    right: 0;color:white; font-weight: 700; 
-                                    font-size: 2.3rem;
-                                    ">
-
-                              <?php
-                                  $startYear = 2021;
-                                  $currentYear = date("Y");
-                                  $yearsOfExperience = $currentYear - $startYear;
-                              ?>
-
-                              Hi, I'm Muhammed, I'm a passionate Software Developer with <?php echo $yearsOfExperience; ?> years of Experience, specializing in PHP Backend development.
-                              I Do
-
-                              <span class="typewrite"
-                                    style="color:#fff289; font-weight: 700; 
-                                    font-size: 2.3rem;"
-                                    data-period="2000"
-                                    data-type='[ "Awesome, responsive branding page websites.",
-                                    "Full-stack websites from scratch.",
-                                    "PHP development, with latest PHP Frameworks, Laravel, CodeIgniter.",
-                                    "Backend microservices for websites.",
-                                    "API development." ]'>
-                              </span>
-                          </p>
+                        <p style="position: absolute; margin: 0 auto; left: 0; top: 6%; right: 0; color: white; font-weight: 700; font-size: 2.3rem;">
+                          Hi, I'm Muhammed, I'm a passionate Software Developer with 
+                          <span id="yearsOfExperience"></span> years of Experience, specializing in PHP Backend development. I Do
+                          <span class="typewrite" style="color:#fff289; font-weight: 700; font-size: 2.3rem;"></span>
+                      </p>
+                  
+                      <!-- Script placed just before the closing </body> tag -->
+                      <script>
+                          // Set years of experience
+                          const yearsOfExperience = new Date().getFullYear() - 2021;
+                          document.getElementById("yearsOfExperience").textContent = yearsOfExperience;
+                  
+                          // Typewriter effect
+                          const typewriteElement = document.querySelector('.typewrite');
+                          const phrases = [
+                              "Awesome, responsive branding page websites.",
+                              "Full-stack websites from scratch.",
+                              "PHP development, with latest PHP Frameworks, Laravel, CodeIgniter.",
+                              "Backend microservices for websites.",
+                              "API development."
+                          ];
+                          let i = 0;
+                  
+                          function type() {
+                              typewriteElement.textContent = phrases[i].slice(0, typewriteElement.textContent.length + 1);
+                              if (typewriteElement.textContent.length === phrases[i].length) {
+                                  i = (i + 1) % phrases.length;
+                                  setTimeout(() => { typewriteElement.textContent = ''; }, 1000);
+                              }
+                              setTimeout(type, 150);
+                          }
+                          type();
+                      </script>
 
 
                           <ul class="skillList" style="margin-left: -15%; padding-top: 28vh;" >
@@ -321,82 +327,155 @@
         </path>
       </svg>
 
-      <!-- START (Previews) PHASE +++++++++++++++++++ -->
-      <?php
-      // Read and decode the JSON data
-      $jsonData = file_get_contents('data.json');
-      $projects = json_decode($jsonData, true)['projects'];
-      ?>
-
-      <div class="row">
-        <?php foreach ($projects as $index => $project): ?>
-            <div class="preview-place-<?php echo $index + 1; ?>" style="display: none;">
-                <div class="innerPreviewBox scrollable-container">
-                    <div style="width: 100%; height: 50px; background-color: #1E1E1E; border-radius: 7px 7px 0px 0px;">
-                        <p style="color:#0CFDD0; font-weight: 700; text-align:center; padding-top: 10px;">
-                            <?php echo $project['name']; ?>
-                        </p>
-                    </div>
-
-                    <!-- --------------- -->
-
-                    <div class="row mb-4">
-                        <!-- Screenshot Section -->
-                        <div class="col-12 col-md-6">
-                            <img src="<?php echo "./" . $project['screenshot']; ?>" 
-                                alt="Project Screenshot" 
-                                class="img-fluid rounded shadow-sm">
-                        </div>
-                        <!-- Details Section -->
-                        <div class="col-12 col-md-6">
-                            <!-- Project Title -->
-                            <h4><?php echo $project['name']; ?></h4>
-                            
-                            <!-- Description -->
-                            <p class="mt-3"><strong>Description:</strong> <?php echo $project['description']; ?></p>
-                            
-                            <!-- Technologies Used -->
-                            <h5 class="mt-4">Technologies Used:</h5>
-                            <ul class="list-unstyled">
-                                <?php foreach ($project['skills'] as $skill): ?>
-                                    <li><i class="bi bi-check-circle"></i> <?php echo $skill; ?></li>
-                                <?php endforeach; ?>
-                            </ul>
-                            
-                            <!-- GitHub Source -->
-                            <p class="mt-3">
-                                <strong>Source Code:</strong> 
-                                <a href="<?php echo $project['codespace']; ?>" target="_blank" class="text-decoration-none">
-                                    GitHub Repository
-                                </a>
-                            </p>
-                            
-                            <!-- Features -->
-                            <h5 class="mt-4">Features:</h5>
-                            <ul class="list-unstyled">
-                                <?php foreach ($project['features'] as $feature): ?>
-                                    <li><i class="bi bi-star"></i> <?php echo $feature; ?></li>
-                                <?php endforeach; ?>
-                            </ul>
-                            
-                            <!-- Live URL -->
-                            <p class="mt-3">
-                                <strong>Live Demo:</strong> 
-                                <a href="<?php echo $project['url']; ?>" target="_blank" class="text-decoration-none">
-                                    Visit Project
-                                </a>
-                            </p>
-                        </div>
-                      </div>
-                    <!-- --------------- -->
-
-                    <div class="closeAppPrev" id="closure_<?php echo $index + 1; ?>" style="width: 100%; height: 50px; border-radius: 0px 0px 7px 7px;">
-                        <p style="text-align:center; padding-top: 10px;">Close</p>
-                    </div>
-                </div>
-            </div>
-        <?php endforeach; ?>
+      <div class='row' style="background: #f0f0f0!important;">
+        <div class="col-md-12 text-center wow fadeInUp">
+          <h2 >My Projects</h2>
+          <p class="FonterSmaller">
+              Click on the image to see the project description.
+          </p>
+        </div>
       </div>
+
+
+      <!-- START (Previews) PHASE +++++++++++++++++++ -->
+      <div class="row" id="projects-container" style="background: #f0f0f0!important;">
+
+
+      </div>
+
+      <script>
+        // Fetch the data from the JSON file
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                const projects = data.projects;
+                const container = document.getElementById('projects-container');
+    
+                projects.forEach((project, index) => {
+                    // Create the main project div
+                    const projectDiv = document.createElement('div');
+                    projectDiv.classList.add(`preview-place-${index + 1}`);
+                    projectDiv.style.display = 'none';
+                    projectDiv.style.position = 'relative'; // Needed for absolute positioning of the close button
+    
+                    // Inner preview box
+                    const innerPreviewBox = document.createElement('div');
+                    innerPreviewBox.classList.add('innerPreviewBox', 'scrollable-container');
+                    projectDiv.appendChild(innerPreviewBox);
+    
+                    // Header with project name
+                    const header = document.createElement('div');
+                    header.style.width = '100%';
+                    header.style.height = '50px';
+                    header.style.backgroundColor = '#1E1E1E';
+                    header.style.borderRadius = '7px 7px 0 0';
+                    innerPreviewBox.appendChild(header);
+    
+                    // Row for screenshot and project details
+                    const row = document.createElement('div');
+                    row.classList.add('row', 'mb-4');
+    
+                    // Screenshot section
+                    const screenshotCol = document.createElement('div');
+                    screenshotCol.classList.add('col-12', 'col-md-6');
+                    const screenshotImg = document.createElement('img');
+                    screenshotImg.src = './' + project.screenshot;
+                    screenshotImg.alt = 'Project Screenshot';
+                    screenshotImg.classList.add('img-fluid', 'rounded', 'shadow-sm');
+                    screenshotCol.appendChild(screenshotImg);
+    
+                    // Details section
+                    const detailsCol = document.createElement('div');
+                    detailsCol.classList.add('col-12', 'col-md-6');
+    
+                    const projectTitle = document.createElement('h4');
+                    projectTitle.textContent = project.name;
+                    detailsCol.appendChild(projectTitle);
+    
+                    const description = document.createElement('p');
+                    description.classList.add('mt-3');
+                    description.innerHTML = `<strong>Description:</strong> ${project.description}`;
+                    detailsCol.appendChild(description);
+    
+                    const techTitle = document.createElement('h5');
+                    techTitle.classList.add('mt-4');
+                    techTitle.textContent = 'Technologies Used:';
+                    detailsCol.appendChild(techTitle);
+    
+                    const skillsList = document.createElement('ul');
+                    skillsList.classList.add('list-unstyled');
+                    project.skills.forEach(skill => {
+                        const skillItem = document.createElement('li');
+                        skillItem.innerHTML = `<i class="bi bi-check-circle"></i> ${skill}`;
+                        skillsList.appendChild(skillItem);
+                    });
+                    detailsCol.appendChild(skillsList);
+    
+                    const githubLink = document.createElement('p');
+                    githubLink.classList.add('mt-3');
+                    githubLink.innerHTML = `<strong>Source Code:</strong> <a href="${project.codespace}" target="_blank" class="text-decoration-none">GitHub Repository</a>`;
+                    detailsCol.appendChild(githubLink);
+    
+                    const featuresTitle = document.createElement('h5');
+                    featuresTitle.classList.add('mt-4');
+                    featuresTitle.textContent = 'Features:';
+                    detailsCol.appendChild(featuresTitle);
+    
+                    const featuresList = document.createElement('ul');
+                    featuresList.classList.add('list-unstyled');
+                    project.features.forEach(feature => {
+                        const featureItem = document.createElement('li');
+                        featureItem.innerHTML = `<i class="bi bi-star"></i> ${feature}`;
+                        featuresList.appendChild(featureItem);
+                    });
+                    detailsCol.appendChild(featuresList);
+    
+                    const liveDemo = document.createElement('p');
+                    liveDemo.classList.add('mt-3');
+                    liveDemo.innerHTML = `<strong>Live Demo:</strong> <a href="${project.url}" target="_blank" class="text-decoration-none">Visit Project</a>`;
+                    detailsCol.appendChild(liveDemo);
+    
+                    row.appendChild(screenshotCol);
+                    row.appendChild(detailsCol);
+                    innerPreviewBox.appendChild(row);
+    
+                    // Close button
+                    const closeAppPrev = document.createElement('div');
+                    closeAppPrev.classList.add('closeAppPrev');
+                    closeAppPrev.id = `closure_${index + 1}`;
+                    closeAppPrev.style.position = 'absolute';
+                    closeAppPrev.style.top = '10px';
+                    closeAppPrev.style.left = '10px';
+                    closeAppPrev.style.width = '30px';
+                    closeAppPrev.style.height = '30px';
+                    closeAppPrev.style.backgroundColor = 'red';
+                    closeAppPrev.style.color = 'white';
+                    closeAppPrev.style.borderRadius = '50%';
+                    closeAppPrev.style.display = 'flex';
+                    closeAppPrev.style.alignItems = 'center';
+                    closeAppPrev.style.justifyContent = 'center';
+                    closeAppPrev.style.cursor = 'pointer';
+                    closeAppPrev.style.fontSize = '18px';
+                    closeAppPrev.style.fontWeight = 'bold';
+                    closeAppPrev.textContent = 'X';
+    
+                    innerPreviewBox.appendChild(closeAppPrev);
+    
+                    // Append the project to the container
+                    container.appendChild(projectDiv);
+    
+                    // Add the event listener for the close button
+                    closeAppPrev.addEventListener('click', () => {
+                        projectDiv.style.display = 'none';  // Hide the project preview when the close button is clicked
+                    });
+                });
+            })
+            .catch(error => {
+                console.error('Error loading JSON:', error);
+            });
+    </script>
+    
+    
 
       <!-- One 1 Done -->
 
@@ -405,13 +484,6 @@
           <div class='row wow fadeInUp'>
             <div class="col-md-12 text-center">
 
-
-              <h2 >My Projects</h2>
-
-
-              <p class="FonterSmaller">
-                  Click on the image to see the project description.
-              </p>
               <!-- 
               <button id="showAllDev" class="categorySelection">
                   All
@@ -428,38 +500,114 @@
               -->
               
             </div>
-            <div class="row">
-<!------------------------------------------------------------------------------------------->
-
-            <?php
-            // Read and decode the JSON data
-            $jsonData = file_get_contents('data.json');
-            $projects = json_decode($jsonData, true)['projects'];
-            ?>
-
-            <div class="row">
-                <?php foreach ($projects as $index => $project): ?>
-                  <div class="col-sm-12 col-md-6 col-lg-3 hideWebDev">
-                        <div class="icoHolder card previewBoxImg">
-                            <div class="overlay-viewer">
-                                <i class="overlay-ico fas fa-coffee"></i>
-                            </div>
-                        </div>
-                        <div class="newCard previewBoxImg">
-                            <!-- Display project screenshot -->
-                            <img id="showMe_<?php echo $index + 1; ?>" class="previewImg" src="<?php echo "./".$project['screenshot']; ?>" />
-                        </div>
-                        <!-- Display skill list at the bottom -->
-                        <ul class="skillList" style="position: absolute; bottom: 0; left: 0; opacity: 1;">
-                          <?php foreach ($project['skills'] as $skill): ?>
-                              <li><?php echo $skill; ?></li>
-                          <?php endforeach; ?>
-                        </ul>
-                  </div>
-                <?php endforeach; ?>
-            </div>
+            
+            <div class="row" id="projects-container" style="background: #f0f0f0!important;">
 
             </div>
+
+            <script>
+              // Fetch the data from the JSON file
+              fetch('data.json')
+                  .then(response => response.json())
+                  .then(data => {
+                      const projects = data.projects;
+                      const container = document.getElementById('projects-container');
+          
+                      // Loop through each project and generate HTML
+                      projects.forEach((project, index) => {
+                          // Create the outer div for each project
+                          const projectDiv = document.createElement('div');
+                          projectDiv.classList.add('col-sm-12', 'col-md-6', 'col-lg-3', 'hideWebDev');
+          
+                          // Create the card for the project
+                          const icoHolder = document.createElement('div');
+                          icoHolder.classList.add('icoHolder', 'card', 'previewBoxImg');
+                          
+                          const overlayViewer = document.createElement('div');
+                          overlayViewer.classList.add('overlay-viewer');
+                          
+                          const overlayIcon = document.createElement('i');
+                          overlayIcon.classList.add('overlay-ico', 'fas', 'fa-coffee');
+                          overlayViewer.appendChild(overlayIcon);
+                          
+                          icoHolder.appendChild(overlayViewer);
+                          projectDiv.appendChild(icoHolder);
+          
+                          // Create the preview box for the project image
+                          const newCard = document.createElement('div');
+                          newCard.classList.add('newCard', 'previewBoxImg');
+                          
+                          const projectImg = document.createElement('img');
+                          projectImg.id = `showMe_${index + 1}`;
+                          projectImg.classList.add('previewImg');
+                          projectImg.src = `./${project.screenshot}`;
+                          icoHolder.style.height = projectImg.style.height ='300px';  // Example fixed height
+                          projectImg.style.width = 'auto';  // Adjust width to maintain aspect ratio
+
+                          newCard.appendChild(projectImg);
+                          projectDiv.appendChild(newCard);
+
+                          // Create the skill list for the project
+                          const skillList = document.createElement('ul');
+                          skillList.classList.add('skillList');
+                          skillList.style.position = 'absolute';
+                          skillList.style.bottom = '0';
+                          skillList.style.left = '0';
+                          skillList.style.opacity = '1';
+          
+                          project.skills.forEach(skill => {
+                              const skillItem = document.createElement('li');
+                              skillItem.textContent = skill;
+                              skillList.appendChild(skillItem);
+                          });
+          
+                          projectDiv.appendChild(skillList);
+          
+                          // Create the preview place (hidden initially)
+                          const previewPlace = document.createElement('div');
+                          previewPlace.classList.add(`preview-place-${index + 1}`);
+                          previewPlace.style.display = 'none';  // Initially hidden
+          
+                          // Add content to the preview (for example, description or larger image)
+                          const previewContent = document.createElement('div');
+                          previewContent.classList.add('innerPreviewBox');
+                          previewContent.innerHTML = `
+                              <h3>${project.name}</h3>
+                              <p>${project.description}</p>
+                          `;
+                          previewPlace.appendChild(previewContent);
+          
+                          // Create close button inside preview place
+                          const closePreviewBtn = document.createElement('div');
+                          closePreviewBtn.id = `closure_${index + 1}`;
+                          closePreviewBtn.classList.add('closePreview');
+                          closePreviewBtn.textContent = 'Close';
+                          previewPlace.appendChild(closePreviewBtn);
+          
+                          // Append the preview place to the project div
+                          projectDiv.appendChild(previewPlace);
+          
+                          // Append the project div to the container
+                          container.appendChild(projectDiv);
+          
+                          // Add event listener to show the preview when the image is clicked
+                          projectImg.addEventListener('click', () => {
+                              const preview = document.querySelector(`.preview-place-${index + 1}`);
+                              preview.style.display = 'block';  // Show the preview place
+                          });
+          
+                          // Add event listener to close the preview when the close button is clicked
+                          closePreviewBtn.addEventListener('click', () => {
+                              const preview = document.querySelector(`.preview-place-${index + 1}`);
+                              preview.style.display = 'none';  // Hide the preview place
+                          });
+                      });
+                  })
+                  .catch(error => {
+                      console.error('Error loading JSON:', error);
+                  });
+          </script>
+          
           </div>
         </section>
 
@@ -600,14 +748,36 @@
       </section>
 
       </main>
-      			<!-- Footer copyrights and links -->
-			<footer>
-        <section class="text-center" style="background-color: #0cfdd0; width: 100%;height: 70px;font-weight: 900;font-size: 0.8rem;" >
-          <p style="padding-top: 25px;">
-              Copyright <?php echo date("Y"); ?> My Portfolio by Muhammed K-Aldin.
-          </p>
-        </section>
-			</footer>
+      
+      <!-- Footer copyrights and links -->
+      <script>
+        // Create the footer section dynamically
+        const footer = document.createElement('footer');
+
+        // Create the section inside the footer
+        const section = document.createElement('section');
+        section.classList.add('text-center');
+        section.style.backgroundColor = '#0cfdd0';
+        section.style.width = '100%';
+        section.style.height = '70px';
+        section.style.fontWeight = '900';
+        section.style.fontSize = '0.8rem';
+
+        // Create the paragraph for the copyright text
+        const paragraph = document.createElement('p');
+        paragraph.style.paddingTop = '25px';
+        paragraph.textContent = `Copyright ${new Date().getFullYear()} My Portfolio by Muhammed K-Aldin.`;
+
+        // Append the paragraph to the section
+        section.appendChild(paragraph);
+
+        // Append the section to the footer
+        footer.appendChild(section);
+
+        // Append the footer to the body (or a specific container)
+        document.body.appendChild(footer);
+
+      </script>
 
       <!-- scripts -->
       <script src="particles.js"></script>

@@ -276,16 +276,11 @@ body{
   padding: 5%;
 }
 
-.previewBoxImg{
-
-border-radius: 5%;
-
-overflow: hidden;
-
-margin-bottom: 3%;
-
-margin: 19px auto;;
-
+.previewBoxImg {
+  border-radius: 5%;
+  overflow: hidden;
+  margin-bottom: 3%;
+  margin: 19px auto;;
 }
 
 .previewImg{
@@ -461,10 +456,6 @@ ul>li:hover{
   height:4.5%
 }
 
-.previewBoxImg{
-  height: 200px;
-}
-
 .lostPosSec{
   padding-bottom: 10%;
 }
@@ -495,9 +486,6 @@ ul>li:hover{
     height: 7.5%;
   }
 
-  .previewBoxImg{
-
-  }
 
   .lostPosSec{
     padding-bottom: 40%;
@@ -521,10 +509,6 @@ ul>li:hover{
 
   .logMobile{
     height: 5.5%;
-  }
-
-  .previewBoxImg{
-
   }
 
   .lostPosSec{
@@ -895,7 +879,7 @@ border-color:
 
   position: fixed;
 
-  top: 13.5%;
+  top: 7.5%;
 
   left: 4%;
 
@@ -943,7 +927,6 @@ border-color:
   filter: blur(3px);
   opacity: 0.2;
   position: relative;
-
 }
 
 .icoHolder {
