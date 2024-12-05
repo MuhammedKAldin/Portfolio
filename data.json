@@ -1,0 +1,95 @@
+{
+    "projects": 
+    [
+        {
+            "name": "Crystal CRM",
+            "screenshot": "/PHP-Backend/demo_crm/screenshot.png",
+            "features": [
+             "Dynamic Customers management via Web Dashboard",
+             "Has Services such as SMTP, Customers Management"
+            ],
+            "tags": ["Fullstack", "PHP"],
+            "skills": ["PHP", "MySQL"],
+            "description": "A simple CRM system with a web interface",
+            "instructions": [
+                "Admin account (email/pw) :",
+                "- admin@gmail.com / 12345 "
+            ],
+            "url": "http://crystalcrm.byethost12.com/",
+            "codespace": "https://github1s.com/MuhammedKAldin/Portfolio/tree/master/PHP-Backend/demo_crm"
+        },
+        {
+            "name": "Countries API Module",
+            "screenshot": "/PHP-Backend/demo_countries-api/screenshot.png",
+            "features": [
+             "Manage Countries via Web Dashboard",
+             "Retrieve Countries via API authenticated with OAuth2",
+             "Database Logging, Automated Notifications to Any ExternaL-Gateway set in .env"
+            ],
+            "tags": ["Fullstack", "Laravel 10", "API", "SOAP", "OAuth 2"],
+            "skills": ["Laravel", "Passport", "MySQL"],
+            "description": "A simple CRM system with a web interface",
+            "instructions": [
+                "Web Routes :",
+                "- GET /: Displays all countries",
+                "- GET /create: Form to add a new country",
+                "- POST /store: Saves a new country to the database",
+                "- GET /edit/{id}: Form to edit an existing country by ID.",
+                "- PUT /edit/update/{id}: Updates the country record.",
+                "- DELETE /destroy/{id}: Deletes a country record.",
+
+                "Api Routes and Logging :",
+                "- POST /register: User registration.",
+                "- GET /countries: Fetch all countries (supports XML response for SOAP).",
+                "- POST /countries: Add a new country.",
+                "- PUT /countries/{id}: Update an existing country",
+                "- GET /countries/{id}: Retrieve a country by ID.",
+                "- DELETE /countries/{id}: Delete a country.",
+                "- Logging Requests [ API requests are logged to the database, including dynamic callback URLs provided externally. ]"
+            ],
+            "url": "http://countries-api.byethost15.com/",
+            "codespace": "https://github1s.com/MuhammedKAldin/Portfolio/tree/master/PHP-Backend/demo_countries-api"
+        },
+        {
+            "name": "Wuzzuf Plus",
+            "screenshot": "/PHP-Backend/demo_Wuzzuf/screenshot.png",
+            "features": [
+             "Web project for job postings and applications with Job Listings",
+             "Applicant Tracking, Employer Verification, Search Filters",
+             "Realtime messaging with shortlisted applicants"
+            ],
+            "tags": ["Fullstack", "Laravel 10"],
+            "skills": ["Laravel", "MySQL"],
+            "description": "A simple CRM system with a web interface",
+            "instructions": [
+                "Test Accounts (email/pw) :",
+                "- Applicant Account : test@example.com / 3244039",
+                "- Recruiter Account :  recruitment@microsoft.com / 3244039",
+                "Note: The chat Feature is available between recruiters and applicants at all stages, except during the screening and declined stages."
+            ],
+            "url": "http://wuzzuf-plus.byethost8.com/",
+            "codespace": "https://github1s.com/MuhammedKAldin/Portfolio/tree/master/PHP-Backend/demo_Wuzzuf"
+        },
+        {
+            "name": "Elmenus",
+            "screenshot": "/PHP-Backend/demo_Elmenus/screenshot.png",
+            "features": [
+             "Restaurant Menu, Delivering Order and API Endpoints",
+             "Has Multiple Modules as Menu Provider for verified Owners of Restaurants Track Orders",
+             "Customer may Order and Payment is processed using Credit Card (Paymob)"
+            ],
+            "tags": ["Fullstack", "Laravel 10", "Paymob"],
+            "description": "A simple CRM system with a web interface",
+            "skills": ["Laravel", "MySQL"],
+            "instructions": [
+                "Test Accounts (email/pw) :",
+                "- McDonald's Owner : test@example.com / test12345678",
+                "- McDonald's Owner : test2@gmail.com / test12345678",
+                "- Customer sample : test3@gmail.com / test12345678"
+            ],
+            "url": "http://elmenus.byethost18.com/",
+            "codespace": "https://github1s.com/MuhammedKAldin/Portfolio/tree/master/PHP-Backend/demo_Elmenus"
+        }
+    ]
+  }
+  

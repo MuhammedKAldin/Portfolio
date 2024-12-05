@@ -1,0 +1,30 @@
+SFTP
+--------------------------------------
+SFTP
+SFTP/FTP sync
+v1.16.3
+By : Natizyskunk
+-------------
+Get Started :
+-------------
+->F1
+->SFTP:SYNC REMOTE -> LOCAL
+
+-------------
+Installation :
+-------------
+# Method 1 (Recommended : Auto update)
+- Select Extensions (Ctrl + Shift + X).
+- Uninstall current sftp extension from @liximomo.
+- Install new extension directly from VS Code Marketplace : https://marketplace.visualstudio.com/items?itemName=Natizyskunk.sftp.
+- Voilà!
+	
+# Method 2 (Manual update)
+- To install just follow these steps from within VSCode:
+
+- Select Extensions (Ctrl + Shift + X).
+- Uninstall current sftp extension from @liximomo.
+- Open "More Action" menu(ellipsis on the top) and click "Install from VSIX…".
+- Locate VSIX file and select.
+- Reload VSCode.
+- Voilà!
