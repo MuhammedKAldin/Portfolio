@@ -16,6 +16,22 @@
         <link href="css/all.css" rel="stylesheet"> <!--load all styles -->
         <link rel="stylesheet" href="style.css" />
     
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spinkit/1.2.5/spinkit.min.css">
+        <style>
+            #preloader {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255);
+                z-index: 999999999;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+
         <!-- Favicon -->
         <link rel="icon" href="mk.ico" type="image/x-icon">
     </head>
@@ -28,6 +44,21 @@
 
     "
     >
+
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="sk-cube-grid">
+          <div class="sk-cube sk-cube1"></div>
+          <div class="sk-cube sk-cube2"></div>
+          <div class="sk-cube sk-cube3"></div>
+          <div class="sk-cube sk-cube4"></div>
+          <div class="sk-cube sk-cube5"></div>
+          <div class="sk-cube sk-cube6"></div>
+          <div class="sk-cube sk-cube7"></div>
+          <div class="sk-cube sk-cube8"></div>
+          <div class="sk-cube sk-cube9"></div>
+      </div>
+    </div>
 
     <header>
 
@@ -337,136 +368,125 @@
       </div>
 
 
-      <!-- START (Previews) PHASE +++++++++++++++++++ -->
-      <div class="row" id="projects-container" style="background: #f0f0f0!important;">
-
-
-      </div>
-
-      <script>
+      <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModalLabel">Project Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- Content will be injected dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row" id="projects-container" style="background: #f0f0f0!important;">
+        <!-- Project cards will be dynamically injected here -->
+    </div>
+    
+    <script>
         // Fetch the data from the JSON file
         fetch('data.json')
             .then(response => response.json())
             .then(data => {
                 const projects = data.projects;
                 const container = document.getElementById('projects-container');
+                const modal = new bootstrap.Modal(document.getElementById('projectModal'));
+                const modalBody = document.getElementById('modalBody');
     
                 projects.forEach((project, index) => {
-                    // Create the main project div
-                    const projectDiv = document.createElement('div');
-                    projectDiv.classList.add(`preview-place-${index + 1}`);
-                    projectDiv.style.display = 'none';
-                    projectDiv.style.position = 'relative'; // Needed for absolute positioning of the close button
+                    // Create the project card
+                    const projectCard = document.createElement('div');
+                    projectCard.classList.add('col-sm-12', 'col-md-6', 'col-lg-3', 'mb-4');
     
-                    // Inner preview box
-                    const innerPreviewBox = document.createElement('div');
-                    innerPreviewBox.classList.add('innerPreviewBox', 'scrollable-container');
-                    projectDiv.appendChild(innerPreviewBox);
+                    const card = document.createElement('div');
+                    card.classList.add('card', 'h-100', 'shadow-sm', 'text-center');
     
-                    // Header with project name
-                    const header = document.createElement('div');
-                    header.style.width = '100%';
-                    header.style.height = '50px';
-                    header.style.backgroundColor = '#1E1E1E';
-                    header.style.borderRadius = '7px 7px 0 0';
-                    innerPreviewBox.appendChild(header);
+                    const cardImg = document.createElement('img');
+                    cardImg.src = `./${project.screenshot}`;
+                    cardImg.alt = `${project.name} Screenshot`;
+                    cardImg.classList.add('card-img-top', 'img-fluid', 'rounded');
+                    cardImg.style.height = '200px';
+                    cardImg.style.objectFit = 'cover';
     
-                    // Row for screenshot and project details
-                    const row = document.createElement('div');
-                    row.classList.add('row', 'mb-4');
+                    const cardBody = document.createElement('div');
+                    cardBody.classList.add('card-body');
     
-                    // Screenshot section
-                    const screenshotCol = document.createElement('div');
-                    screenshotCol.classList.add('col-12', 'col-md-6');
-                    const screenshotImg = document.createElement('img');
-                    screenshotImg.src = './' + project.screenshot;
-                    screenshotImg.alt = 'Project Screenshot';
-                    screenshotImg.classList.add('img-fluid', 'rounded', 'shadow-sm');
-                    screenshotCol.appendChild(screenshotImg);
+                    const cardTitle = document.createElement('h5');
+                    cardTitle.textContent = project.name;
+                    cardTitle.classList.add('card-title', 'text-truncate');
     
-                    // Details section
-                    const detailsCol = document.createElement('div');
-                    detailsCol.classList.add('col-12', 'col-md-6');
+                    const cardButton = document.createElement('button');
+                    cardButton.textContent = 'View Details';
+                    cardButton.classList.add('btn', 'btn-primary', 'mt-3');
+                    cardButton.setAttribute('data-index', index);
     
-                    const projectTitle = document.createElement('h4');
-                    projectTitle.textContent = project.name;
-                    detailsCol.appendChild(projectTitle);
+                    // Append elements to the card
+                    cardBody.appendChild(cardTitle);
+                    cardBody.appendChild(cardButton);
+                    card.appendChild(cardImg);
+                    card.appendChild(cardBody);
+                    projectCard.appendChild(card);
+                    container.appendChild(projectCard);
     
-                    const description = document.createElement('p');
-                    description.classList.add('mt-3');
-                    description.innerHTML = `<strong>Description:</strong> ${project.description}`;
-                    detailsCol.appendChild(description);
+                    // Event listener to open the modal with project details
+                    cardButton.addEventListener('click', () => {
+                        // Clear previous modal content
+                        modalBody.innerHTML = '';
     
-                    const techTitle = document.createElement('h5');
-                    techTitle.classList.add('mt-4');
-                    techTitle.textContent = 'Technologies Used:';
-                    detailsCol.appendChild(techTitle);
+                        // Populate modal with project details
+                        const projectTitle = document.createElement('h4');
+                        projectTitle.textContent = project.name;
     
-                    const skillsList = document.createElement('ul');
-                    skillsList.classList.add('list-unstyled');
-                    project.skills.forEach(skill => {
-                        const skillItem = document.createElement('li');
-                        skillItem.innerHTML = `<i class="bi bi-check-circle"></i> ${skill}`;
-                        skillsList.appendChild(skillItem);
-                    });
-                    detailsCol.appendChild(skillsList);
+                        const description = document.createElement('p');
+                        description.innerHTML = `<strong>Description:</strong> ${project.description}`;
     
-                    const githubLink = document.createElement('p');
-                    githubLink.classList.add('mt-3');
-                    githubLink.innerHTML = `<strong>Source Code:</strong> <a href="${project.codespace}" target="_blank" class="text-decoration-none">GitHub Repository</a>`;
-                    detailsCol.appendChild(githubLink);
+                        const screenshotImg = document.createElement('img');
+                        screenshotImg.src = `./${project.screenshot}`;
+                        screenshotImg.alt = 'Project Screenshot';
+                        screenshotImg.classList.add('img-fluid', 'rounded', 'shadow-sm', 'mb-3');
     
-                    const featuresTitle = document.createElement('h5');
-                    featuresTitle.classList.add('mt-4');
-                    featuresTitle.textContent = 'Features:';
-                    detailsCol.appendChild(featuresTitle);
+                        const techTitle = document.createElement('h5');
+                        techTitle.textContent = 'Technologies Used:';
     
-                    const featuresList = document.createElement('ul');
-                    featuresList.classList.add('list-unstyled');
-                    project.features.forEach(feature => {
-                        const featureItem = document.createElement('li');
-                        featureItem.innerHTML = `<i class="bi bi-star"></i> ${feature}`;
-                        featuresList.appendChild(featureItem);
-                    });
-                    detailsCol.appendChild(featuresList);
+                        const skillsList = document.createElement('ul');
+                        project.skills.forEach(skill => {
+                            const skillItem = document.createElement('li');
+                            skillItem.innerHTML = `<i class="bi bi-check-circle"></i> ${skill}`;
+                            skillsList.appendChild(skillItem);
+                        });
     
-                    const liveDemo = document.createElement('p');
-                    liveDemo.classList.add('mt-3');
-                    liveDemo.innerHTML = `<strong>Live Demo:</strong> <a href="${project.url}" target="_blank" class="text-decoration-none">Visit Project</a>`;
-                    detailsCol.appendChild(liveDemo);
+                        const featuresTitle = document.createElement('h5');
+                        featuresTitle.textContent = 'Features:';
     
-                    row.appendChild(screenshotCol);
-                    row.appendChild(detailsCol);
-                    innerPreviewBox.appendChild(row);
+                        const featuresList = document.createElement('ul');
+                        project.features.forEach(feature => {
+                            const featureItem = document.createElement('li');
+                            featureItem.innerHTML = `<i class="bi bi-star"></i> ${feature}`;
+                            featuresList.appendChild(featureItem);
+                        });
     
-                    // Close button
-                    const closeAppPrev = document.createElement('div');
-                    closeAppPrev.classList.add('closeAppPrev');
-                    closeAppPrev.id = `closure_${index + 1}`;
-                    closeAppPrev.style.position = 'absolute';
-                    closeAppPrev.style.top = '10px';
-                    closeAppPrev.style.left = '10px';
-                    closeAppPrev.style.width = '30px';
-                    closeAppPrev.style.height = '30px';
-                    closeAppPrev.style.backgroundColor = 'red';
-                    closeAppPrev.style.color = 'white';
-                    closeAppPrev.style.borderRadius = '50%';
-                    closeAppPrev.style.display = 'flex';
-                    closeAppPrev.style.alignItems = 'center';
-                    closeAppPrev.style.justifyContent = 'center';
-                    closeAppPrev.style.cursor = 'pointer';
-                    closeAppPrev.style.fontSize = '18px';
-                    closeAppPrev.style.fontWeight = 'bold';
-                    closeAppPrev.textContent = 'X';
+                        const githubLink = document.createElement('p');
+                        githubLink.innerHTML = `<strong>Source Code:</strong> <a href="${project.codespace}" target="_blank" class="text-decoration-none">GitHub Repository</a>`;
     
-                    innerPreviewBox.appendChild(closeAppPrev);
+                        const liveDemo = document.createElement('p');
+                        liveDemo.innerHTML = `<strong>Live Demo:</strong> <a href="${project.url}" target="_blank" class="text-decoration-none">Visit Project</a>`;
     
-                    // Append the project to the container
-                    container.appendChild(projectDiv);
+                        // Append elements to the modal body
+                        modalBody.appendChild(projectTitle);
+                        modalBody.appendChild(screenshotImg);
+                        modalBody.appendChild(description);
+                        modalBody.appendChild(techTitle);
+                        modalBody.appendChild(skillsList);
+                        modalBody.appendChild(featuresTitle);
+                        modalBody.appendChild(featuresList);
+                        modalBody.appendChild(githubLink);
+                        modalBody.appendChild(liveDemo);
     
-                    // Add the event listener for the close button
-                    closeAppPrev.addEventListener('click', () => {
-                        projectDiv.style.display = 'none';  // Hide the project preview when the close button is clicked
+                        // Show the modal
+                        modal.show();
                     });
                 });
             })
@@ -474,7 +494,6 @@
                 console.error('Error loading JSON:', error);
             });
     </script>
-    
     
 
       <!-- One 1 Done -->
@@ -501,113 +520,6 @@
               
             </div>
             
-            <div class="row" id="projects-container" style="background: #f0f0f0!important;">
-
-            </div>
-
-            <script>
-              // Fetch the data from the JSON file
-              fetch('data.json')
-                  .then(response => response.json())
-                  .then(data => {
-                      const projects = data.projects;
-                      const container = document.getElementById('projects-container');
-          
-                      // Loop through each project and generate HTML
-                      projects.forEach((project, index) => {
-                          // Create the outer div for each project
-                          const projectDiv = document.createElement('div');
-                          projectDiv.classList.add('col-sm-12', 'col-md-6', 'col-lg-3', 'hideWebDev');
-          
-                          // Create the card for the project
-                          const icoHolder = document.createElement('div');
-                          icoHolder.classList.add('icoHolder', 'card', 'previewBoxImg');
-                          
-                          const overlayViewer = document.createElement('div');
-                          overlayViewer.classList.add('overlay-viewer');
-                          
-                          const overlayIcon = document.createElement('i');
-                          overlayIcon.classList.add('overlay-ico', 'fas', 'fa-coffee');
-                          overlayViewer.appendChild(overlayIcon);
-                          
-                          icoHolder.appendChild(overlayViewer);
-                          projectDiv.appendChild(icoHolder);
-          
-                          // Create the preview box for the project image
-                          const newCard = document.createElement('div');
-                          newCard.classList.add('newCard', 'previewBoxImg');
-                          
-                          const projectImg = document.createElement('img');
-                          projectImg.id = `showMe_${index + 1}`;
-                          projectImg.classList.add('previewImg');
-                          projectImg.src = `./${project.screenshot}`;
-                          icoHolder.style.height = projectImg.style.height ='250px';  // Example fixed height
-                          projectImg.style.width = 'auto';  // Adjust width to maintain aspect ratio
-
-                          newCard.appendChild(projectImg);
-                          projectDiv.appendChild(newCard);
-
-                          // Create the skill list for the project
-                          const skillList = document.createElement('ul');
-                          skillList.classList.add('skillList');
-                          skillList.style.position = 'absolute';
-                          skillList.style.bottom = '0';
-                          skillList.style.left = '0';
-                          skillList.style.opacity = '1';
-          
-                          project.skills.forEach(skill => {
-                              const skillItem = document.createElement('li');
-                              skillItem.textContent = skill;
-                              skillList.appendChild(skillItem);
-                          });
-          
-                          projectDiv.appendChild(skillList);
-          
-                          // Create the preview place (hidden initially)
-                          const previewPlace = document.createElement('div');
-                          previewPlace.classList.add(`preview-place-${index + 1}`);
-                          previewPlace.style.display = 'none';  // Initially hidden
-          
-                          // Add content to the preview (for example, description or larger image)
-                          const previewContent = document.createElement('div');
-                          previewContent.classList.add('innerPreviewBox');
-                          previewContent.innerHTML = `
-                              <h3>${project.name}</h3>
-                              <p>${project.description}</p>
-                          `;
-                          previewPlace.appendChild(previewContent);
-          
-                          // Create close button inside preview place
-                          const closePreviewBtn = document.createElement('div');
-                          closePreviewBtn.id = `closure_${index + 1}`;
-                          closePreviewBtn.classList.add('closePreview');
-                          closePreviewBtn.textContent = 'Close';
-                          previewPlace.appendChild(closePreviewBtn);
-          
-                          // Append the preview place to the project div
-                          projectDiv.appendChild(previewPlace);
-          
-                          // Append the project div to the container
-                          container.appendChild(projectDiv);
-          
-                          // Add event listener to show the preview when the image is clicked
-                          projectImg.addEventListener('click', () => {
-                              const preview = document.querySelector(`.preview-place-${index + 1}`);
-                              preview.style.display = 'block';  // Show the preview place
-                          });
-          
-                          // Add event listener to close the preview when the close button is clicked
-                          closePreviewBtn.addEventListener('click', () => {
-                              const preview = document.querySelector(`.preview-place-${index + 1}`);
-                              preview.style.display = 'none';  // Hide the preview place
-                          });
-                      });
-                  })
-                  .catch(error => {
-                      console.error('Error loading JSON:', error);
-                  });
-          </script>
-          
           </div>
         </section>
 
@@ -806,5 +718,15 @@
         <script type="text/javascript" src="all.min.js"></script>
         <script src="script.js"></script>
         <script src="script2.js"></script>
+        <script>
+          window.addEventListener('load', () => {
+              const preloader = document.getElementById('preloader');
+              preloader.style.opacity = '0';
+              preloader.style.transition = 'opacity 0.5s ease';
+              setTimeout(() => {
+                  preloader.style.display = 'none';
+              }, 500);
+          });
+      </script>
     </body>
 </html>
