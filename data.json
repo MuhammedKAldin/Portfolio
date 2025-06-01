@@ -71,7 +71,7 @@
             "codespace": "https://github.com/MuhammedKAldin/laravel_wuzzuf"
         },
         {
-            "name": "Elmenus",
+            "name": "Elmenus - Multi-Vendor - SaaS",
             "screenshot": "/PHP-Backend/demo_Elmenus/screenshot.png",
             "features": [
              "Restaurant Menu, Delivering Order and API Endpoints",
@@ -88,7 +88,43 @@
                 "- Customer sample : test3@gmail.com / test12345678"
             ],
             "url": "http://elmenus.byethost18.com/",
-            "codespace": "https://github1s.com/MuhammedKAldin/Portfolio/tree/master/PHP-Backend/demo_Elmenus"
+            "codespace": "https://github.com/MuhammedKAldin/laravel_elmenus"
+        },
+        {
+            "name": "Medical E-commerce Platform",
+            "screenshot": "/PHP-Backend/demo_ecommerce_medicine/screenshot.png",
+            "features": [
+                "Guest checkout with order confirmation and receipt",
+                "Admin panel for product CRUD operations",
+                "User profiles, order history, and dashboards",
+                "Role-based access control (User/Admin)",
+                "Shopping cart and checkout process",
+                "Invoice generation and management",
+                "Product image handling and filtering"
+            ],
+            "tags": ["Fullstack", "Laravel 10", "E-commerce", "Medical"],
+            "skills": ["Laravel", "MySQL", "Blade", "TailwindCSS", "Bootstrap", "JavaScript"],
+            "description": "A Laravel-based e-commerce platform specialized for medical and healthcare products.",
+            "instructions": [
+                "Admin account:",
+                "- Email: admin@gmail.com / Password: password",
+                "User account:",
+                "- Email: mohamed@gmail.com / Password: password",
+                "\nPublic Routes:",
+                "- / : Home page",
+                "- /products : Products listing",
+                "- /products/{id} : Single product",
+                "- /cart : Cart management",
+                "- /checkout : Checkout",
+                "- /order-confirmation : Order confirmation",
+                "\nAdmin Routes:",
+                "- /admin/dashboard : Admin dashboard",
+                "- /admin/products : Product management",
+                "- /admin/products/logs : Product logs",
+                "- /admin/invoices : Invoice management"
+            ],
+            "url": "",
+            "codespace": "https://github.com/MuhammedKAldin/laravel_ecommerce_medicine"
         }
     ]
   }
