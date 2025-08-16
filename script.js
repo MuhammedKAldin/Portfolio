@@ -1386,8 +1386,19 @@ document.addEventListener('DOMContentLoaded', function() {
             --darker-bg: #e9ecef;
             --light-text: #212529;
             --gray-text: #6c757d;
+            --nav-text: #00d4ff;
             --card-bg: rgba(0, 0, 0, 0.05);
             --border-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        .light-theme .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px);
+        }
+        
+        .light-theme .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
     `;
     document.head.appendChild(revealStyle);
