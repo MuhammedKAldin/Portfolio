@@ -1,19 +1,22 @@
 {
-    "projects": 
-    [
+    "projects": [
         {
-            "name": "Crystal CRM",
+            "name": "Crystal CRM System",
             "screenshot": "/PHP-Backend/demo_crm/screenshot.png",
             "features": [
-             "Dynamic Customers management via Web Dashboard",
-             "Has Services such as SMTP, Customers Management"
+                "Dynamic Customer Management Dashboard",
+                "Sales Pipeline Tracking",
+                "Lead Management System",
+                "Customer Communication Logs",
+                "Reporting & Analytics",
+                "Role-based Access Control"
             ],
-            "tags": ["Fullstack", "PHP"],
-            "skills": ["PHP", "MySQL"],
-            "description": "A simple CRM system with a web interface",
+            "tags": ["Fullstack", "PHP", "CRM"],
+            "skills": ["PHP", "MySQL", "Bootstrap", "JavaScript", "AJAX"],
+            "description": "A comprehensive CRM system built with PHP and MySQL, featuring customer management, sales tracking, and detailed reporting capabilities.",
             "instructions": [
-                "Admin account (email/pw) :",
-                "- admin@gmail.com / 12345 "
+                "Admin account (email/pw):",
+                "- admin@gmail.com / 12345"
             ],
             "url": "http://crystalcrm.byethost12.com/",
             "codespace": "https://github.com/MuhammedKAldin/php_crystal_crm"
@@ -22,70 +25,82 @@
             "name": "Countries API Module",
             "screenshot": "/PHP-Backend/demo_countries-api/screenshot.png",
             "features": [
-             "Manage Countries via Web Dashboard",
-             "Retrieve Countries via API authenticated with OAuth2",
-             "Database Logging, Automated Notifications to Any ExternaL-Gateway set in .env"
+                "RESTful API with OAuth2 Authentication",
+                "SOAP API Support",
+                "Database Logging & Monitoring",
+                "Automated External Gateway Notifications",
+                "CRUD Operations via Web Dashboard",
+                "API Rate Limiting & Security"
             ],
             "tags": ["Fullstack", "Laravel 10", "API", "SOAP", "OAuth 2"],
-            "skills": ["Laravel", "Passport", "MySQL"],
-            "description": "A simple CRM system with a web interface",
+            "skills": ["Laravel", "Passport", "MySQL", "REST API", "SOAP", "OAuth2"],
+            "description": "Advanced API module built with Laravel 10, featuring OAuth2 authentication, SOAP support, and comprehensive logging for enterprise applications.",
             "instructions": [
-                "Web Routes :",
+                "Web Routes:",
                 "- GET /: Displays all countries",
                 "- GET /create: Form to add a new country",
                 "- POST /store: Saves a new country to the database",
-                "- GET /edit/{id}: Form to edit an existing country by ID.",
-                "- PUT /edit/update/{id}: Updates the country record.",
-                "- DELETE /destroy/{id}: Deletes a country record.",
-
-                "Api Routes and Logging :",
-                "- POST /register: User registration.",
-                "- GET /countries: Fetch all countries (supports XML response for SOAP).",
-                "- POST /countries: Add a new country.",
+                "- GET /edit/{id}: Form to edit an existing country by ID",
+                "- PUT /edit/update/{id}: Updates the country record",
+                "- DELETE /destroy/{id}: Deletes a country record",
+                "",
+                "API Routes and Logging:",
+                "- POST /register: User registration",
+                "- GET /countries: Fetch all countries (supports XML response for SOAP)",
+                "- POST /countries: Add a new country",
                 "- PUT /countries/{id}: Update an existing country",
-                "- GET /countries/{id}: Retrieve a country by ID.",
-                "- DELETE /countries/{id}: Delete a country.",
-                "- Logging Requests [ API requests are logged to the database, including dynamic callback URLs provided externally. ]"
+                "- GET /countries/{id}: Retrieve a country by ID",
+                "- DELETE /countries/{id}: Delete a country",
+                "- Logging Requests [API requests are logged to the database, including dynamic callback URLs provided externally]"
             ],
             "url": "http://countries-api.byethost15.com/",
             "codespace": "https://github.com/MuhammedKAldin/laravel_countries_api_crud"
         },
         {
-            "name": "Wuzzuf Plus",
+            "name": "Wuzzuf Plus - Job Platform",
             "screenshot": "/PHP-Backend/demo_Wuzzuf/screenshot.png",
             "features": [
-             "Web project for job postings and applications with Job Listings",
-             "Applicant Tracking, Employer Verification, Search Filters",
-             "Realtime messaging with shortlisted applicants"
+                "Job Posting & Application Management",
+                "Applicant Tracking System",
+                "Employer Verification System",
+                "Advanced Search & Filtering",
+                "Real-time Messaging System",
+                "Interview Scheduling",
+                "Resume Management",
+                "Analytics Dashboard"
             ],
-            "tags": ["Fullstack", "Laravel 10"],
-            "skills": ["Laravel", "MySQL"],
-            "description": "A simple CRM system with a web interface",
+            "tags": ["Fullstack", "Laravel 10", "Job Platform", "Real-time"],
+            "skills": ["Laravel", "MySQL", "Pusher", "Real-time", "Bootstrap", "JavaScript"],
+            "description": "A comprehensive job platform built with Laravel 10, featuring job posting, applicant tracking, real-time messaging, and advanced search capabilities.",
             "instructions": [
-                "Test Accounts (email/pw) :",
-                "- Applicant Account : test@example.com / 3244039",
-                "- Recruiter Account :  recruitment@microsoft.com / 3244039",
+                "Test Accounts (email/pw):",
+                "- Applicant Account: test@example.com / 3244039",
+                "- Recruiter Account: recruitment@microsoft.com / 3244039",
                 "Note: The chat Feature is available between recruiters and applicants at all stages, except during the screening and declined stages."
             ],
             "url": "http://wuzzuf-plus.byethost8.com/",
             "codespace": "https://github.com/MuhammedKAldin/laravel_wuzzuf"
         },
         {
-            "name": "Elmenus - Multi-Vendor - SaaS",
+            "name": "Elmenus - Multi-Vendor SaaS",
             "screenshot": "/PHP-Backend/demo_Elmenus/screenshot.png",
             "features": [
-             "Restaurant Menu, Delivering Order and API Endpoints",
-             "Has Multiple Modules as Menu Provider for verified Owners of Restaurants Track Orders",
-             "Customer may Order and Payment is processed using Credit Card (Paymob)"
+                "Restaurant Menu Management",
+                "Multi-Vendor Support",
+                "Order Processing & Tracking",
+                "Payment Integration (Paymob)",
+                "Customer Management",
+                "Analytics & Reporting",
+                "API Endpoints",
+                "Real-time Order Updates"
             ],
-            "tags": ["Fullstack", "Laravel 10", "Paymob"],
-            "description": "A simple CRM system with a web interface",
-            "skills": ["Laravel", "MySQL"],
+            "tags": ["Fullstack", "Laravel 10", "SaaS", "Multi-Vendor", "Paymob"],
+            "description": "A comprehensive SaaS platform for restaurant management, featuring multi-vendor support, order processing, and integrated payment systems.",
             "instructions": [
-                "Test Accounts (email/pw) :",
-                "- McDonald's Owner : test@example.com / test12345678",
-                "- McDonald's Owner : test2@gmail.com / test12345678",
-                "- Customer sample : test3@gmail.com / test12345678"
+                "Test Accounts (email/pw):",
+                "- McDonald's Owner: test@example.com / test12345678",
+                "- McDonald's Owner: test2@gmail.com / test12345678",
+                "- Customer sample: test3@gmail.com / test12345678"
             ],
             "url": "http://elmenus.byethost18.com/",
             "codespace": "https://github.com/MuhammedKAldin/laravel_elmenus"
@@ -94,30 +109,34 @@
             "name": "Medical E-commerce Platform",
             "screenshot": "/PHP-Backend/demo_ecommerce_medicine/screenshot.png",
             "features": [
-                "Guest checkout with order confirmation and receipt",
-                "Admin panel for product CRUD operations",
-                "User profiles, order history, and dashboards",
-                "Role-based access control (User/Admin)",
-                "Shopping cart and checkout process",
-                "Invoice generation and management",
-                "Product image handling and filtering"
+                "Product Catalog Management",
+                "Shopping Cart & Checkout",
+                "Guest & User Checkout",
+                "Order Management System",
+                "Invoice Generation",
+                "Admin Dashboard",
+                "Role-based Access Control",
+                "Product Image Handling",
+                "Inventory Management"
             ],
-            "tags": ["Fullstack", "Laravel 10", "E-commerce", "Medical"],
-            "skills": ["Laravel", "MySQL", "Blade", "TailwindCSS", "Bootstrap", "JavaScript"],
-            "description": "A Laravel-based e-commerce platform specialized for medical and healthcare products.",
+            "tags": ["Fullstack", "Laravel 10", "E-commerce", "Medical", "Healthcare"],
+            "skills": ["Laravel", "MySQL", "Blade", "TailwindCSS", "Bootstrap", "JavaScript", "Payment Integration"],
+            "description": "A specialized e-commerce platform for medical and healthcare products, featuring comprehensive product management, secure checkout, and administrative tools.",
             "instructions": [
                 "Admin account:",
                 "- Email: admin@gmail.com / Password: password",
                 "User account:",
                 "- Email: mohamed@gmail.com / Password: password",
-                "\nPublic Routes:",
+                "",
+                "Public Routes:",
                 "- / : Home page",
                 "- /products : Products listing",
                 "- /products/{id} : Single product",
                 "- /cart : Cart management",
                 "- /checkout : Checkout",
                 "- /order-confirmation : Order confirmation",
-                "\nAdmin Routes:",
+                "",
+                "Admin Routes:",
                 "- /admin/dashboard : Admin dashboard",
                 "- /admin/products : Product management",
                 "- /admin/products/logs : Product logs",
@@ -125,7 +144,101 @@
             ],
             "url": "",
             "codespace": "https://github.com/MuhammedKAldin/laravel_ecommerce_medicine"
+        },
+        {
+            "name": "Enterprise Resource Planning (ERP) System",
+            "screenshot": "app1.PNG",
+            "features": [
+                "Inventory Management",
+                "Financial Accounting",
+                "Human Resources Management",
+                "Supply Chain Management",
+                "Customer Relationship Management",
+                "Business Intelligence Dashboard",
+                "Multi-company Support",
+                "Advanced Reporting",
+                "Workflow Automation"
+            ],
+            "tags": ["Fullstack", "Laravel", "ERP", "Enterprise"],
+            "skills": ["Laravel", "PHP", "MySQL", "Vue.js", "Redis", "Queue System", "Microservices"],
+            "description": "A comprehensive ERP system designed for enterprise-level businesses, featuring integrated modules for all major business operations.",
+            "instructions": [
+                "Demo Account:",
+                "- Email: demo@erp.com / Password: demo123",
+                "",
+                "Key Modules:",
+                "- Inventory & Supply Chain",
+                "- Financial Management",
+                "- HR & Payroll",
+                "- CRM & Sales",
+                "- Analytics & Reporting"
+            ],
+            "url": "#",
+            "codespace": "https://github.com/MuhammedKAldin/erp-system"
+        },
+        {
+            "name": "Learning Management System (LMS)",
+            "screenshot": "app2.PNG",
+            "features": [
+                "Course Creation & Management",
+                "Student Enrollment System",
+                "Video Streaming & Content Delivery",
+                "Assessment & Quiz System",
+                "Progress Tracking",
+                "Discussion Forums",
+                "Certificate Generation",
+                "Mobile Responsive Design",
+                "Multi-language Support"
+            ],
+            "tags": ["Fullstack", "Laravel", "EdTech", "LMS"],
+            "skills": ["Laravel", "PHP", "MySQL", "React", "Video Streaming", "WebRTC", "Redis"],
+            "description": "A modern Learning Management System built for educational institutions and corporate training, featuring advanced content delivery and student engagement tools.",
+            "instructions": [
+                "Instructor Account:",
+                "- Email: instructor@lms.com / Password: instructor123",
+                "Student Account:",
+                "- Email: student@lms.com / Password: student123",
+                "",
+                "Features:",
+                "- Course Management",
+                "- Video Streaming",
+                "- Assessment Tools",
+                "- Progress Analytics"
+            ],
+            "url": "#",
+            "codespace": "https://github.com/MuhammedKAldin/lms-platform"
+        },
+        {
+            "name": "Real-time Chat Application",
+            "screenshot": "app3.PNG",
+            "features": [
+                "Real-time Messaging",
+                "User Authentication",
+                "File Sharing",
+                "Group Chat Support",
+                "Message Encryption",
+                "Online Status Indicators",
+                "Message History",
+                "Push Notifications",
+                "Mobile Responsive"
+            ],
+            "tags": ["Fullstack", "Laravel", "Real-time", "Chat", "WebSocket"],
+            "skills": ["Laravel", "PHP", "MySQL", "Vue.js", "Pusher", "WebSockets", "Redis"],
+            "description": "A modern real-time chat application with advanced features like file sharing, group chats, and end-to-end encryption for secure communication.",
+            "instructions": [
+                "Test Accounts:",
+                "- User 1: user1@chat.com / password123",
+                "- User 2: user2@chat.com / password123",
+                "",
+                "Features:",
+                "- Real-time Messaging",
+                "- File Sharing",
+                "- Group Chats",
+                "- Push Notifications"
+            ],
+            "url": "#",
+            "codespace": "https://github.com/MuhammedKAldin/chat-app"
         }
     ]
-  }
+}
   

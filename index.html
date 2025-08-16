@@ -1,373 +1,716 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-        <meta name="theme-color" content="black" />
-        <title> Muhammed K.Aldin | Software Developer </title>
-        <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
-        <meta name="author" content="Muhammed K.Aldin" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Kamal Aldin | Full Stack Developer</title>
+    <meta name="description" content="Full Stack Developer with 4+ years experience in Laravel, PHP, React, Vue.js, and modern web technologies">
+    <meta name="author" content="Mohamed Kamal Aldin">
     
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet"/>
-        <link href="css/fontawesome.min.css" rel="stylesheet"> <!--load all styles -->
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/5.14.0/css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/all.css" rel="stylesheet"> <!--load all styles -->
-        <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spinkit/1.2.5/spinkit.min.css">
-        <style>
-            #preloader {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(255, 255, 255);
-                z-index: 999999999;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-        </style>
-
-        <!-- Favicon -->
+    <link rel="stylesheet" href="style.css">
         <link rel="icon" href="mk.ico" type="image/x-icon">
     </head>
 
-    <body
-    style="
-    overflow-y: visible;
-
-    background: linear-gradient(90deg, rgba(45,51,77,1) 16%, rgba(72,72,125,1) 86%);
-
-    "
-    >
-
+<body>
     <!-- Preloader -->
     <div id="preloader">
-      <div class="sk-cube-grid">
-          <div class="sk-cube sk-cube1"></div>
-          <div class="sk-cube sk-cube2"></div>
-          <div class="sk-cube sk-cube3"></div>
-          <div class="sk-cube sk-cube4"></div>
-          <div class="sk-cube sk-cube5"></div>
-          <div class="sk-cube sk-cube6"></div>
-          <div class="sk-cube sk-cube7"></div>
-          <div class="sk-cube sk-cube8"></div>
-          <div class="sk-cube sk-cube9"></div>
+        <div class="loader">
+            <div class="cube">
+                <div class="face front"></div>
+                <div class="face back"></div>
+                <div class="face right"></div>
+                <div class="face left"></div>
+                <div class="face top"></div>
+                <div class="face bottom"></div>
+            </div>
       </div>
     </div>
 
-    <header>
-
-      <div width="100%" height="55" style="/*! background-color: #0a2128; */padding: 2%;background: linear-gradient(90deg, rgb(0, 0, 0) 16%, rgb(17, 56, 68) 86%);"  >
-
-      </div>
-
-
-      <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: fixed;width: 100%; top: 0px;z-index: 999999; background-color: #1e1e1e !important;" >
-        <a class="navbar-brand" href="index.php" style="color: #1ae9c6;font-variant: all-small-caps; margin-top: -8px;" >
-          <<span>MK
-            </span>
-
-            />
-        </a>
-        <a class="navbar-toggler" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-
-          <div class="icon-tab" style="background: #50ecbd;border-radius: 59px;border-width: 5px;height: 43px;width: 44px;margin-top: -9px;" >
-
-            <div class="s-code" style="padding-top: 11px;font-weight: 500;margin-left: 15%;color: white;" >
-              <<span></span>/>
-              </div>
-          </div>
-
-        </a>
-
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02" style="margin-right: 3%;" >
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <span class="brand-text">MK</span>
+                <span class="brand-slash">/</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="Muhammed K.Aldin CV.pdf" download>
+                            <i class="fas fa-download"></i> Resume
+                        </a>
+                    </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <div style="margin-right: auto;margin-left: auto;" >
-              <!-- <div id="buzz_Proj" class="btn btn-outline-light my-2 my-sm-"  >Projects</div> -->
-              <div id="buzz_Proj2" class="btn btn-outline-light my-2 my-sm-" >Hire me</div>
-              <div id="buzz_Proj3" class="btn btn-outline-light my-2 my-sm-" >Contact</div>
-              <a href="Muhammed K.Aldin CV.pdf" class="btn btn-outline-light my-2 my-sm-0" download="Mohamed_Kamal_Aldin_Fullstack_PHP_Laravel_Developer.pdf">
-                  <i class="fas fa-file-download"></i>
-                  Resume/CV
-              </a>
-
-
             </div>
-          </form>
         </div>
       </nav>
 
-
-      <!-- myLogin -->
-
-      <section class="wow fadeInLeft" id="panel" style="display: none; position: fixed;width: 100%; height: 100%;
-
-      /* background: linear-gradient(90deg, rgb(111, 159, 148) 16%, rgb(17, 56, 68) 86%); z-index: 99999; */
-      background: #1e1e1e;
-      z-index: 99999;
-      ">
-        <div class="logMobile" style="background-color: #FFF289; position: fixed;width: 100%; " >
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            <span class="greeting">السلام عليكم ورحمة الله</span>
+                            <span class="name">I'm Mohamed Kamal Aldin</span>
+                            <span class="title">Full Stack Developer</span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            <span class="experience">4+ Years Experience</span> in building scalable web applications
+                        </p>
+                        <div class="hero-description">
+                            <p>Specializing in <strong>Laravel</strong>, <strong>PHP</strong>, <strong>React</strong>, and <strong>Vue.js</strong></p>
+                            <p>Building <strong>ERP</strong>, <strong>CRM</strong>, <strong>SaaS</strong> platforms and more</p>
+                        </div>
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn btn-primary btn-lg">View My Work</a>
+                            <a href="#contact" class="btn btn-outline-light btn-lg">Get In Touch</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-visual">
+                        <div id="hero-3d-container"></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-
-        <form action="./Admin/dbconManager.php"  method="POST" >
-          <div class="text-center" style="margin-top: 194px;"  >
-            <h2 style="color:white; " >Admin Panel</h2>
-            <small style="color:white; " >(staff only)</small>
-              </br>
-                <input type="text" style="margin: 2%;border-radius: 9px;" placeholder="Username" name="name" />
-                <input type="password" style="margin: 2%;border-radius: 9px;"  placeholder="Password" name="password" />
-              </br>
-                <button type="submit" class="btn ordinarySkin" style="width: 40%;height: 49px;" >Login</button>
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
           </div>
-        </form>
-
-
-
       </section>
 
-      <!-- ngIf: Main.page.previous -->
-        <div class="trigger ng-scope" ng-if="Main.page.previous" ng-class="{ 'open': Main.menu }" ng-click="Main.toggle('menu')" trigger="">
-          <div class="burger">
-            <span class="top" style="width: 100%;">
-            </span>
-
-            <span class="center" style="width: 100%;">
-            </span>
-
-            <span class="bottom" style="width: 100%;">
-            </span>
-
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">About Me</h2>
+                    <div class="section-divider"></div>
+                </div>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <h3>Full Stack Web Developer</h3>
+                        <p class="about-text">
+                            أنا Full Stack Web Developer لدي خبرة 4 سنوات في تطوير مواقع الويب باستخدام Laravel وPHP، من مصر.
+                        </p>
+                        <p class="about-text">
+                            عملت على مشاريع متنوعة مثل أنظمة ERP وCRM، مما منحني خبرة قوية في بناء تطبيقات قابلة للتوسع وكبيرة.
+                        </p>
+                        <p class="about-text">
+                            أقوم بتطوير الـ Backend باستخدام Laravel، والـ Frontend باستخدام React.js و Vue.js, Nuxt.js
+                        </p>
+                        
+                        <div class="experience-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-building"></i>
+                                <span>Worked in 3 Companies</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-globe"></i>
+                                <span>Remote Work Ready</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-code"></i>
+                                <span>Clean, Testable Code</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="about-visual">
+                        <div class="floating-cards">
+                            <div class="card-3d" data-tilt>
+                                <div class="card-content">
+                                    <i class="fas fa-server"></i>
+                                    <h4>Backend</h4>
+                                    <p>Laravel, PHP, Microservices</p>
+                                </div>
+                            </div>
+                            <div class="card-3d" data-tilt>
+                                <div class="card-content">
+                                    <i class="fas fa-desktop"></i>
+                                    <h4>Frontend</h4>
+                                    <p>React, Vue, Nuxt.js</p>
+                                </div>
+                            </div>
+                            <div class="card-3d" data-tilt>
+                                <div class="card-content">
+                                    <i class="fas fa-database"></i>
+                                    <h4>Database</h4>
+                                    <p>MySQL, MongoDB, Firebase</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
           </div>
-        </div><!-- end ngIf: Main.page.previous -->
+    </section>
 
-          <a href="/" class="logo negative" cc-logo="" style="">
-          </a>
-
-          <div class="headsUp" >
-
+    <!-- Experience & Education Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Experience & Education</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">My professional journey and educational background that have shaped my skills and expertise.</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="experience-timeline">
+                        <h3 class="timeline-title">
+                            <i class="fas fa-briefcase"></i>
+                            Work Experience
+                        </h3>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h4>Full Stack Developer</h4>
+                                    <div class="company">Tech Solutions Company</div>
+                                    <div class="timeline-meta">
+                                        <span class="location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Alexandria, Egypt
+                                        </span>
+                                        <span class="period">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            2023 - Present
+                                        </span>
+                                    </div>
+                                    <ul class="timeline-description">
+                                        <li>Developed and maintained multiple web applications using Laravel and PHP</li>
+                                        <li>Built responsive frontend interfaces with React.js and Vue.js</li>
+                                        <li>Implemented RESTful APIs and microservices architecture</li>
+                                        <li>Collaborated with cross-functional teams on ERP and CRM systems</li>
+                                    </ul>
+                                </div>
           </div>
 
-    </header>
-
-    <!-- Welcome my Art Section -->
-
-      <main style="background: linear-gradient(90deg, rgb(0, 0, 0) 16%, rgb(17, 56, 68) 86%); " >
-
-        <h1 class="text-left font_presenter myTitle wow fadeInDown" style="color: white; font-weight: bold;
-        position: absolute;
-        top: 80px;
-        " >
-          Software
-
-          <span style="color:#21FFA1" > <!--#2BA99E--> <!--21FFA1-->
-          /
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h4>Backend Developer</h4>
+                                    <div class="company">Digital Innovation Agency</div>
+                                    <div class="timeline-meta">
+                                        <span class="location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Cairo, Egypt
+                                        </span>
+                                        <span class="period">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            2022 - 2023
+                                        </span>
+                                    </div>
+                                    <ul class="timeline-description">
+                                        <li>Specialized in Laravel development for enterprise applications</li>
+                                        <li>Integrated payment gateways (Paymob, Stripe) and third-party APIs</li>
+                                        <li>Developed real-time applications using Pusher and WebSockets</li>
+                                        <li>Implemented database optimization and caching strategies</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h4>Web Developer</h4>
+                                    <div class="company">Startup Ventures</div>
+                                    <div class="timeline-meta">
+                                        <span class="location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Remote
+                                        </span>
+                                        <span class="period">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            2021 - 2022
+                                        </span>
+                                    </div>
+                                    <ul class="timeline-description">
+                                        <li>Built full-stack web applications from concept to deployment</li>
+                                        <li>Created e-commerce platforms and SaaS solutions</li>
+                                        <li>Implemented user authentication and role-based access control</li>
+                                        <li>Optimized applications for performance and scalability</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h4>Freelance Developer</h4>
+                                    <div class="company">Independent Projects</div>
+                                    <div class="timeline-meta">
+                                        <span class="location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Remote
+                                        </span>
+                                        <span class="period">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            2020 - 2021
+                                        </span>
+                                    </div>
+                                    <ul class="timeline-description">
+                                        <li>Developed custom web solutions for various clients</li>
+                                        <li>Built WordPress themes and plugins</li>
+                                        <li>Created responsive websites and web applications</li>
+                                        <li>Provided technical consulting and support</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="education-timeline">
+                        <h3 class="timeline-title">
+                            <i class="fas fa-graduation-cap"></i>
+                            Education
+                        </h3>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h4>Bachelor's Degree in Computer Science</h4>
+                                    <div class="institution">Cairo University</div>
+                                    <div class="timeline-meta">
+                                        <span class="location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Cairo, Egypt
+                                        </span>
+                                        <span class="period">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            2019 - 2023
           </span>
-
-          Developer
-        </h1>
-
-
-      <!-- ============================================================================= -->
-        <div class="logIcon" style="  z-index: 999999;
-              width: 25vw;
-              height: 93px;
-              display: block;
-              position: absolute;
-              position: fixed;
-              top: -21px;
-        " >
-        <a id="loginAnchor"  onclick="myFunction()" style="cursor: pointer;">
-          <p>
-            <span class="bg">
-
+                                    </div>
+                                    <p class="education-description">
+                                        Studied computer science with focus on software engineering, web development, and database systems. 
+                                        Completed projects in Laravel, React, and modern web technologies.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h4>Web Development Certification</h4>
+                                    <div class="institution">Udemy & Coursera</div>
+                                    <div class="timeline-meta">
+                                        <span class="location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Online
+                                        </span>
+                                        <span class="period">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            2020 - 2023
+                                        </span>
+                                    </div>
+                                    <p class="education-description">
+                                        Completed advanced courses in Laravel, React, Vue.js, and modern web development practices. 
+                                        Earned certifications in full-stack development and API design.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h4>DevOps & Cloud Computing</h4>
+                                    <div class="institution">AWS & Linux Academy</div>
+                                    <div class="timeline-meta">
+                                        <span class="location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Online
             </span>
-            <span class="base">
-
+                                        <span class="period">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            2022 - 2023
             </span>
-            <span class="text">
-              <i class="fas fa-fingerprint"></i>
-            </span
-            ></p>
-        </a>
+                                    </div>
+                                    <p class="education-description">
+                                        Gained expertise in AWS services, Linux administration, and CI/CD pipelines. 
+                                        Learned deployment strategies and infrastructure management.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      <!-- ============================================================================= -->
+    </section>
 
-        <section class="Art_2 text-left">
-          <div class='row'>
-            <div class="col-md-12" style="padding-bottom: 25vh;" >
-
-            </br>
-
-            <div class="col-md-6 imgHeaderP1 wow fadeInUp" >
-              <img class="imgHeader" src="computer22.png" />
-              <!-- <a href='https://www.freepik.com/vectors/people'></a> -->
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Technical Skills</h2>
+                    <div class="section-divider"></div>
+                </div>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Backend Development</h3>
+                    <div class="skills-list">
+                        <div class="skill-item" data-skill="Laravel">
+                            <span class="skill-name">Laravel</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-skill="PHP">
+                            <span class="skill-name">PHP</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-skill="Microservices">
+                            <span class="skill-name">Microservices</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-skill="REST APIs">
+                            <span class="skill-name">REST APIs</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-palette"></i> Frontend Development</h3>
+                    <div class="skills-list">
+                        <div class="skill-item" data-skill="React.js">
+                            <span class="skill-name">React.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-skill="Vue.js">
+                            <span class="skill-name">Vue.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-skill="Nuxt.js">
+                            <span class="skill-name">Nuxt.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Databases & DevOps</h3>
+                    <div class="skills-list">
+                        <div class="skill-item" data-skill="MySQL">
+                            <span class="skill-name">MySQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-skill="MongoDB">
+                            <span class="skill-name">MongoDB</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 78%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-skill="AWS">
+                            <span class="skill-name">AWS</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item" data-skill="Git">
+                            <span class="skill-name">Git & GitHub Actions</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
+            <div class="expertise-areas">
+                <h3>Areas of Expertise</h3>
+                <div class="expertise-grid">
+                    <div class="expertise-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>E-commerce & Multivendor</span>
+                    </div>
+                    <div class="expertise-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span>SaaS Platforms</span>
+                    </div>
+                    <div class="expertise-item">
+                        <i class="fas fa-users"></i>
+                        <span>CRM & HRM Systems</span>
+                    </div>
+                    <div class="expertise-item">
+                        <i class="fas fa-warehouse"></i>
+                        <span>WMS Solutions</span>
+                    </div>
+                    <div class="expertise-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>EdTech Platforms</span>
+                    </div>
+                    <div class="expertise-item">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Payment Gateways</span>
+                    </div>
+                    <div class="expertise-item">
+                        <i class="fas fa-plug"></i>
+                        <span>API Integration</span>
+                    </div>
+                    <div class="expertise-item">
+                        <i class="fas fa-robot"></i>
+                        <span>AI Integration</span>
+                    </div>
+                    <div class="expertise-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp APIs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div class='row' >
-
-
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
                 <div class="container">
-                  <div class="row text-center">
-                      <div class="col-md-6" style="text-align: left;" >
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">Click on any project to see detailed information</p>
+                </div>
+            </div>
+            
+            <div class="projects-grid" id="projects-container">
+                <!-- Static Project Cards (similar to Areas of Expertise) -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h4>ERP System</h4>
+                    <p>Enterprise Resource Planning</p>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h4>LMS Platform</h4>
+                    <p>Learning Management System</p>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h4>Chat Application</h4>
+                    <p>Real-time Messaging</p>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>CRM System</h4>
+                    <p>Customer Relationship Management</p>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h4>E-commerce Platform</h4>
+                    <p>Multi-vendor Marketplace</p>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h4>Payment Integration</h4>
+                    <p>Gateway & API Systems</p>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h4>API Services</h4>
+                    <p>Third-party Integrations</p>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h4>AI Integration</h4>
+                    <p>OpenAI & DeepSeek</p>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h4>WhatsApp APIs</h4>
+                    <p>Chatbots & Integration</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                        <p style="position: absolute; margin: 0 auto; left: 0; top: 6%; right: 0; color: white; font-weight: 700; font-size: 2.3rem;">
-                          Hi, I'm Muhammed, I'm a passionate Software Developer with 
-                          <span id="yearsOfExperience"></span> years of Experience, specializing in PHP Backend development. I Do
-                          <span class="typewrite" style="color:#fff289; font-weight: 700; font-size: 2.3rem;"></span>
-                      </p>
-                  
-                      <!-- Script placed just before the closing </body> tag -->
-                      <script>
-                          // Set years of experience
-                          const yearsOfExperience = new Date().getFullYear() - 2021;
-                          document.getElementById("yearsOfExperience").textContent = yearsOfExperience;
-                  
-                          // Typewriter effect
-                          const typewriteElement = document.querySelector('.typewrite');
-                          const phrases = [
-                              "Awesome, responsive branding page websites.",
-                              "Full-stack websites from scratch.",
-                              "PHP development, with latest PHP Frameworks, Laravel, CodeIgniter.",
-                              "Backend microservices for websites.",
-                              "API development."
-                          ];
-                          let i = 0;
-                  
-                          function type() {
-                              typewriteElement.textContent = phrases[i].slice(0, typewriteElement.textContent.length + 1);
-                              if (typewriteElement.textContent.length === phrases[i].length) {
-                                  i = (i + 1) % phrases.length;
-                                  setTimeout(() => { typewriteElement.textContent = ''; }, 1000);
-                              }
-                              setTimeout(type, 150);
-                          }
-                          type();
-                      </script>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">I'm currently looking for Full-time Remote opportunities</p>
+                </div>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>muhammedk.aldin@gmail.com</p>
+                                <span class="contact-note">Available for immediate response</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Phone</h4>
+                                <p>+20 (010) 953 040 64</p>
+                                <span class="contact-note">WhatsApp available</span>
+                            </div>
+                        </div>
 
-
-                          <ul class="skillList" style="margin-left: -15%; padding-top: 38vh;" >
-                            <!--
-                            <li class="" title="Show All Projects">
-                              <span>Show All</span>
-                            </li>
-                            -->
-                            <!-- Filter by -->
-
-                            
-                            <li class="">
-                                <span>PHP</span>
-                              </li>
-
-                              <li class="">
-                                <span>Laravel</span>
-                              </li>
-
-                              <li class="">
-                                <span>OOP</span>
-                              </li>
-
-                              <li class="">
-                                <span>SQL</span>
-                              </li>
-
-                              <li class="">
-                                <span>Javascript</span>
-                              </li>
-
-                              <li class="">
-                                <span>JQuery</span>
-                              </li>
-
-                              <li class="">
-                                <span>Bootstrap</span>
-                              </li>
-
-                              <li class="">
-                                <span>React</span>
-                              </li>
-
-                              <li class="">
-                                <span>Vue</span>
-                              </li>
-
-                              <li class="">
-                                <span>JQUERY</span>
-                              </li>
-                  
-                              <li class="">
-                                <span>Firebase</span>
-                              </li>
-
-                              <li class="">
-                                <span>Payments Integration</span>
-                              </li>
-
-                              <li class="">
-                                <span>3rd-Party Integration</span>
-                              </li>
-
-                              <li class="">
-                                <span>Realtime</span>
-                              </li>
-				  
-                              <li class="">
-                                <span>Git</span>
-                              </li>
-
-                            </ul>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <p>Cairo, Egypt</p>
+                                <span class="contact-note">Remote work ready</span>
+                            </div>
                       </div>
 
-                      <div class="col-md-6 imgHeaderP2 wow fadeInUp" >
-                        <img class="imgHeader" src="computer22.png" />
-                        <!-- <a href='https://www.freepik.com/vectors/people'></a> -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Availability</h4>
+                                <p>Full-time Remote</p>
+                                <span class="contact-note">Ready to start immediately</span>
+                            </div>
                       </div>
                   </div>
 
+                    <div class="social-links">
+                        <a href="https://github.com/MuhammedKAldin" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCTshwAMQrIRTUQvuhfKjZxA" target="_blank" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
               </div>
 
-
-
-
+                    <div class="contact-cta">
+                        <h3>Ready to work together?</h3>
+                        <p>I'm available for full-time remote positions. Let's discuss how I can help bring your ideas to life!</p>
+                        <a href="mailto:muhammedk.aldin@gmail.com" class="btn btn-primary btn-lg">Send Message</a>
+                    </div>
+                </div>
             </div>
-
-            </br>
-            </br>
-
-
-
           </div>
         </section>
 
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 14" height="70" preserveAspectRatio="none" aria-hidden="true" focusable="false"
-      class="ka8fj sc-1qsp046-2 gtVXfI ">
-        <path>
-          <animate attributeName="d"
-        values="M 27 10C 21 8 14 3 0 3L 0 0L 54 0L 54 14C 40 14 33 12 27 10Z;M 27 14C 12 14 5 7 0 7L 0 0L 54 0L 54 7C 49 7 42 14 27 14Z;M 27 10C 21 12 14 14 0 14L 0 0L 54 0L 54 3C 40 3 33 8 27 10Z;M 27 10C 21 12 14 14 0 14L 0 0L 54 0L 54 3C 40 3 33 8 27 10Z;M 27 14C 12 14 5 7 0 7L 0 0L 54 0L 54 7C 49 7 42 14 27 14Z;M 27 10C 21 8 14 3 0 3L 0 0L 54 0L 54 14C 40 14 33 12 27 10Z"
-        repeatCount="indefinite"
-        dur="10s">
-          </animate>
-        </path>
-      </svg>
-
-      <div class='row' style="background: #f0f0f0!important;">
-        <div class="col-md-12 text-center wow fadeInUp">
-          <h2 >My Projects</h2>
-          <p class="FonterSmaller">
-              Click on the image to see the project description.
-          </p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p>&copy; 2024 Mohamed Kamal Aldin. All rights reserved.</p>
+                </div>
+            </div>
         </div>
-      </div>
+    </footer>
 
-
+    <!-- Project Modal -->
       <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -382,351 +725,9 @@
         </div>
     </div>
     
-    <div class="row" id="projects-container" style="background: #f0f0f0!important;">
-        <!-- Project cards will be dynamically injected here -->
-    </div>
-    
-    <script>
-        // Fetch the data from the JSON file
-        fetch('data.json')
-            .then(response => response.json())
-            .then(data => {
-                const projects = data.projects;
-                const container = document.getElementById('projects-container');
-                const modal = new bootstrap.Modal(document.getElementById('projectModal'));
-                const modalBody = document.getElementById('modalBody');
-    
-                projects.forEach((project, index) => {
-                    // Create the project card
-                    const projectCard = document.createElement('div');
-                    projectCard.classList.add('col-sm-12', 'col-md-6', 'col-lg-3', 'mb-4');
-    
-                    const card = document.createElement('div');
-                    card.classList.add('card', 'h-100', 'shadow-sm', 'text-center');
-    
-                    const cardImg = document.createElement('img');
-                    cardImg.src = `./${project.screenshot}`;
-                    cardImg.alt = `${project.name} Screenshot`;
-                    cardImg.classList.add('card-img-top', 'img-fluid', 'rounded');
-                    cardImg.style.height = '200px';
-                    cardImg.style.objectFit = 'cover';
-    
-                    const cardBody = document.createElement('div');
-                    cardBody.classList.add('card-body');
-    
-                    const cardTitle = document.createElement('h5');
-                    cardTitle.textContent = project.name;
-                    cardTitle.classList.add('card-title', 'text-truncate');
-    
-                    const cardButton = document.createElement('button');
-                    cardButton.textContent = 'View Details';
-                    cardButton.classList.add('btn', 'btn-primary', 'mt-3');
-                    cardButton.setAttribute('data-index', index);
-    
-                    // Append elements to the card
-                    cardBody.appendChild(cardTitle);
-                    cardBody.appendChild(cardButton);
-                    card.appendChild(cardImg);
-                    card.appendChild(cardBody);
-                    projectCard.appendChild(card);
-                    container.appendChild(projectCard);
-    
-                    // Event listener to open the modal with project details
-                    cardButton.addEventListener('click', () => {
-                        // Clear previous modal content
-                        modalBody.innerHTML = '';
-    
-                        // Populate modal with project details
-                        const projectTitle = document.createElement('h4');
-                        projectTitle.textContent = project.name;
-    
-                        const description = document.createElement('p');
-                        description.innerHTML = `<strong>Description:</strong> ${project.description}`;
-    
-                        const screenshotImg = document.createElement('img');
-                        screenshotImg.src = `./${project.screenshot}`;
-                        screenshotImg.alt = 'Project Screenshot';
-                        screenshotImg.classList.add('img-fluid', 'rounded', 'shadow-sm', 'mb-3');
-    
-                        const techTitle = document.createElement('h5');
-                        techTitle.textContent = 'Technologies Used:';
-    
-                        const skillsList = document.createElement('ul');
-                        project.skills.forEach(skill => {
-                            const skillItem = document.createElement('li');
-                            skillItem.innerHTML = `<i class="bi bi-check-circle"></i> ${skill}`;
-                            skillsList.appendChild(skillItem);
-                        });
-    
-                        const featuresTitle = document.createElement('h5');
-                        featuresTitle.textContent = 'Features:';
-    
-                        const featuresList = document.createElement('ul');
-                        project.features.forEach(feature => {
-                            const featureItem = document.createElement('li');
-                            featureItem.innerHTML = `<i class="bi bi-star"></i> ${feature}`;
-                            featuresList.appendChild(featureItem);
-                        });
-    
-                        const githubLink = document.createElement('p');
-                        githubLink.innerHTML = `<strong>Source Code:</strong> <a href="${project.codespace}" target="_blank" class="text-decoration-none">GitHub Repository</a>`;
-    
-                        const liveDemo = document.createElement('p');
-                        liveDemo.innerHTML = `<strong>Live Demo:</strong> <a href="${project.url}" target="_blank" class="text-decoration-none">Visit Project</a>`;
-    
-                        // Append elements to the modal body
-                        modalBody.appendChild(projectTitle);
-                        modalBody.appendChild(screenshotImg);
-                        modalBody.appendChild(description);
-                        modalBody.appendChild(techTitle);
-                        modalBody.appendChild(skillsList);
-                        modalBody.appendChild(featuresTitle);
-                        modalBody.appendChild(featuresList);
-                        modalBody.appendChild(githubLink);
-                        modalBody.appendChild(liveDemo);
-    
-                        // Show the modal
-                        modal.show();
-                    });
-                });
-            })
-            .catch(error => {
-                console.error('Error loading JSON:', error);
-            });
-    </script>
-    
-
-      <!-- One 1 Done -->
-
-        <!-- <hr class="Liner" /> +++++++++++++++++++ -->
-        <section id="Projects_area" class="Art_3 text-left">
-          <div class='row wow fadeInUp'>
-            <div class="col-md-12 text-center">
-
-              <!-- 
-              <button id="showAllDev" class="categorySelection">
-                  All
-              </button>
-              <button id="hideGameDev_Btn" class="categorySelection">
-                  Web development
-              </button>
-              <button id="hideGameDev_Btn" class="categorySelection">
-                  Personal projects
-              </button>
-              <button id="hideWebDev_Btn" class="categorySelection">
-                  Game development
-              </button> 
-              -->
-              
-            </div>
-            
-          </div>
-        </section>
-
-        <!-- END PHASE -->
-
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 14" height="70" preserveAspectRatio="none" aria-hidden="true" focusable="false"
-        class="ka8fjb sc-1qsp046-2 gtVXfI ">
-          <path>
-            <animate attributeName="d"
-          values="M 27 10C 21 8 14 3 0 3L 0 0L 54 0L 54 14C 40 14 33 12 27 10Z;M 27 14C 12 14 5 7 0 7L 0 0L 54 0L 54 7C 49 7 42 14 27 14Z;M 27 10C 21 12 14 14 0 14L 0 0L 54 0L 54 3C 40 3 33 8 27 10Z;M 27 10C 21 12 14 14 0 14L 0 0L 54 0L 54 3C 40 3 33 8 27 10Z;M 27 14C 12 14 5 7 0 7L 0 0L 54 0L 54 7C 49 7 42 14 27 14Z;M 27 10C 21 8 14 3 0 3L 0 0L 54 0L 54 14C 40 14 33 12 27 10Z" repeatCount="indefinite" dur="25s">
-            </animate>
-          </path>
-        </svg>
-
-        <section id="Hire_area" class="Art_2 text-left" style="padding-top: 24%;">
-            <div class='row' style="justify-content: center;" >
-
-                <div class="col-md-2" style="margin-right: -26%;" >
-                    <hr class='linePresent' />
-                </div>
-                <div class="col-md-8">
-                    <h2 class="text-center font_presenter" style="color:white; ">Get your <span style="font-weight: 700; color: #fff289; ">Proposal</span> </h2>
-                </div>
-                <div class="col-md-2" style="margin-left: -26%;">
-                    <hr class='linePresent' />
-                </div>
-
-            </div>
-
-            <div class='row'>
-                <div class="col-md-12">
-                      <p class="FonterSmaller" style="color:white; font-weight: 500; " >
-                        lets build your awesome project together now
-
-
-                      </p>
-
-                <div
-                style="z-index: 9999999999999999999999999999999999999999999;
-                width: 250px;
-                height: 93px;
-                margin-left: auto;
-                margin-right: auto;
-                " >
-                <a class="fresh-button" href="./Hire/index.php">
-                  <p>
-                    <span class="bg">
-
-                    </span>
-                    <span class="base">
-
-                    </span>
-                    <span class="text">
-                      Hire
-                    </span
-                    ></p>
-                </a>
-                </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section class="Art_2 text-left lostPosSec" style="padding-top: 24%;" >
-          <div id="Contact_area" class='row' style='justify-content: center;'>
-
-              <div class="col-md-2" style="margin-right: -26%;" >
-                  <hr class='linePresent' />
-              </div>
-              <div class="col-md-8">
-                  <h2 class="text-center font_presenter" style="color:white; "><span style="font-weight: 700; color: #fff289; ">Contact </span>Me</h2>
-              </div>
-              <div class="col-md-2" style="margin-left: -26%;">
-                  <hr class='linePresent' />
-              </div>
-
-          </div>
-
-          <div class='row'>
-              <div class="col-md-12">
-                    <p class="FonterSmaller" style="color:white; font-weight: 500; " >
-                      If you wanna get in touch, talk to me about a project collaboration.
-                    </p>
-
-                  <div class="row" style="color:white;">
-                    <div class="col-md-6 text-center" style="padding-left: 6%;padding-top: 20px;">
-
-                        <p class="text-left">
-                          <i class="fas fa-phone-alt"></i>
-                          +20 (010) 953 040 64
-                        </p>
-                        <p class="text-left">
-                          <i class="far fa-envelope"></i>
-                          muhammedk.aldin@gmail.com
-                        </p>
-                      </br>
-
-                          <img id="showDiscordLogo" class="outSideLinks" src="disc11.png" />
-                          <div class="alert alert-primary showDiscord" role="alert">
-                            SubstanceShift
-                          </div>
-
-                        <a href="https://www.youtube.com/channel/UCTshwAMQrIRTUQvuhfKjZxA/videos">
-                          <img class="outSideLinks" src="disc22.png" />
-                        </a>
-                        <a href="https://github.com/MuhammedKAldin">
-                          <img class="outSideLinks" src="disc33.png" />
-                        </a>
-                    </div>
-
-                    <div class="col-md-6" style="padding-left: 3%;">
-                      <!-- Google Maps Section -->
-                    </br>
-                          <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
-                            <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div><script>(function () {
-                                var setting = {"height":250,"width":500,"zoom":2000,"queryString":"Cairo, Egypt","place_id":"ChIJ674hC6Y_WBQRujtC6Jay33k","satellite":false,"centerCoord":[30.059501644912803,31.25846434999999],"cid":"0x79dfb296e8423bba","lang":"en","cityUrl":"/egypt/cairo","cityAnchorText":"Map of Cairo, Egypt, Egypt","id":"map-9cd199b9cc5410cd3b1ad21cab2e54d3","embed_id":"248806"};
-                                var d = document;
-                                var s = d.createElement('script');
-                                s.src = 'https://1map.com/js/script-for-user.js?embed_id=248806';
-                                s.async = true;
-                                s.onload = function (e) {
-                                  window.OneMap.initMap(setting)
-                                };
-                                var to = d.getElementsByTagName('script')[0];
-                                to.parentNode.insertBefore(s, to);
-                              })();</script><a href="https://1map.com/map-embed">1 Map</a>
-                          </div>
-
-                  </div>
-
-
-
-                  </div>
-              </div>
-              </div>
-          </div>
-
-      </section>
-
-      </main>
-      
-      <!-- Footer copyrights and links -->
-      <script>
-        // Create the footer section dynamically
-        const footer = document.createElement('footer');
-
-        // Create the section inside the footer
-        const section = document.createElement('section');
-        section.classList.add('text-center');
-        section.style.backgroundColor = '#0cfdd0';
-        section.style.width = '100%';
-        section.style.height = '70px';
-        section.style.fontWeight = '900';
-        section.style.fontSize = '0.8rem';
-
-        // Create the paragraph for the copyright text
-        const paragraph = document.createElement('p');
-        paragraph.style.paddingTop = '25px';
-        paragraph.textContent = `Copyright ${new Date().getFullYear()} My Portfolio by Muhammed K-Aldin.`;
-
-        // Append the paragraph to the section
-        section.appendChild(paragraph);
-
-        // Append the section to the footer
-        footer.appendChild(section);
-
-        // Append the footer to the body (or a specific container)
-        document.body.appendChild(footer);
-
-      </script>
-
-      <!-- scripts -->
-      <script src="particles.js"></script>
-      <script src="particlesJS/app.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-      <script>
-        var wow = new WOW(
-          {
-            boxClass:     'wow',      // animated element css class (default is wow)
-            animateClass: 'animated', // animation css class (default is animated)
-            offset:       0,          // distance to the element when triggering the animation (default is 0)
-            mobile:       true,       // trigger animations on mobile devices (default is true)
-            live:         true,       // act on asynchronously loaded content (default is true)
-            callback:     function(box) {
-              // the callback is fired every time an animation is started
-              // the argument that is passed in is the DOM node being animated
-            },
-            scrollContainer: null // optional scroll container selector, otherwise use window
-          }
-        );
-        wow.init();
-      </script>
-        <script type="text/javascript" src="jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="all.min.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
         <script src="script.js"></script>
-        <script src="script2.js"></script>
-        <script>
-          window.addEventListener('load', () => {
-              const preloader = document.getElementById('preloader');
-              preloader.style.opacity = '0';
-              preloader.style.transition = 'opacity 0.5s ease';
-              setTimeout(() => {
-                  preloader.style.display = 'none';
-              }, 500);
-          });
-      </script>
     </body>
 </html>
