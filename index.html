@@ -42,8 +42,27 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#home">
-                <span class="brand-text">MK</span>
-                <span class="brand-slash">/</span>
+                <div class="brand-container">
+                    <!-- Background icons -->
+                    <div class="brand-bg-icons">
+                        <i class="fas fa-rocket"></i>
+                        <i class="fas fa-code"></i>
+                        <i class="fas fa-terminal"></i>
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    
+                    <!-- Main brand -->
+                    <span class="brand-text">&lt;MK</span>
+                    <span class="brand-slash">/&gt;</span>
+                    
+                    <!-- Flying instances -->
+                    <div class="brand-flying brand-flying-1">&lt;MK/&gt;</div>
+                    <div class="brand-flying brand-flying-2">&lt;MK/&gt;</div>
+                    <div class="brand-flying brand-flying-3">&lt;MK/&gt;</div>
+                    <div class="brand-flying brand-flying-4">&lt;MK/&gt;</div>
+                    <div class="brand-flying brand-flying-5">&lt;MK/&gt;</div>
+                    <div class="brand-flying brand-flying-6">&lt;MK/&gt;</div>
+                </div>
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -88,8 +107,8 @@
                 <div class="col-lg-6">
                     <div class="hero-content">
                         <h1 class="hero-title">
-                            <span class="greeting">السلام عليكم ورحمة الله</span>
-                            <span class="name">I'm Mohamed Kamal Aldin</span>
+                            <span class="greeting">Hello, I'm</span>
+                            <span class="name">Mohamed Kamal Aldin</span>
                             <span class="title">Full Stack Developer</span>
                         </h1>
                         <p class="hero-subtitle">
@@ -134,13 +153,13 @@
                     <div class="about-content">
                         <h3>Full Stack Web Developer</h3>
                         <p class="about-text">
-                            أنا Full Stack Web Developer لدي خبرة 4 سنوات في تطوير مواقع الويب باستخدام Laravel وPHP، من مصر.
+                            I am a Full Stack Web Developer with 4 years of experience in web development using Laravel and PHP, from Egypt.
                         </p>
                         <p class="about-text">
-                            عملت على مشاريع متنوعة مثل أنظمة ERP وCRM، مما منحني خبرة قوية في بناء تطبيقات قابلة للتوسع وكبيرة.
+                            I have worked on diverse projects such as ERP and CRM systems, which has given me strong experience in building scalable and large applications.
                         </p>
                         <p class="about-text">
-                            أقوم بتطوير الـ Backend باستخدام Laravel، والـ Frontend باستخدام React.js و Vue.js, Nuxt.js
+                            I develop the Backend using Laravel, and the Frontend using React.js and Vue.js
                         </p>
                         
                         <div class="experience-highlights">
@@ -182,6 +201,13 @@
                                     <i class="fas fa-database"></i>
                                     <h4>Database</h4>
                                     <p>MySQL, MongoDB, Firebase</p>
+                                </div>
+                            </div>
+                            <div class="card-3d" data-tilt>
+                                <div class="card-content">
+                                    <i class="fas fa-rocket"></i>
+                                    <h4>DevOps</h4>
+                                    <p>Git, AWS, CI/CD</p>
                                 </div>
                             </div>
                         </div>
@@ -591,88 +617,20 @@
 
     <!-- Projects Section -->
     <section id="projects" class="projects-section">
-                <div class="container">
+        <!-- 3D Background Canvas -->
+        <div id="projects-3d-bg" class="projects-3d-background"></div>
+        
+        <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
                     <h2 class="section-title">Featured Projects</h2>
                     <div class="section-divider"></div>
-                    <p class="section-subtitle">Click on any project to see detailed information</p>
+                    <p class="section-subtitle">Explore my portfolio of innovative web applications and solutions</p>
                 </div>
             </div>
             
             <div class="projects-grid" id="projects-container">
-                <!-- Static Project Cards (similar to Areas of Expertise) -->
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h4>ERP System</h4>
-                    <p>Enterprise Resource Planning</p>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h4>LMS Platform</h4>
-                    <p>Learning Management System</p>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h4>Chat Application</h4>
-                    <p>Real-time Messaging</p>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h4>CRM System</h4>
-                    <p>Customer Relationship Management</p>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <h4>E-commerce Platform</h4>
-                    <p>Multi-vendor Marketplace</p>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-credit-card"></i>
-                    </div>
-                    <h4>Payment Integration</h4>
-                    <p>Gateway & API Systems</p>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-plug"></i>
-                    </div>
-                    <h4>API Services</h4>
-                    <p>Third-party Integrations</p>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h4>AI Integration</h4>
-                    <p>OpenAI & DeepSeek</p>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fab fa-whatsapp"></i>
-                    </div>
-                    <h4>WhatsApp APIs</h4>
-                    <p>Chatbots & Integration</p>
-                </div>
+                <!-- Projects will be dynamically loaded from data.json -->
             </div>
         </div>
     </section>
@@ -763,15 +721,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <p>&copy; 2024 Mohamed Kamal Aldin. All rights reserved.</p>
+                    <p>&copy; 2025 Mohamed Kamal Aldin. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Project Modal -->
-      <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="projectModalLabel">Project Details</h5>
@@ -779,6 +737,9 @@
                 </div>
                 <div class="modal-body" id="modalBody">
                     <!-- Content will be injected dynamically -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

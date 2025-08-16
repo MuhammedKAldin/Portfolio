@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
     initPreloader();
     init3DHero();
+    initProjects3DBackground();
     initScrollAnimations();
     initProjectCards();
     initSkillBars();
@@ -111,6 +112,226 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // 3D Projects Background
+    function initProjects3DBackground() {
+        const container = document.getElementById('projects-3d-bg');
+        if (!container) return;
+        
+        // Create Three.js scene
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setClearColor(0x000000, 0);
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        container.appendChild(renderer.domElement);
+        
+        // Create floating objects with more variety
+        const objects = [];
+        const objectTypes = [
+            { geometry: new THREE.BoxGeometry(0.5, 0.5, 0.5), color: 0x00d4ff, name: 'cube' },
+            { geometry: new THREE.SphereGeometry(0.3, 16, 16), color: 0xff6b35, name: 'sphere' },
+            { geometry: new THREE.ConeGeometry(0.4, 0.8, 16), color: 0x0099cc, name: 'cone' },
+            { geometry: new THREE.TorusGeometry(0.3, 0.1, 8, 24), color: 0x00d4ff, name: 'torus' },
+            { geometry: new THREE.OctahedronGeometry(0.4), color: 0xff6b35, name: 'octahedron' },
+            { geometry: new THREE.DodecahedronGeometry(0.3), color: 0x0099cc, name: 'dodecahedron' },
+            { geometry: new THREE.TetrahedronGeometry(0.4), color: 0x00d4ff, name: 'tetrahedron' },
+            { geometry: new THREE.IcosahedronGeometry(0.3), color: 0xff6b35, name: 'icosahedron' }
+        ];
+        
+        // Create multiple floating objects
+        for (let i = 0; i < 20; i++) {
+            const type = objectTypes[Math.floor(Math.random() * objectTypes.length)];
+            const material = new THREE.MeshPhongMaterial({
+                color: type.color,
+                transparent: true,
+                opacity: 0.6,
+                wireframe: true,
+                emissive: type.color,
+                emissiveIntensity: 0.1
+            });
+            
+            const mesh = new THREE.Mesh(type.geometry, material);
+            
+            // Random position
+            mesh.position.set(
+                (Math.random() - 0.5) * 25,
+                (Math.random() - 0.5) * 25,
+                (Math.random() - 0.5) * 25
+            );
+            
+            // Random rotation
+            mesh.rotation.set(
+                Math.random() * Math.PI,
+                Math.random() * Math.PI,
+                Math.random() * Math.PI
+            );
+            
+            // Store animation properties
+            mesh.userData = {
+                speed: 0.001 + Math.random() * 0.002,
+                rotationSpeed: 0.01 + Math.random() * 0.02,
+                floatSpeed: 0.001 + Math.random() * 0.002,
+                floatRange: 2 + Math.random() * 3,
+                originalPosition: mesh.position.clone(),
+                pulseSpeed: 0.002 + Math.random() * 0.003
+            };
+            
+            objects.push(mesh);
+            scene.add(mesh);
+        }
+        
+        // Add particle system with more particles
+        const particleCount = 80;
+        const particles = new THREE.BufferGeometry();
+        const positions = new Float32Array(particleCount * 3);
+        const colors = new Float32Array(particleCount * 3);
+        const sizes = new Float32Array(particleCount);
+        
+        for (let i = 0; i < particleCount; i++) {
+            positions[i * 3] = (Math.random() - 0.5) * 40;
+            positions[i * 3 + 1] = (Math.random() - 0.5) * 40;
+            positions[i * 3 + 2] = (Math.random() - 0.5) * 40;
+            
+            colors[i * 3] = Math.random() * 0.5 + 0.5;
+            colors[i * 3 + 1] = Math.random() * 0.5 + 0.5;
+            colors[i * 3 + 2] = 1;
+            
+            sizes[i] = Math.random() * 0.2 + 0.05;
+        }
+        
+        particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        particles.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+        particles.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+        
+        const particleMaterial = new THREE.PointsMaterial({
+            size: 0.1,
+            vertexColors: true,
+            transparent: true,
+            opacity: 0.8,
+            sizeAttenuation: true
+        });
+        
+        const particleSystem = new THREE.Points(particles, particleMaterial);
+        scene.add(particleSystem);
+        
+        // Add enhanced lighting
+        const ambientLight = new THREE.AmbientLight(0x404040, 0.4);
+        scene.add(ambientLight);
+        
+        const directionalLight = new THREE.DirectionalLight(0x00d4ff, 0.8);
+        directionalLight.position.set(10, 10, 10);
+        directionalLight.castShadow = true;
+        scene.add(directionalLight);
+        
+        const pointLight = new THREE.PointLight(0xff6b35, 0.6, 20);
+        pointLight.position.set(-10, -10, -10);
+        scene.add(pointLight);
+        
+        // Add colored point lights for dynamic lighting
+        const colorLights = [
+            { color: 0x00d4ff, position: [15, 15, 15] },
+            { color: 0xff6b35, position: [-15, -15, -15] },
+            { color: 0x0099cc, position: [15, -15, 15] },
+            { color: 0xff6b35, position: [-15, 15, -15] }
+        ];
+        
+        colorLights.forEach(light => {
+            const pointLight = new THREE.PointLight(light.color, 0.3, 15);
+            pointLight.position.set(...light.position);
+            scene.add(pointLight);
+        });
+        
+        camera.position.z = 20;
+        
+        // Animation loop with enhanced effects
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            const time = Date.now();
+            
+            // Animate floating objects with enhanced movement
+            objects.forEach((object, index) => {
+                const data = object.userData;
+                
+                // Rotation
+                object.rotation.x += data.rotationSpeed;
+                object.rotation.y += data.rotationSpeed * 0.7;
+                object.rotation.z += data.rotationSpeed * 0.5;
+                
+                // Enhanced floating movement
+                object.position.y = data.originalPosition.y + Math.sin(time * data.floatSpeed + index) * data.floatRange;
+                object.position.x = data.originalPosition.x + Math.cos(time * data.floatSpeed * 0.7 + index) * (data.floatRange * 0.5);
+                object.position.z = data.originalPosition.z + Math.sin(time * data.floatSpeed * 0.5 + index) * (data.floatRange * 0.8);
+                
+                // Pulse effect
+                const scale = 1 + Math.sin(time * data.pulseSpeed + index) * 0.1;
+                object.scale.setScalar(scale);
+                
+                // Color pulsing
+                if (object.material.emissiveIntensity !== undefined) {
+                    object.material.emissiveIntensity = 0.1 + Math.sin(time * data.pulseSpeed + index) * 0.05;
+                }
+            });
+            
+            // Animate particles with more dynamic movement
+            particleSystem.rotation.y += 0.001;
+            particleSystem.rotation.x += 0.0005;
+            
+            // Move particles in a wave pattern
+            const positions = particleSystem.geometry.attributes.position.array;
+            for (let i = 0; i < positions.length; i += 3) {
+                positions[i + 1] += Math.sin(time * 0.001 + i) * 0.01;
+                positions[i] += Math.cos(time * 0.0008 + i) * 0.005;
+            }
+            particleSystem.geometry.attributes.position.needsUpdate = true;
+            
+            renderer.render(scene, camera);
+        }
+        
+        animate();
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        });
+        
+        // Enhanced mouse interaction
+        let mouseX = 0;
+        let mouseY = 0;
+        let targetRotationX = 0;
+        let targetRotationY = 0;
+        
+        document.addEventListener('mousemove', (event) => {
+            mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+            
+            targetRotationX = mouseY * 0.5;
+            targetRotationY = mouseX * 0.5;
+        });
+        
+        // Smooth camera movement based on mouse
+        function updateCamera() {
+            camera.position.x += (mouseX * 3 - camera.position.x) * 0.01;
+            camera.position.y += (mouseY * 3 - camera.position.y) * 0.01;
+            
+            // Add subtle rotation based on mouse
+            scene.rotation.x += (targetRotationX - scene.rotation.x) * 0.02;
+            scene.rotation.y += (targetRotationY - scene.rotation.y) * 0.02;
+        }
+        
+        // Add camera update to animation loop
+        const originalAnimate = animate;
+        animate = function() {
+            updateCamera();
+            originalAnimate();
+        };
+    }
+    
     // Scroll Animations
     function initScrollAnimations() {
         const observerOptions = {
@@ -143,48 +364,287 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         console.log('✅ Projects container found:', container);
-        console.log('✅ Static projects are already visible in HTML');
         
-        // Initialize tilt effects for the project cards if VanillaTilt is available
-        if (typeof VanillaTilt !== 'undefined') {
-            VanillaTilt.init(document.querySelectorAll('.project-card'), {
-                max: 10,
-                speed: 300,
-                glare: true,
-                "max-glare": 0.2,
-            });
-            console.log('✅ Tilt effects initialized for project cards');
-        }
+        // Test: Verify we can access the projects data
+        const testProjects = [
+            "Crystal CRM System",
+            "Countries API Module", 
+            "Wuzzuf Plus - Job Platform",
+            "Elmenus - Multi-Vendor SaaS",
+            "Medical E-commerce Platform"
+        ];
+        console.log('🧪 Test projects list:', testProjects);
+        console.log('🧪 Expected count: 5 projects');
+        console.log('🖼️ Project images:', window.projectImages);
+        
+        // Load projects from embedded data
+        console.log('🚀 Calling loadProjectsFromData...');
+        loadProjectsFromData();
+        
+        // Add a fallback check after a short delay
+        setTimeout(() => {
+            const displayedProjects = container.querySelectorAll('.project-card');
+            console.log('🔍 Fallback check - Projects displayed:', displayedProjects.length);
+            if (displayedProjects.length < 5) {
+                console.warn('⚠️ Not all projects displayed, forcing fallback...');
+                displayFallbackProjects();
+            }
+        }, 1000);
         
         console.log('=== PROJECTS DEBUG END ===');
     }
     
+    // Project images array - corresponds to the 5 projects in sequence
+    window.projectImages = [
+        "placeholder/colored/1.PNG",  // Crystal CRM System
+        "placeholder/colored/2.PNG",  // Countries API Module
+        "placeholder/colored/3.PNG",  // Wuzzuf Plus - Job Platform
+        "placeholder/colored/4.PNG",  // Elmenus - Multi-Vendor SaaS
+        "placeholder/colored/5.PNG"   // Medical E-commerce Platform
+    ];
+    
+    // Project links array - corresponds to the 5 projects in sequence
+    window.projectLinks = [
+        "http://crystalcrm.byethost12.com/",           // Crystal CRM System
+        "http://countries-api.byethost15.com/",        // Countries API Module
+        "http://wuzzuf-plus.byethost8.com/",          // Wuzzuf Plus - Job Platform
+        "http://elmenus.byethost18.com/",             // Elmenus - Multi-Vendor SaaS
+        ""                                              // Medical E-commerce Platform (no live URL)
+    ];
+    
+    // Project GitHub links array - corresponds to the 5 projects in sequence
+    window.projectGit = [
+        "https://github.com/MuhammedKAldin/php_crystal_crm",           // Crystal CRM System
+        "https://github.com/MuhammedKAldin/laravel_countries_api_crud", // Countries API Module
+        "https://github.com/MuhammedKAldin/laravel_wuzzuf",            // Wuzzuf Plus - Job Platform
+        "https://github.com/MuhammedKAldin/laravel_elmenus",           // Elmenus - Multi-Vendor SaaS
+        "https://github.com/MuhammedKAldin/laravel_ecommerce_medicine" // Medical E-commerce Platform
+    ];
+    
+    async function loadProjectsFromData() {
+        try {
+            console.log('🔄 Loading projects from embedded data...');
+            
+            // Use only the 5 specific projects
+            const projects = [
+                {
+                    "name": "Crystal CRM System",
+                    "screenshot": window.projectImages[0],
+                    "features": [
+                        "Dynamic Customer Management Dashboard",
+                        "Sales Pipeline Tracking",
+                        "Lead Management System",
+                        "Customer Communication Logs",
+                        "Reporting & Analytics",
+                        "Role-based Access Control"
+                    ],
+                    "tags": ["Fullstack", "PHP", "CRM"],
+                    "skills": ["PHP", "MySQL", "Bootstrap", "JavaScript", "AJAX"],
+                    "description": "A comprehensive CRM system built with PHP and MySQL, featuring customer management, sales tracking, and detailed reporting capabilities.",
+                    "instructions": [
+                        "Admin account (email/pw):",
+                        "- admin@gmail.com / 12345"
+                    ],
+                    "url": "http://crystalcrm.byethost12.com/",
+                    "codespace": "https://github.com/MuhammedKAldin/php_crystal_crm"
+                },
+                {
+                    "name": "Countries API Module",
+                    "screenshot": window.projectImages[1],
+                    "features": [
+                        "RESTful API with OAuth2 Authentication",
+                        "SOAP API Support",
+                        "Database Logging & Monitoring",
+                        "Automated External Gateway Notifications",
+                        "CRUD Operations via Web Dashboard",
+                        "API Rate Limiting & Security"
+                    ],
+                    "tags": ["Fullstack", "Laravel 10", "API", "SOAP", "OAuth 2"],
+                    "skills": ["Laravel", "Passport", "MySQL", "REST API", "SOAP", "OAuth2"],
+                    "description": "Advanced API module built with Laravel 10, featuring OAuth2 authentication, SOAP support, and comprehensive logging for enterprise applications.",
+                    "instructions": [
+                        "Web Routes:",
+                        "- GET /: Displays all countries",
+                        "- GET /create: Form to add a new country",
+                        "- POST /store: Saves a new country to the database",
+                        "- GET /edit/{id}: Form to edit an existing country by ID",
+                        "- PUT /edit/update/{id}: Updates the country record",
+                        "- DELETE /destroy/{id}: Deletes a country record",
+                        "",
+                        "API Routes and Logging:",
+                        "- POST /register: User registration",
+                        "- GET /countries: Fetch all countries (supports XML response for SOAP)",
+                        "- POST /countries: Add a new country",
+                        "- PUT /countries/{id}: Update an existing country",
+                        "- GET /countries/{id}: Retrieve a country by ID",
+                        "- DELETE /countries/{id}: Delete a country",
+                        "- Logging Requests [API requests are logged to the database, including dynamic callback URLs provided externally]"
+                    ],
+                    "url": "http://countries-api.byethost15.com/",
+                    "codespace": "https://github.com/MuhammedKAldin/laravel_countries_api_crud"
+                },
+                {
+                    "name": "Wuzzuf Plus - Job Platform",
+                    "screenshot": window.projectImages[2],
+                    "features": [
+                        "Job Posting & Application Management",
+                        "Applicant Tracking System",
+                        "Employer Verification System",
+                        "Advanced Search & Filtering",
+                        "Real-time Messaging System",
+                        "Interview Scheduling",
+                        "Resume Management",
+                        "Analytics Dashboard"
+                    ],
+                    "tags": ["Fullstack", "Laravel 10", "Job Platform", "Real-time"],
+                    "skills": ["Laravel", "MySQL", "Pusher", "Real-time", "Bootstrap", "JavaScript"],
+                    "description": "A comprehensive job platform built with Laravel 10, featuring job posting, applicant tracking, real-time messaging, and advanced search capabilities.",
+                    "instructions": [
+                        "Test Accounts (email/pw):",
+                        "- Applicant Account: test@example.com / 3244039",
+                        "- Recruiter Account: recruitment@microsoft.com / 3244039",
+                        "Note: The chat Feature is available between recruiters and applicants at all stages, except during the screening and declined stages."
+                    ],
+                    "url": "http://wuzzuf-plus.byethost8.com/",
+                    "codespace": "https://github.com/MuhammedKAldin/laravel_wuzzuf"
+                },
+                {
+                    "name": "Elmenus - Multi-Vendor SaaS",
+                    "screenshot": window.projectImages[3],
+                    "features": [
+                        "Restaurant Menu Management",
+                        "Multi-Vendor Support",
+                        "Order Processing & Tracking",
+                        "Payment Integration (Paymob)",
+                        "Customer Management",
+                        "Analytics & Reporting",
+                        "API Endpoints",
+                        "Real-time Order Updates"
+                    ],
+                    "tags": ["Fullstack", "Laravel 10", "SaaS", "Multi-Vendor", "Paymob"],
+                    "description": "A comprehensive SaaS platform for restaurant management, featuring multi-vendor support, order processing, and integrated payment systems.",
+                    "instructions": [
+                        "Test Accounts (email/pw):",
+                        "- McDonald's Owner: test@example.com / test12345678",
+                        "- McDonald's Owner: test2@gmail.com / test12345678",
+                        "- Customer sample: test3@gmail.com / test12345678"
+                    ],
+                    "url": "http://elmenus.byethost18.com/",
+                    "codespace": "https://github.com/MuhammedKAldin/laravel_elmenus"
+                },
+                {
+                    "name": "Medical E-commerce Platform",
+                    "screenshot": window.projectImages[4],
+                    "features": [
+                        "Product Catalog Management",
+                        "Shopping Cart & Checkout",
+                        "Guest & User Checkout",
+                        "Order Management System",
+                        "Invoice Generation",
+                        "Admin Dashboard",
+                        "Role-based Access Control",
+                        "Product Image Handling",
+                        "Inventory Management"
+                    ],
+                    "tags": ["Fullstack", "Laravel 10", "E-commerce", "Medical", "Healthcare"],
+                    "skills": ["Laravel", "MySQL", "Blade", "TailwindCSS", "Bootstrap", "JavaScript", "Payment Integration"],
+                    "description": "A specialized e-commerce platform for medical and healthcare products, featuring comprehensive product management, secure checkout, and administrative tools.",
+                    "instructions": [
+                        "Admin account:",
+                        "- Email: admin@gmail.com / Password: password",
+                        "User account:",
+                        "- Email: mohamed@gmail.com / Password: password",
+                        "",
+                        "Public Routes:",
+                        "- / : Home page",
+                        "- /products : Products listing",
+                        "- /products/{id} : Single product",
+                        "- /cart : Cart management",
+                        "- /checkout : Checkout",
+                        "- /order-confirmation : Order confirmation",
+                        "",
+                        "Admin Routes:",
+                        "- /admin/dashboard : Admin dashboard",
+                        "- /admin/products : Product management",
+                        "- /admin/products/logs : Product logs",
+                        "- /admin/invoices : Invoice management"
+                    ],
+                    "url": "",
+                    "codespace": "https://github.com/MuhammedKAldin/laravel_ecommerce_medicine"
+                }
+            ];
+            
+            console.log('✅ Projects data loaded successfully:', projects.length, 'projects');
+            console.log('📋 Projects:', projects);
+            
+            // Verify each project has required fields
+            projects.forEach((project, index) => {
+                console.log(`Project ${index + 1}:`, project.name);
+                if (!project.name || !project.description) {
+                    console.warn(`⚠️ Project ${index + 1} missing required fields:`, project);
+                }
+            });
+            
+            displayProjects(projects);
+        } catch (error) {
+            console.error('❌ Error loading projects:', error);
+            console.log('🔄 Falling back to static projects...');
+            displayFallbackProjects();
+        }
+    }
+    
     function displayProjects(projects) {
         const container = document.getElementById('projects-container');
-        if (!container) return;
+        if (!container) {
+            console.error('❌ Projects container not found');
+            return;
+        }
         
-        console.log('Displaying projects:', projects.length);
+        console.log('🎨 Displaying projects:', projects.length);
+        console.log('📍 Container:', container);
         
         // Clear container first
         container.innerHTML = '';
         
+        // Debug: Log each project being processed
         projects.forEach((project, index) => {
+            console.log(`📱 Creating project card ${index + 1}:`, project.name);
+            console.log(`   - Tags:`, project.tags);
+            console.log(`   - Skills:`, project.skills);
+            console.log(`   - Screenshot:`, project.screenshot);
+            
             const projectCard = createProjectCard(project, index);
+            if (projectCard) {
             container.appendChild(projectCard);
+                console.log(`✅ Project card ${index + 1} added to container`);
+            } else {
+                console.error(`❌ Failed to create project card ${index + 1}`);
+            }
         });
+        
+        console.log('✅ All project cards created and added to container');
+        console.log('🔍 Final container children count:', container.children.length);
         
         // Initialize tilt effects for the new project cards
         if (typeof VanillaTilt !== 'undefined') {
-            VanillaTilt.init(document.querySelectorAll('.project-card.card-3d'), {
+            console.log('🎯 Initializing VanillaTilt for project cards...');
+            const tiltCards = document.querySelectorAll('.project-card.card-3d');
+            console.log('🎯 Found tilt cards:', tiltCards.length);
+            VanillaTilt.init(tiltCards, {
                 max: 15,
                 speed: 400,
                 glare: true,
                 "max-glare": 0.3,
             });
+            console.log('✅ VanillaTilt initialized for project cards');
+        } else {
+            console.warn('⚠️ VanillaTilt not available for 3D effects');
         }
     }
     
     function createProjectCard(project, index) {
+        console.log(`🔨 Creating project card for: ${project.name}`);
+        
         const card = document.createElement('div');
         card.className = 'project-card card-3d fade-in';
         card.style.animationDelay = `${index * 0.1}s`;
@@ -192,7 +652,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Get appropriate icon based on project type
         const getProjectIcon = (projectName, skills) => {
             const name = projectName.toLowerCase();
-            const skillList = skills.join(' ').toLowerCase();
+            const skillList = skills ? skills.join(' ').toLowerCase() : '';
             
             if (name.includes('crm') || name.includes('erp') || name.includes('system')) {
                 return 'fas fa-cogs';
@@ -214,20 +674,38 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         
         const projectIcon = getProjectIcon(project.name, project.skills);
+        console.log(`   - Icon selected: ${projectIcon}`);
         
+        // Create project card with image and 3D effects
         card.innerHTML = `
-            <div class="project-icon">
+            <div class="project-image-container">
+                <div class="project-image">
+                    <img src="${project.screenshot || 'app1.PNG'}" alt="${project.name}" onerror="this.src='app1.PNG'">
+                    <div class="project-overlay">
+                        <div class="project-overlay-content">
                 <i class="${projectIcon}"></i>
+                            <h4>${project.name}</h4>
             </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-content">
             <h3 class="project-title">${project.name}</h3>
             <p class="project-description">${project.description}</p>
             <div class="project-tags">
-                ${project.skills.slice(0, 3).map(skill => `<span class="project-tag">${skill}</span>`).join('')}
-                ${project.skills.length > 3 ? `<span class="project-tag">+${project.skills.length - 3}</span>` : ''}
+                    ${project.tags ? project.tags.slice(0, 3).map(tag => `<span class="project-tag">${tag}</span>`).join('') : ''}
+                    ${project.skills ? project.skills.slice(0, 3).map(skill => `<span class="skill-tag">${skill}</span>`).join('') : ''}
             </div>
             <div class="project-actions">
-                <a href="${project.codespace}" target="_blank" class="project-btn primary">View Code</a>
-                ${project.url ? `<a href="${project.url}" target="_blank" class="project-btn secondary">Live Demo</a>` : ''}
+                    <a href="${project.codespace}" target="_blank" class="project-btn primary">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                    ${project.url && project.url !== '#' ? `
+                        <a href="${project.url}" target="_blank" class="project-btn secondary">
+                            <i class="fas fa-external-link-alt"></i> Demo
+                        </a>
+                    ` : ''}
+                </div>
             </div>
         `;
         
@@ -236,6 +714,7 @@ document.addEventListener('DOMContentLoaded', function() {
             showProjectModal(project);
         });
         
+        console.log(`✅ Project card created successfully for: ${project.name}`);
         return card;
     }
     
@@ -253,40 +732,149 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const fallbackProjects = [
             {
-                name: "Enterprise Resource Planning (ERP) System",
-                description: "A comprehensive ERP system designed for enterprise-level businesses, featuring integrated modules for all major business operations.",
-                skills: ["Laravel", "PHP", "MySQL", "Vue.js", "Redis", "Microservices"],
-                screenshot: "app1.PNG"
+                "name": "Crystal CRM System",
+                "screenshot": window.projectImages[0],
+                "features": [
+                    "Dynamic Customer Management Dashboard",
+                    "Sales Pipeline Tracking",
+                    "Lead Management System",
+                    "Customer Communication Logs",
+                    "Reporting & Analytics",
+                    "Role-based Access Control"
+                ],
+                "tags": ["Fullstack", "PHP", "CRM"],
+                "skills": ["PHP", "MySQL", "Bootstrap", "JavaScript", "AJAX"],
+                "description": "A comprehensive CRM system built with PHP and MySQL, featuring customer management, sales tracking, and detailed reporting capabilities.",
+                "instructions": [
+                    "Admin account (email/pw):",
+                    "- admin@gmail.com / 12345"
+                ],
+                "url": "http://crystalcrm.byethost12.com/",
+                "codespace": "https://github.com/MuhammedKAldin/php_crystal_crm"
             },
             {
-                name: "Learning Management System (LMS)",
-                description: "A modern Learning Management System built for educational institutions and corporate training, featuring advanced content delivery and student engagement tools.",
-                skills: ["Laravel", "PHP", "MySQL", "React", "Video Streaming", "WebRTC"],
-                screenshot: "app2.PNG"
+                "name": "Countries API Module",
+                "screenshot": window.projectImages[1],
+                "features": [
+                    "RESTful API with OAuth2 Authentication",
+                    "SOAP API Support",
+                    "Database Logging & Monitoring",
+                    "Automated External Gateway Notifications",
+                    "CRUD Operations via Web Dashboard",
+                    "API Rate Limiting & Security"
+                ],
+                "tags": ["Fullstack", "Laravel 10", "API", "SOAP", "OAuth 2"],
+                "skills": ["Laravel", "Passport", "MySQL", "REST API", "SOAP", "OAuth2"],
+                "description": "Advanced API module built with Laravel 10, featuring OAuth2 authentication, SOAP support, and comprehensive logging for enterprise applications.",
+                "instructions": [
+                    "Web Routes:",
+                    "- GET /: Displays all countries",
+                    "- GET /create: Form to add a new country",
+                    "- POST /store: Saves a new country to the database",
+                    "- GET /edit/{id}: Form to edit an existing country by ID",
+                    "- PUT /edit/update/{id}: Updates the country record",
+                    "- DELETE /destroy/{id}: Deletes a country record",
+                    "",
+                    "API Routes and Logging:",
+                    "- POST /register: User registration",
+                    "- GET /countries: Fetch all countries (supports XML response for SOAP)",
+                    "- POST /countries: Add a new country",
+                    "- PUT /countries/{id}: Update an existing country",
+                    "- GET /countries/{id}: Retrieve a country by ID",
+                    "- DELETE /countries/{id}: Delete a country",
+                    "- Logging Requests [API requests are logged to the database, including dynamic callback URLs provided externally]"
+                ],
+                "url": "http://countries-api.byethost15.com/",
+                "codespace": "https://github.com/MuhammedKAldin/laravel_countries_api_crud"
             },
             {
-                name: "Real-time Chat Application",
-                description: "A modern real-time chat application with advanced features like file sharing, group chats, and end-to-end encryption for secure communication.",
-                skills: ["Laravel", "PHP", "MySQL", "Vue.js", "Pusher", "WebSockets"],
-                screenshot: "app3.PNG"
+                "name": "Wuzzuf Plus - Job Platform",
+                "screenshot": window.projectImages[2],
+                "features": [
+                    "Job Posting & Application Management",
+                    "Applicant Tracking System",
+                    "Employer Verification System",
+                    "Advanced Search & Filtering",
+                    "Real-time Messaging System",
+                    "Interview Scheduling",
+                    "Resume Management",
+                    "Analytics Dashboard"
+                ],
+                "tags": ["Fullstack", "Laravel 10", "Job Platform", "Real-time"],
+                "skills": ["Laravel", "MySQL", "Pusher", "Real-time", "Bootstrap", "JavaScript"],
+                "description": "A comprehensive job platform built with Laravel 10, featuring job posting, applicant tracking, real-time messaging, and advanced search capabilities.",
+                "instructions": [
+                    "Test Accounts (email/pw):",
+                    "- Applicant Account: test@example.com / 3244039",
+                    "- Recruiter Account: recruitment@microsoft.com / 3244039",
+                    "Note: The chat Feature is available between recruiters and applicants at all stages, except during the screening and declined stages."
+                ],
+                "url": "http://wuzzuf-plus.byethost8.com/",
+                "codespace": "https://github.com/MuhammedKAldin/laravel_wuzzuf"
             },
             {
-                name: "Crystal CRM System",
-                description: "A comprehensive CRM system with sales pipeline tracking, lead management, customer communication logs, and advanced reporting capabilities.",
-                skills: ["Laravel", "PHP", "MySQL", "Bootstrap", "JavaScript", "AJAX"],
-                screenshot: "app1.PNG"
+                "name": "Elmenus - Multi-Vendor SaaS",
+                "screenshot": window.projectImages[3],
+                "features": [
+                    "Restaurant Menu Management",
+                    "Multi-Vendor Support",
+                    "Order Processing & Tracking",
+                    "Payment Integration (Paymob)",
+                    "Customer Management",
+                    "Analytics & Reporting",
+                    "API Endpoints",
+                    "Real-time Order Updates"
+                ],
+                "tags": ["Fullstack", "Laravel 10", "SaaS", "Multi-Vendor", "Paymob"],
+                "description": "A comprehensive SaaS platform for restaurant management, featuring multi-vendor support, order processing, and integrated payment systems.",
+                "instructions": [
+                    "Test Accounts (email/pw):",
+                    "- McDonald's Owner: test@example.com / test12345678",
+                    "- McDonald's Owner: test2@gmail.com / test12345678",
+                    "- Customer sample: test3@gmail.com / test12345678"
+                ],
+                "url": "http://elmenus.byethost18.com/",
+                "codespace": "https://github.com/MuhammedKAldin/laravel_elmenus"
             },
             {
-                name: "E-commerce Multi-vendor Platform",
-                description: "A full-featured multi-vendor e-commerce platform with order processing, customer management, analytics, and real-time updates.",
-                skills: ["Laravel", "PHP", "MySQL", "Vue.js", "Payment Integration", "Real-time"],
-                screenshot: "app2.PNG"
-            },
-            {
-                name: "Payment Gateway Integration System",
-                description: "A robust payment integration system supporting multiple gateways including Paymob, Stripe, and PayPal with secure transaction handling.",
-                skills: ["Laravel", "PHP", "MySQL", "API Integration", "Security", "Webhooks"],
-                screenshot: "app3.PNG"
+                "name": "Medical E-commerce Platform",
+                "screenshot": window.projectImages[4],
+                "features": [
+                    "Product Catalog Management",
+                    "Shopping Cart & Checkout",
+                    "Guest & User Checkout",
+                    "Order Management System",
+                    "Invoice Generation",
+                    "Admin Dashboard",
+                    "Role-based Access Control",
+                    "Product Image Handling",
+                    "Inventory Management"
+                ],
+                "tags": ["Fullstack", "Laravel 10", "E-commerce", "Medical", "Healthcare"],
+                "skills": ["Laravel", "MySQL", "Blade", "TailwindCSS", "Bootstrap", "JavaScript", "Payment Integration"],
+                "description": "A specialized e-commerce platform for medical and healthcare products, featuring comprehensive product management, secure checkout, and administrative tools.",
+                "instructions": [
+                    "Admin account:",
+                    "- Email: admin@gmail.com / Password: password",
+                    "User account:",
+                    "- Email: mohamed@gmail.com / Password: password",
+                    "",
+                    "Public Routes:",
+                    "- / : Home page",
+                    "- /products : Products listing",
+                    "- /products/{id} : Single product",
+                    "- /cart : Cart management",
+                    "- /checkout : Checkout",
+                    "- /order-confirmation : Order confirmation",
+                    "",
+                    "Admin Routes:",
+                    "- /admin/dashboard : Admin dashboard",
+                    "- /admin/products : Product management",
+                    "- /admin/products/logs : Product logs",
+                    "- /admin/invoices : Invoice management"
+                ],
+                "url": "",
+                "codespace": "https://github.com/MuhammedKAldin/laravel_ecommerce_medicine"
             }
         ];
         
@@ -315,7 +903,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Get appropriate icon for the modal
         const getProjectIcon = (projectName, skills) => {
             const name = projectName.toLowerCase();
-            const skillList = skills.join(' ').toLowerCase();
+            const skillList = skills ? skills.join(' ').toLowerCase() : '';
             
             if (name.includes('crm') || name.includes('erp') || name.includes('system')) {
                 return 'fas fa-cogs';
@@ -339,35 +927,68 @@ document.addEventListener('DOMContentLoaded', function() {
         const projectIcon = getProjectIcon(project.name, project.skills);
         
         modalBody.innerHTML = `
-            <div class="text-center mb-4">
-                <div class="project-modal-icon" style="font-size: 4rem; color: var(--primary-color); margin-bottom: 1rem;">
-                    <i class="${projectIcon}"></i>
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="project-modal-image">
+                        <img src="${project.screenshot || 'app1.PNG'}" alt="${project.name}" class="img-fluid rounded" onerror="this.src='app1.PNG'">
+                    </div>
+                </div>
+                <div class="col-12 mb-4">
+                    <div class="project-modal-content">
+                        <div class="project-modal-header mb-4">
+                            <div class="project-modal-icon mb-3">
+                                <i class="${projectIcon}"></i>
+                            </div>
+                            <h3 class="text-primary mb-2">${project.name}</h3>
+                            <p class="text">${project.description}</p>
+                        </div>
+                        
+                        ${project.skills ? `
+                            <div class="mb-4">
+                                <h6 class="text-primary mb-2">Technologies Used:</h6>
+                                <div class="d-flex flex-wrap gap-2">
+                                    ${project.skills.map(skill => `<span class="badge bg-secondary">${skill}</span>`).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+                        
+                        ${project.features ? `
+                            <div class="mb-4">
+                                <h6 class="text-primary mb-2">Key Features:</h6>
+                                <ul class="list-unstyled">
+                                    ${project.features.map(feature => `<li><i class="fas fa-check text-success me-2"></i>${feature}</li>`).join('')}
+                                </ul>
+                            </div>
+                        ` : ''}
+                    </div>
                 </div>
             </div>
-            <h4 class="text-primary mb-3">${project.name}</h4>
-            <p class="mb-3">${project.description}</p>
             
-            <h5 class="text-primary mb-2">Technologies Used:</h5>
-            <div class="mb-3">
-                ${project.skills.map(skill => `<span class="badge bg-primary me-2">${skill}</span>`).join('')}
-            </div>
-            
-            ${project.features ? `
-                <h5 class="text-primary mb-2">Key Features:</h5>
-                <ul class="mb-3">
-                    ${project.features.map(feature => `<li>${feature}</li>`).join('')}
-                </ul>
-            ` : ''}
-            
-            <div class="d-flex gap-3 justify-content-center">
-                <a href="${project.codespace}" target="_blank" class="btn btn-primary">
-                    <i class="fab fa-github me-2"></i>View Code
-                </a>
-                ${project.url ? `
-                    <a href="${project.url}" target="_blank" class="btn btn-outline-primary">
-                        <i class="fas fa-external-link-alt me-2"></i>Live Demo
-                    </a>
-                ` : ''}
+            <div class="row mt-4">
+                <div class="col-6">
+                    <div class="project-modal-actions">
+                        <div class="d-grid gap-2 d-md-flex">
+                            <a href="${project.codespace}" target="_blank" class="btn btn-primary btn-lg w-100">
+                                <i class="fab fa-github me-2"></i>View Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="project-modal-actions">
+                        <div class="d-grid gap-2 d-md-flex">
+                            ${project.url && project.url !== '#' ? `
+                                <a href="${project.url}" target="_blank" class="btn btn-outline-primary btn-lg w-100">
+                                    <i class="fas fa-external-link-alt me-2"></i>Live Demo
+                                </a>
+                            ` : `
+                                <button class="btn btn-outline-secondary btn-lg w-100" disabled>
+                                    <i class="fas fa-external-link-alt me-2"></i>Demo Not Available
+                                </button>
+                            `}
+                        </div>
+                    </div>
+                </div>
             </div>
         `;
         
