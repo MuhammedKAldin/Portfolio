@@ -23,7 +23,7 @@
         },
         {
             "name": "Countries API Module",
-            "screenshot": "placeholder/colored/1.png",
+            "screenshot": "placeholder/colored/2.png",
             "features": [
                 "RESTful API with OAuth2 Authentication",
                 "SOAP API Support",
@@ -58,7 +58,7 @@
         },
         {
             "name": "Wuzzuf Plus - Job Platform",
-            "screenshot": "placeholder/colored/1.png",
+            "screenshot": "placeholder/colored/3.png",
             "features": [
                 "Job Posting & Application Management",
                 "Applicant Tracking System",
@@ -83,7 +83,7 @@
         },
         {
             "name": "Elmenus - Multi-Vendor SaaS",
-            "screenshot": "placeholder/colored/1.png",
+            "screenshot": "placeholder/colored/4.png",
             "features": [
                 "Restaurant Menu Management",
                 "Multi-Vendor Support",
@@ -107,7 +107,7 @@
         },
         {
             "name": "Medical E-commerce Platform",
-            "screenshot": "placeholder/colored/1.png",
+            "screenshot": "placeholder/colored/5.png",
             "features": [
                 "Product Catalog Management",
                 "Shopping Cart & Checkout",
@@ -147,7 +147,7 @@
         },
         {
             "name": "Enterprise Resource Planning (ERP) System",
-            "screenshot": "placeholder/colored/1.png",
+            "screenshot": "placeholder/colored/6.png",
             "features": [
                 "Inventory Management",
                 "Financial Accounting",
@@ -178,7 +178,7 @@
         },
         {
             "name": "Learning Management System (LMS)",
-            "screenshot": "placeholder/colored/1.png",
+            "screenshot": "placeholder/colored/7.png",
             "features": [
                 "Course Creation & Management",
                 "Student Enrollment System",
@@ -210,7 +210,7 @@
         },
         {
             "name": "Real-time Chat Application",
-            "screenshot": "placeholder/colored/1.png",
+            "screenshot": "placeholder/colored/8.png",
             "features": [
                 "Real-time Messaging",
                 "User Authentication",
