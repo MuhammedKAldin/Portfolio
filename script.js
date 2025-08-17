@@ -680,7 +680,7 @@ document.addEventListener('DOMContentLoaded', function() {
         card.innerHTML = `
             <div class="project-image-container">
                 <div class="project-image">
-                    <img src="${project.screenshot || 'app1.PNG'}" alt="${project.name}" onerror="this.src='app1.PNG'">
+                    <img src="${project.screenshot || 'images/app1.PNG'}" alt="${project.name}" onerror="this.src='app1.PNG'">
                     <div class="project-overlay">
                         <div class="project-overlay-content">
                 <i class="${projectIcon}"></i>
