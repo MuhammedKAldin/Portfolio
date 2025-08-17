@@ -396,11 +396,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Project images array - corresponds to the 5 projects in sequence
     window.projectImages = [
-        "placeholder/colored/1.PNG",  // Crystal CRM System
-        "placeholder/colored/2.PNG",  // Countries API Module
-        "placeholder/colored/3.PNG",  // Wuzzuf Plus - Job Platform
-        "placeholder/colored/4.PNG",  // Elmenus - Multi-Vendor SaaS
-        "placeholder/colored/5.PNG"   // Medical E-commerce Platform
+        "placeholder/colored/1.png",  // Crystal CRM System
+        "placeholder/colored/1.png",  // Countries API Module
+        "placeholder/colored/1.png",  // Wuzzuf Plus - Job Platform
+        "placeholder/colored/1.png",  // Elmenus - Multi-Vendor SaaS
+        "placeholder/colored/1.png"   // Medical E-commerce Platform
     ];
     
     // Project links array - corresponds to the 5 projects in sequence

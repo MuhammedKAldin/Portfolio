@@ -2,7 +2,7 @@
     "projects": [
         {
             "name": "Crystal CRM System",
-            "screenshot": "/PHP-Backend/demo_crm/screenshot.png",
+            "screenshot": "placeholder/colored/1.png",
             "features": [
                 "Dynamic Customer Management Dashboard",
                 "Sales Pipeline Tracking",
@@ -23,7 +23,7 @@
         },
         {
             "name": "Countries API Module",
-            "screenshot": "/PHP-Backend/demo_countries-api/screenshot.png",
+            "screenshot": "placeholder/colored/1.png",
             "features": [
                 "RESTful API with OAuth2 Authentication",
                 "SOAP API Support",
@@ -58,7 +58,7 @@
         },
         {
             "name": "Wuzzuf Plus - Job Platform",
-            "screenshot": "/PHP-Backend/demo_Wuzzuf/screenshot.png",
+            "screenshot": "placeholder/colored/1.png",
             "features": [
                 "Job Posting & Application Management",
                 "Applicant Tracking System",
@@ -83,7 +83,7 @@
         },
         {
             "name": "Elmenus - Multi-Vendor SaaS",
-            "screenshot": "/PHP-Backend/demo_Elmenus/screenshot.png",
+            "screenshot": "placeholder/colored/1.png",
             "features": [
                 "Restaurant Menu Management",
                 "Multi-Vendor Support",
@@ -107,7 +107,7 @@
         },
         {
             "name": "Medical E-commerce Platform",
-            "screenshot": "/PHP-Backend/demo_ecommerce_medicine/screenshot.png",
+            "screenshot": "placeholder/colored/1.png",
             "features": [
                 "Product Catalog Management",
                 "Shopping Cart & Checkout",
@@ -147,7 +147,7 @@
         },
         {
             "name": "Enterprise Resource Planning (ERP) System",
-            "screenshot": "app1.PNG",
+            "screenshot": "placeholder/colored/1.png",
             "features": [
                 "Inventory Management",
                 "Financial Accounting",
@@ -178,7 +178,7 @@
         },
         {
             "name": "Learning Management System (LMS)",
-            "screenshot": "app2.PNG",
+            "screenshot": "placeholder/colored/1.png",
             "features": [
                 "Course Creation & Management",
                 "Student Enrollment System",
@@ -210,7 +210,7 @@
         },
         {
             "name": "Real-time Chat Application",
-            "screenshot": "app3.PNG",
+            "screenshot": "placeholder/colored/1.png",
             "features": [
                 "Real-time Messaging",
                 "User Authentication",
