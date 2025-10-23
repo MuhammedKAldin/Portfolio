@@ -175,161 +175,90 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('=== PROJECTS DEBUG END ===')
     }
 
-    // Project images array - corresponds to the 5 projects in sequence
+    // Project images array - corresponds to the 6 projects in sequence
     window.projectImages = [
         "placeholder/colored/1.png",  // Crystal CRM System
-        "placeholder/colored/2.png",  // Countries API Module
+        "placeholder/colored/2.png",  // AI Smartshop - AI-Powered E-Commerce
         "placeholder/colored/3.png",  // Wuzzuf Plus - Job Platform
         "placeholder/colored/4.png",  // Elmenus - Multi-Vendor SaaS
-        "placeholder/colored/5.png"   // Medical E-commerce Platform
+        "placeholder/colored/5.png",  // Medical E-commerce Platform
+        "placeholder/colored/6.png"   // Laravel-React E-commerce SPA
     ]
 
-    // Project links array - corresponds to the 5 projects in sequence
+    // Project links array - corresponds to the 6 projects in sequence
     window.projectLinks = [
         "http://crystalcrm.byethost12.com/",           // Crystal CRM System
-        "http://countries-api.byethost15.com/",        // Countries API Module
+        "",                                            // AI Smartshop - No live URL
         "http://wuzzuf-plus.byethost8.com/",          // Wuzzuf Plus - Job Platform
         "http://elmenus.byethost18.com/",             // Elmenus - Multi-Vendor SaaS
-        ""                                              // Medical E-commerce Platform (no live URL)
+        "",                                            // Medical E-commerce Platform (no live URL)
+        ""                                             // Laravel-React E-commerce SPA (no live URL)
     ]
 
-    // Project GitHub links array - corresponds to the 5 projects in sequence
+    // Project GitHub links array - corresponds to the 6 projects in sequence
     window.projectGit = [
         "https://github.com/MuhammedKAldin/php_crystal_crm",           // Crystal CRM System
-        "https://github.com/MuhammedKAldin/laravel_countries_api_crud", // Countries API Module
+        "https://github.com/MuhammedKAldin/AI-Smartshop",              // AI Smartshop - AI-Powered E-Commerce
         "https://github.com/MuhammedKAldin/laravel_wuzzuf",            // Wuzzuf Plus - Job Platform
         "https://github.com/MuhammedKAldin/laravel_elmenus",           // Elmenus - Multi-Vendor SaaS
-        "https://github.com/MuhammedKAldin/laravel_ecommerce_medicine" // Medical E-commerce Platform
+        "https://github.com/MuhammedKAldin/laravel_ecommerce_medicine", // Medical E-commerce Platform
+        "https://github.com/MuhammedKAldin/laravel-react-ecommerce"    // Laravel-React E-commerce SPA
     ]
 
     async function loadProjectsFromData() {
         try {
             console.log('🔄 Loading projects from embedded data...')
 
-            // Use only the 5 specific projects
+            // Use only the 6 specific projects
             const projects = [
                 {
-                    "name": "Crystal CRM System",
-                    "screenshot": window.projectImages[0],
-                    "features": [
-                        "Dynamic Customer Management Dashboard",
-                        "Sales Pipeline Tracking",
-                        "Lead Management System",
-                        "Customer Communication Logs",
-                        "Reporting & Analytics",
-                        "Role-based Access Control"
-                    ],
-                    "tags": ["Fullstack", "PHP", "CRM"],
-                    "skills": ["PHP", "MySQL", "Bootstrap", "JavaScript", "AJAX"],
-                    "description": "A comprehensive CRM system built with PHP and MySQL, featuring customer management, sales tracking, and detailed reporting capabilities.",
-                    "instructions": [
-                        "Admin account (email/pw):",
-                        "- admin@gmail.com / 12345"
-                    ],
-                    "url": "http://crystalcrm.byethost12.com/",
-                    "codespace": "https://github.com/MuhammedKAldin/php_crystal_crm"
-                },
-                {
-                    "name": "Countries API Module",
+                    "name": "AI-Powered E-Commerce Platform",
                     "screenshot": window.projectImages[1],
                     "features": [
-                        "RESTful API with OAuth2 Authentication",
-                        "SOAP API Support",
-                        "Database Logging & Monitoring",
-                        "Automated External Gateway Notifications",
-                        "CRUD Operations via Web Dashboard",
-                        "API Rate Limiting & Security"
+                        "Machine Learning Product Recommendations",
+                        "Advanced Shopping Cart with Real-time Updates",
+                        "Secure Payment Gateway Integration (Stripe)",
+                        "Multi-tenant User & Admin Management",
+                        "Complete Order Lifecycle Management",
+                        "AI-Driven Personalization Engine",
+                        "User Behavior Analytics & Tracking",
+                        "Context-Aware Smart Suggestions",
+                        "Modern Admin Panel (Filament)",
+                        "Responsive Progressive Web App (PWA)"
                     ],
-                    "tags": ["Fullstack", "Laravel 10", "API", "SOAP", "OAuth 2"],
-                    "skills": ["Laravel", "Passport", "MySQL", "REST API", "SOAP", "OAuth2"],
-                    "description": "Advanced API module built with Laravel 10, featuring OAuth2 authentication, SOAP support, and comprehensive logging for enterprise applications.",
+                    "tags": ["Fullstack", "Laravel 10", "AI", "E-commerce", "Stripe", "Gemini"],
+                    "skills": ["Laravel", "Alpine.js", "TailwindCSS", "MySQL", "Stripe", "Google Gemini"],
+                    "description": "A modern, AI-powered e-commerce platform with intelligent product recommendations, Stripe payments, and a full admin panel.",
                     "instructions": [
-                        "Web Routes:",
-                        "- GET /: Displays all countries",
-                        "- GET /create: Form to add a new country",
-                        "- POST /store: Saves a new country to the database",
-                        "- GET /edit/{id}: Form to edit an existing country by ID",
-                        "- PUT /edit/update/{id}: Updates the country record",
-                        "- DELETE /destroy/{id}: Deletes a country record",
-                        "",
-                        "API Routes and Logging:",
-                        "- POST /register: User registration",
-                        "- GET /countries: Fetch all countries (supports XML response for SOAP)",
-                        "- POST /countries: Add a new country",
-                        "- PUT /countries/{id}: Update an existing country",
-                        "- GET /countries/{id}: Retrieve a country by ID",
-                        "- DELETE /countries/{id}: Delete a country",
-                        "- Logging Requests [API requests are logged to the database, including dynamic callback URLs provided externally]"
+                        "Admin Account:",
+                        "- Email: admin@smartshop.com / Password: password",
+                        "Customer Accounts:",
+                        "- customer@smartshop.com / password",
+                        "- jane@smartshop.com / password",
+                        "- mike@smartshop.com / password",
+                        "- moha@gmail.com / password"
                     ],
-                    "url": "http://countries-api.byethost15.com/",
-                    "codespace": "https://github.com/MuhammedKAldin/laravel_countries_api_crud"
+                    "url": "",
+                    "codespace": "https://github.com/MuhammedKAldin/AI-Smartshop"
                 },
                 {
-                    "name": "Wuzzuf Plus - Job Platform",
-                    "screenshot": window.projectImages[2],
-                    "features": [
-                        "Job Posting & Application Management",
-                        "Applicant Tracking System",
-                        "Employer Verification System",
-                        "Advanced Search & Filtering",
-                        "Real-time Messaging System",
-                        "Interview Scheduling",
-                        "Resume Management",
-                        "Analytics Dashboard"
-                    ],
-                    "tags": ["Fullstack", "Laravel 10", "Job Platform", "Real-time"],
-                    "skills": ["Laravel", "MySQL", "Pusher", "Real-time", "Bootstrap", "JavaScript"],
-                    "description": "A comprehensive job platform built with Laravel 10, featuring job posting, applicant tracking, real-time messaging, and advanced search capabilities.",
-                    "instructions": [
-                        "Test Accounts (email/pw):",
-                        "- Applicant Account: test@example.com / 3244039",
-                        "- Recruiter Account: recruitment@microsoft.com / 3244039",
-                        "Note: The chat Feature is available between recruiters and applicants at all stages, except during the screening and declined stages."
-                    ],
-                    "url": "http://wuzzuf-plus.byethost8.com/",
-                    "codespace": "https://github.com/MuhammedKAldin/laravel_wuzzuf"
-                },
-                {
-                    "name": "Elmenus - Multi-Vendor SaaS",
-                    "screenshot": window.projectImages[3],
-                    "features": [
-                        "Restaurant Menu Management",
-                        "Multi-Vendor Support",
-                        "Order Processing & Tracking",
-                        "Payment Integration (Paymob)",
-                        "Customer Management",
-                        "Analytics & Reporting",
-                        "API Endpoints",
-                        "Real-time Order Updates"
-                    ],
-                    "tags": ["Fullstack", "Laravel 10", "SaaS", "Multi-Vendor", "Paymob"],
-                    "description": "A comprehensive SaaS platform for restaurant management, featuring multi-vendor support, order processing, and integrated payment systems.",
-                    "instructions": [
-                        "Test Accounts (email/pw):",
-                        "- McDonald's Owner: test@example.com / test12345678",
-                        "- McDonald's Owner: test2@gmail.com / test12345678",
-                        "- Customer sample: test3@gmail.com / test12345678"
-                    ],
-                    "url": "http://elmenus.byethost18.com/",
-                    "codespace": "https://github.com/MuhammedKAldin/laravel_elmenus"
-                },
-                {
-                    "name": "Medical E-commerce Platform",
+                    "name": "Healthcare E-Commerce Platform",
                     "screenshot": window.projectImages[4],
                     "features": [
-                        "Product Catalog Management",
-                        "Shopping Cart & Checkout",
-                        "Guest & User Checkout",
-                        "Order Management System",
-                        "Invoice Generation",
-                        "Admin Dashboard",
-                        "Role-based Access Control",
-                        "Product Image Handling",
-                        "Inventory Management"
+                        "Advanced Product Catalog Management",
+                        "Secure Shopping Cart & Checkout",
+                        "Guest & User Authentication",
+                        "Comprehensive Order Management",
+                        "Automated Invoice Generation",
+                        "Admin Dashboard & Analytics",
+                        "Role-based Access Control (RBAC)",
+                        "Image Processing & Optimization",
+                        "Inventory Management System",
+                        "Compliance & Security Features"
                     ],
-                    "tags": ["Fullstack", "Laravel 10", "E-commerce", "Medical", "Healthcare"],
-                    "skills": ["Laravel", "MySQL", "Blade", "TailwindCSS", "Bootstrap", "JavaScript", "Payment Integration"],
-                    "description": "A specialized e-commerce platform for medical and healthcare products, featuring comprehensive product management, secure checkout, and administrative tools.",
+                    "tags": ["Fullstack", "Laravel 10", "E-commerce", "Healthcare", "Security", "Compliance"],
+                    "skills": ["Laravel", "MySQL", "Blade", "TailwindCSS", "Bootstrap", "JavaScript", "Payment Integration", "Security"],
+                    "description": "Specialized healthcare e-commerce platform with advanced security features, compliance management, automated inventory tracking, and secure payment processing designed for medical and pharmaceutical product sales.",
                     "instructions": [
                         "Admin account:",
                         "- Email: admin@gmail.com / Password: password",
@@ -352,6 +281,92 @@ document.addEventListener('DOMContentLoaded', function () {
                     ],
                     "url": "",
                     "codespace": "https://github.com/MuhammedKAldin/laravel_ecommerce_medicine"
+                },
+                {
+                    "name": "Laravel-React E-commerce SPA",
+                    "screenshot": window.projectImages[5],
+                    "features": [
+                        "Modern React Single Page Application",
+                        "Laravel Sanctum API Authentication",
+                        "Token-based Security System",
+                        "Protected Routes & Middleware",
+                        "Real-time Cart Management",
+                        "Secure Payment Processing",
+                        "Responsive Mobile-First Design",
+                        "Rate Limiting & Security Headers",
+                        "CSRF Protection & XSS Prevention",
+                        "Local Storage Token Management"
+                    ],
+                    "tags": ["Fullstack", "Laravel 10", "React", "SPA", "API", "Security"],
+                    "skills": ["Laravel", "React", "Sanctum", "MySQL", "API Development", "Token Authentication", "Security", "SPA"],
+                    "description": "Modern full-stack e-commerce application built with Laravel backend API and React frontend SPA, featuring secure token-based authentication, real-time updates, and enterprise-grade security implementation.",
+                    "instructions": [
+                        "Test Account:",
+                        "- Email: muhammedk.aldin@gmail.com / Password: Test@123456",
+                        "",
+                        "Security Features:",
+                        "- Rate limiting on all endpoints",
+                        "- Token-based authentication",
+                        "- CSRF protection",
+                        "- XSS prevention",
+                        "- Input validation & sanitization"
+                    ],
+                    "url": "",
+                    "codespace": "https://github.com/MuhammedKAldin/laravel-react-ecommerce"
+                },
+                {
+                    "name": "Advanced Job Portal Platform",
+                    "screenshot": window.projectImages[2],
+                    "features": [
+                        "Intelligent Job Matching Algorithm",
+                        "Advanced Applicant Tracking System (ATS)",
+                        "Employer Verification & Trust System",
+                        "AI-Powered Search & Filtering",
+                        "Real-time Messaging & Video Chat",
+                        "Automated Interview Scheduling",
+                        "Resume Parsing & Management",
+                        "Advanced Analytics Dashboard",
+                        "Multi-role User Management",
+                        "Notification System"
+                    ],
+                    "tags": ["Fullstack", "Laravel 10", "Job Portal", "Real-time", "AI", "ATS"],
+                    "skills": ["Laravel", "MySQL", "Pusher", "WebSockets", "Real-time", "Bootstrap", "JavaScript", "AI Matching"],
+                    "description": "Comprehensive job portal platform with intelligent matching algorithms, real-time communication features, advanced applicant tracking system, and AI-powered job recommendations for optimal recruitment efficiency.",
+                    "instructions": [
+                        "Test Accounts (email/pw):",
+                        "- Applicant Account: test@example.com / 3244039",
+                        "- Recruiter Account: recruitment@microsoft.com / 3244039",
+                        "Note: The chat Feature is available between recruiters and applicants at all stages, except during the screening and declined stages."
+                    ],
+                    "url": "http://wuzzuf-plus.byethost8.com/",
+                    "codespace": "https://github.com/MuhammedKAldin/laravel_wuzzuf"
+                },
+                {
+                    "name": "Multi-Vendor SaaS Platform",
+                    "screenshot": window.projectImages[3],
+                    "features": [
+                        "Restaurant Menu Management System",
+                        "Multi-tenant Architecture",
+                        "Advanced Order Processing & Tracking",
+                        "Payment Gateway Integration (Paymob)",
+                        "Customer Relationship Management",
+                        "Business Intelligence & Analytics",
+                        "RESTful API & Webhooks",
+                        "Real-time Order Updates",
+                        "Commission Management System",
+                        "Mobile-Responsive Dashboard"
+                    ],
+                    "tags": ["Fullstack", "Laravel 10", "SaaS", "Multi-Vendor", "API", "Microservices"],
+                    "skills": ["Laravel", "MySQL", "Paymob API", "Multi-tenancy", "RESTful API", "Webhooks", "SaaS Architecture"],
+                    "description": "Enterprise-grade multi-vendor SaaS platform for restaurant management featuring microservices architecture, advanced payment processing, real-time analytics, and scalable multi-tenant infrastructure for food delivery businesses.",
+                    "instructions": [
+                        "Test Accounts (email/pw):",
+                        "- McDonald's Owner: test@example.com / test12345678",
+                        "- McDonald's Owner: test2@gmail.com / test12345678",
+                        "- Customer sample: test3@gmail.com / test12345678"
+                    ],
+                    "url": "http://elmenus.byethost18.com/",
+                    "codespace": "https://github.com/MuhammedKAldin/laravel_elmenus"
                 }
             ]
 
@@ -495,77 +510,53 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const fallbackProjects = [
             {
-                "name": "Crystal CRM System",
-                "screenshot": window.projectImages[0],
-                "features": [
-                    "Dynamic Customer Management Dashboard",
-                    "Sales Pipeline Tracking",
-                    "Lead Management System",
-                    "Customer Communication Logs",
-                    "Reporting & Analytics",
-                    "Role-based Access Control"
-                ],
-                "tags": ["Fullstack", "PHP", "CRM"],
-                "skills": ["PHP", "MySQL", "Bootstrap", "JavaScript", "AJAX"],
-                "description": "A comprehensive CRM system built with PHP and MySQL, featuring customer management, sales tracking, and detailed reporting capabilities.",
-                "instructions": [
-                    "Admin account (email/pw):",
-                    "- admin@gmail.com / 12345"
-                ],
-                "url": "http://crystalcrm.byethost12.com/",
-                "codespace": "https://github.com/MuhammedKAldin/php_crystal_crm"
-            },
-            {
-                "name": "Countries API Module",
+                "name": "AI-Powered E-Commerce Platform",
                 "screenshot": window.projectImages[1],
                 "features": [
-                    "RESTful API with OAuth2 Authentication",
-                    "SOAP API Support",
-                    "Database Logging & Monitoring",
-                    "Automated External Gateway Notifications",
-                    "CRUD Operations via Web Dashboard",
-                    "API Rate Limiting & Security"
+                    "Machine Learning Product Recommendations",
+                    "Advanced Shopping Cart with Real-time Updates",
+                    "Secure Payment Gateway Integration (Stripe)",
+                    "Multi-tenant User & Admin Management",
+                    "Complete Order Lifecycle Management",
+                    "AI-Driven Personalization Engine",
+                    "User Behavior Analytics & Tracking",
+                    "Context-Aware Smart Suggestions",
+                    "Modern Admin Panel (Filament)",
+                    "Responsive Progressive Web App (PWA)"
                 ],
-                "tags": ["Fullstack", "Laravel 10", "API", "SOAP", "OAuth 2"],
-                "skills": ["Laravel", "Passport", "MySQL", "REST API", "SOAP", "OAuth2"],
-                "description": "Advanced API module built with Laravel 10, featuring OAuth2 authentication, SOAP support, and comprehensive logging for enterprise applications.",
+                "tags": ["Fullstack", "Laravel 10", "AI/ML", "E-commerce", "Stripe", "PWA"],
+                "skills": ["Laravel", "Alpine.js", "TailwindCSS", "MySQL", "Stripe API", "Google Gemini AI", "Machine Learning", "PWA"],
+                "description": "Next-generation AI-powered e-commerce platform featuring machine learning recommendations, secure payment processing, real-time analytics, and modern PWA architecture for optimal user experience and conversion optimization.",
                 "instructions": [
-                    "Web Routes:",
-                    "- GET /: Displays all countries",
-                    "- GET /create: Form to add a new country",
-                    "- POST /store: Saves a new country to the database",
-                    "- GET /edit/{id}: Form to edit an existing country by ID",
-                    "- PUT /edit/update/{id}: Updates the country record",
-                    "- DELETE /destroy/{id}: Deletes a country record",
-                    "",
-                    "API Routes and Logging:",
-                    "- POST /register: User registration",
-                    "- GET /countries: Fetch all countries (supports XML response for SOAP)",
-                    "- POST /countries: Add a new country",
-                    "- PUT /countries/{id}: Update an existing country",
-                    "- GET /countries/{id}: Retrieve a country by ID",
-                    "- DELETE /countries/{id}: Delete a country",
-                    "- Logging Requests [API requests are logged to the database, including dynamic callback URLs provided externally]"
+                    "Admin Account:",
+                    "- Email: admin@smartshop.com / Password: password",
+                    "Customer Accounts:",
+                    "- customer@smartshop.com / password",
+                    "- jane@smartshop.com / password",
+                    "- mike@smartshop.com / password",
+                    "- moha@gmail.com / password"
                 ],
-                "url": "http://countries-api.byethost15.com/",
-                "codespace": "https://github.com/MuhammedKAldin/laravel_countries_api_crud"
+                "url": "",
+                "codespace": "https://github.com/MuhammedKAldin/AI-Smartshop"
             },
             {
-                "name": "Wuzzuf Plus - Job Platform",
+                "name": "Advanced Job Portal Platform",
                 "screenshot": window.projectImages[2],
                 "features": [
-                    "Job Posting & Application Management",
-                    "Applicant Tracking System",
-                    "Employer Verification System",
-                    "Advanced Search & Filtering",
-                    "Real-time Messaging System",
-                    "Interview Scheduling",
-                    "Resume Management",
-                    "Analytics Dashboard"
+                    "Intelligent Job Matching Algorithm",
+                    "Advanced Applicant Tracking System (ATS)",
+                    "Employer Verification & Trust System",
+                    "AI-Powered Search & Filtering",
+                    "Real-time Messaging & Video Chat",
+                    "Automated Interview Scheduling",
+                    "Resume Parsing & Management",
+                    "Advanced Analytics Dashboard",
+                    "Multi-role User Management",
+                    "Notification System"
                 ],
-                "tags": ["Fullstack", "Laravel 10", "Job Platform", "Real-time"],
-                "skills": ["Laravel", "MySQL", "Pusher", "Real-time", "Bootstrap", "JavaScript"],
-                "description": "A comprehensive job platform built with Laravel 10, featuring job posting, applicant tracking, real-time messaging, and advanced search capabilities.",
+                "tags": ["Fullstack", "Laravel 10", "Job Portal", "Real-time", "AI", "ATS"],
+                "skills": ["Laravel", "MySQL", "Pusher", "WebSockets", "Real-time", "Bootstrap", "JavaScript", "AI Matching"],
+                "description": "Comprehensive job portal platform with intelligent matching algorithms, real-time communication features, advanced applicant tracking system, and AI-powered job recommendations for optimal recruitment efficiency.",
                 "instructions": [
                     "Test Accounts (email/pw):",
                     "- Applicant Account: test@example.com / 3244039",
@@ -576,20 +567,23 @@ document.addEventListener('DOMContentLoaded', function () {
                 "codespace": "https://github.com/MuhammedKAldin/laravel_wuzzuf"
             },
             {
-                "name": "Elmenus - Multi-Vendor SaaS",
+                "name": "Multi-Vendor SaaS Platform",
                 "screenshot": window.projectImages[3],
                 "features": [
-                    "Restaurant Menu Management",
-                    "Multi-Vendor Support",
-                    "Order Processing & Tracking",
-                    "Payment Integration (Paymob)",
-                    "Customer Management",
-                    "Analytics & Reporting",
-                    "API Endpoints",
-                    "Real-time Order Updates"
+                    "Restaurant Menu Management System",
+                    "Multi-tenant Architecture",
+                    "Advanced Order Processing & Tracking",
+                    "Payment Gateway Integration (Paymob)",
+                    "Customer Relationship Management",
+                    "Business Intelligence & Analytics",
+                    "RESTful API & Webhooks",
+                    "Real-time Order Updates",
+                    "Commission Management System",
+                    "Mobile-Responsive Dashboard"
                 ],
-                "tags": ["Fullstack", "Laravel 10", "SaaS", "Multi-Vendor", "Paymob"],
-                "description": "A comprehensive SaaS platform for restaurant management, featuring multi-vendor support, order processing, and integrated payment systems.",
+                "tags": ["Fullstack", "Laravel 10", "SaaS", "Multi-Vendor", "API", "Microservices"],
+                "skills": ["Laravel", "MySQL", "Paymob API", "Multi-tenancy", "RESTful API", "Webhooks", "SaaS Architecture"],
+                "description": "Enterprise-grade multi-vendor SaaS platform for restaurant management featuring microservices architecture, advanced payment processing, real-time analytics, and scalable multi-tenant infrastructure for food delivery businesses.",
                 "instructions": [
                     "Test Accounts (email/pw):",
                     "- McDonald's Owner: test@example.com / test12345678",
@@ -600,22 +594,23 @@ document.addEventListener('DOMContentLoaded', function () {
                 "codespace": "https://github.com/MuhammedKAldin/laravel_elmenus"
             },
             {
-                "name": "Medical E-commerce Platform",
+                "name": "Healthcare E-Commerce Platform",
                 "screenshot": window.projectImages[4],
                 "features": [
-                    "Product Catalog Management",
-                    "Shopping Cart & Checkout",
-                    "Guest & User Checkout",
-                    "Order Management System",
-                    "Invoice Generation",
-                    "Admin Dashboard",
-                    "Role-based Access Control",
-                    "Product Image Handling",
-                    "Inventory Management"
+                    "Advanced Product Catalog Management",
+                    "Secure Shopping Cart & Checkout",
+                    "Guest & User Authentication",
+                    "Comprehensive Order Management",
+                    "Automated Invoice Generation",
+                    "Admin Dashboard & Analytics",
+                    "Role-based Access Control (RBAC)",
+                    "Image Processing & Optimization",
+                    "Inventory Management System",
+                    "Compliance & Security Features"
                 ],
-                "tags": ["Fullstack", "Laravel 10", "E-commerce", "Medical", "Healthcare"],
-                "skills": ["Laravel", "MySQL", "Blade", "TailwindCSS", "Bootstrap", "JavaScript", "Payment Integration"],
-                "description": "A specialized e-commerce platform for medical and healthcare products, featuring comprehensive product management, secure checkout, and administrative tools.",
+                "tags": ["Fullstack", "Laravel 10", "E-commerce", "Healthcare", "Security", "Compliance"],
+                "skills": ["Laravel", "MySQL", "Blade", "TailwindCSS", "Bootstrap", "JavaScript", "Payment Integration", "Security"],
+                "description": "Specialized healthcare e-commerce platform with advanced security features, compliance management, automated inventory tracking, and secure payment processing designed for medical and pharmaceutical product sales.",
                 "instructions": [
                     "Admin account:",
                     "- Email: admin@gmail.com / Password: password",
@@ -638,6 +633,38 @@ document.addEventListener('DOMContentLoaded', function () {
                 ],
                 "url": "",
                 "codespace": "https://github.com/MuhammedKAldin/laravel_ecommerce_medicine"
+            },
+            {
+                "name": "Laravel-React E-commerce SPA",
+                "screenshot": window.projectImages[5],
+                "features": [
+                    "Modern React Single Page Application",
+                    "Laravel Sanctum API Authentication",
+                    "Token-based Security System",
+                    "Protected Routes & Middleware",
+                    "Real-time Cart Management",
+                    "Secure Payment Processing",
+                    "Responsive Mobile-First Design",
+                    "Rate Limiting & Security Headers",
+                    "CSRF Protection & XSS Prevention",
+                    "Local Storage Token Management"
+                ],
+                "tags": ["Fullstack", "Laravel 10", "React", "SPA", "API", "Security"],
+                "skills": ["Laravel", "React", "Sanctum", "MySQL", "API Development", "Token Authentication", "Security", "SPA"],
+                "description": "Modern full-stack e-commerce application built with Laravel backend API and React frontend SPA, featuring secure token-based authentication, real-time updates, and enterprise-grade security implementation.",
+                "instructions": [
+                    "Test Account:",
+                    "- Email: muhammedk.aldin@gmail.com / Password: Test@123456",
+                    "",
+                    "Security Features:",
+                    "- Rate limiting on all endpoints",
+                    "- Token-based authentication",
+                    "- CSRF protection",
+                    "- XSS prevention",
+                    "- Input validation & sanitization"
+                ],
+                "url": "",
+                "codespace": "https://github.com/MuhammedKAldin/laravel-react-ecommerce"
             }
         ]
 
