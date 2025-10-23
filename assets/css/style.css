@@ -429,9 +429,27 @@ h6 {
     justify-content: center;
 }
 
-#hero-3d-container {
+/* Hero Image Container */
+.hero-image-container {
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 30px rgba(0, 212, 255, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+    transform: scale(1.05);
 }
 
 .scroll-indicator {
@@ -937,15 +955,19 @@ h6 {
     margin-right: auto;
 }
 
-/* Project Expertise Items - Match expertise-item styling exactly */
+/* Project Expertise Items - Enhanced with badges and buttons */
 .project-expertise-item {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 15px;
-    padding: 2rem 1rem;
+    padding: 1.5rem;
     text-align: center;
     transition: all 0.3s ease;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 200px;
 }
 
 .project-expertise-item:hover {
@@ -954,16 +976,96 @@ h6 {
     box-shadow: var(--shadow-heavy);
 }
 
+.project-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
 .project-expertise-item i {
     font-size: 2.5rem;
     color: var(--primary-color);
-    margin-bottom: 1rem;
 }
 
-.project-expertise-item span {
-    display: block;
+.project-title {
+    font-size: 1.1rem;
     font-weight: 600;
     color: var(--light-text);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 0.5rem 0;
+}
+
+.tech-badge {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.project-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.project-code-btn,
+.project-demo-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    border: none;
+    cursor: pointer;
+}
+
+.project-demo-btn {
+    background: var(--accent-color);
+}
+
+.project-code-btn:hover,
+.project-demo-btn:hover:not(.disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+}
+
+.project-demo-btn.disabled {
+    background: var(--gray-text);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Ensure buttons don't interfere with card hover */
+.project-actions a,
+.project-actions button {
+    position: relative;
+    z-index: 1;
+}
+
+/* Improve button accessibility */
+.project-code-btn:focus,
+.project-demo-btn:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
 }
 
 /* Mobile-optimized background for projects */
@@ -1961,25 +2063,38 @@ h6 {
     }
 
     .project-expertise-item {
-        padding: 1.5rem 1rem;
-        min-height: 120px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        padding: 1.25rem 1rem;
+        min-height: 180px;
+        gap: 0.75rem;
     }
 
     .project-expertise-item i {
         font-size: 2rem;
-        margin-bottom: 0.75rem;
     }
 
-    .project-expertise-item span {
-        font-size: 0.9rem;
-        line-height: 1.3;
-        text-align: center;
-        word-wrap: break-word;
-        hyphens: auto;
+    .project-title {
+        font-size: 1rem;
+        line-height: 1.2;
+    }
+
+    .project-technologies {
+        gap: 0.375rem;
+        margin: 0.375rem 0;
+    }
+
+    .tech-badge {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    .project-actions {
+        gap: 0.375rem;
+    }
+
+    .project-code-btn,
+    .project-demo-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
     }
 }
 
@@ -1992,17 +2107,37 @@ h6 {
 
     .project-expertise-item {
         padding: 1rem 0.75rem;
-        min-height: 100px;
+        min-height: 160px;
+        gap: 0.5rem;
     }
 
     .project-expertise-item i {
         font-size: 1.8rem;
-        margin-bottom: 0.5rem;
     }
 
-    .project-expertise-item span {
-        font-size: 0.85rem;
-        line-height: 1.2;
+    .project-title {
+        font-size: 0.9rem;
+        line-height: 1.1;
+    }
+
+    .project-technologies {
+        gap: 0.25rem;
+        margin: 0.25rem 0;
+    }
+
+    .tech-badge {
+        font-size: 0.65rem;
+        padding: 0.15rem 0.3rem;
+    }
+
+    .project-actions {
+        gap: 0.25rem;
+    }
+
+    .project-code-btn,
+    .project-demo-btn {
+        padding: 0.35rem 0.7rem;
+        font-size: 0.75rem;
     }
 }
 
@@ -3241,7 +3376,10 @@ html {
 
     .hero-visual {
         height: 300px; /* Reduce height on mobile */
-        margin-top: 2rem;
+    }
+
+    .hero-image {
+        max-height: 300px;
     }
 }
 
@@ -3291,7 +3429,10 @@ html {
 
     .hero-visual {
         height: 250px;
-        margin-top: 1.5rem;
+    }
+
+    .hero-image {
+        max-height: 250px;
     }
 }
 

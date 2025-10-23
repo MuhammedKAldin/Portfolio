@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initialize all components
     initPreloader()
-    init3DHero()
     initProjects3DBackground()
     initScrollAnimations()
     initProjectCards()
@@ -30,85 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // 3D Hero Section - Mobile Optimized
-    function init3DHero() {
-        const container = document.getElementById('hero-3d-container')
-        if (!container || window.innerWidth <= 768) {
-            // Use CSS-only animation for mobile
-            container.innerHTML = '<div class="hero-mobile-animation"></div>'
-            return
-        }
-
-        // Only load Three.js for desktop
-        if (typeof THREE === 'undefined') {
-            container.innerHTML = '<div class="hero-mobile-animation"></div>'
-            return
-        }
-
-        // Create simplified Three.js scene
-        const scene = new THREE.Scene()
-        const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000)
-        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false }) // Disable antialias for performance
-
-        renderer.setSize(container.clientWidth, container.clientHeight)
-        renderer.setClearColor(0x000000, 0)
-        container.appendChild(renderer.domElement)
-
-        // Create only 2 simple shapes for better performance
-        const geometries = [
-            new THREE.BoxGeometry(1, 1, 1),
-            new THREE.SphereGeometry(0.7, 16, 16) // Reduced segments
-        ]
-
-        const meshes = []
-        geometries.forEach((geometry, index) => {
-            const material = new THREE.MeshBasicMaterial({
-                color: index === 0 ? 0x00d4ff : 0xff6b35,
-                transparent: true,
-                opacity: 0.6,
-                wireframe: true
-            })
-
-            const mesh = new THREE.Mesh(geometry, material)
-            mesh.position.set(
-                (Math.random() - 0.5) * 3,
-                (Math.random() - 0.5) * 3,
-                (Math.random() - 0.5) * 3
-            )
-
-            meshes.push(mesh)
-            scene.add(mesh)
-        })
-
-        camera.position.z = 5
-
-        // Simplified animation loop with reduced frequency
-        let lastTime = 0
-        function animate(currentTime) {
-            if (currentTime - lastTime > 16) { // ~60fps max
-                requestAnimationFrame(animate)
-
-                meshes.forEach((mesh, index) => {
-                    mesh.rotation.x += 0.005 * (index + 1)
-                    mesh.rotation.y += 0.005 * (index + 1)
-                })
-
-                renderer.render(scene, camera)
-                lastTime = currentTime
-            } else {
-                requestAnimationFrame(animate)
-            }
-        }
-
-        animate()
-
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            camera.aspect = container.clientWidth / container.clientHeight
-            camera.updateProjectionMatrix()
-            renderer.setSize(container.clientWidth, container.clientHeight)
-        })
-    }
 
     // 3D Projects Background - Mobile Optimized
     function initProjects3DBackground() {
@@ -523,15 +443,38 @@ document.addEventListener('DOMContentLoaded', function () {
         const projectIcon = getProjectIcon(project.name, project.skills)
         console.log(`   - Icon selected: ${projectIcon}`)
 
-        // Create project card in expertise style - simple icon and title
+        // Create project card with technology badges and buttons
+        const technologies = project.skills ? project.skills.slice(0, 6) : []
+        const demoButton = project.url && project.url !== '#' ?
+            `<a href="${project.url}" target="_blank" class="project-demo-btn" aria-label="View Demo">
+                <i class="fas fa-external-link-alt"></i> Demo
+            </a>` :
+            `<button class="project-demo-btn disabled" disabled aria-label="Demo Not Available">
+                <i class="fas fa-external-link-alt"></i> Demo
+            </button>`
+
         card.innerHTML = `
-            <i class="${projectIcon}"></i>
-            <span>${project.name}</span>
+            <div class="project-card-header">
+                <i class="${projectIcon}"></i>
+                <h4 class="project-title">${project.name}</h4>
+            </div>
+            <div class="project-technologies">
+                ${technologies.map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
+            </div>
+            <div class="project-actions">
+                <a href="${project.codespace}" target="_blank" class="project-code-btn" aria-label="View Source Code">
+                    <i class="fab fa-github"></i> Code
+                </a>
+                ${demoButton}
+            </div>
         `
 
-        // Add click event for project details
-        card.addEventListener('click', () => {
-            showProjectModal(project)
+        // Add click event for project details (but not on buttons)
+        card.addEventListener('click', (e) => {
+            // Don't trigger modal if clicking on buttons or links
+            if (!e.target.closest('.project-actions')) {
+                showProjectModal(project)
+            }
         })
 
         console.log(`✅ Project card created successfully for: ${project.name}`)
