@@ -926,6 +926,43 @@ h6 {
     overflow: hidden;
 }
 
+/* Projects Expertise Grid - Match Areas of Expertise styling */
+.projects-expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* Project Expertise Items - Match expertise-item styling exactly */
+.project-expertise-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 2rem 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.project-expertise-item:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-heavy);
+}
+
+.project-expertise-item i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.project-expertise-item span {
+    display: block;
+    font-weight: 600;
+    color: var(--light-text);
+}
+
 /* Mobile-optimized background for projects */
 .projects-mobile-bg {
     position: absolute;
@@ -1812,6 +1849,10 @@ h6 {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 
+    .projects-expertise-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
     .contact-info {
         grid-template-columns: 1fr;
     }
@@ -1904,6 +1945,10 @@ h6 {
     }
 
     .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-expertise-grid {
         grid-template-columns: 1fr;
     }
 }

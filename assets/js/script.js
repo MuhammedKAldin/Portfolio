@@ -486,32 +486,15 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('✅ All project cards created and added to container')
         console.log('🔍 Final container children count:', container.children.length)
 
-        // Initialize tilt effects for the new project cards (desktop only)
-        if (typeof VanillaTilt !== 'undefined' && window.innerWidth > 768) {
-            console.log('🎯 Initializing VanillaTilt for project cards...')
-            const tiltCards = document.querySelectorAll('.project-card.card-3d')
-            console.log('🎯 Found tilt cards:', tiltCards.length)
-            VanillaTilt.init(tiltCards, {
-                max: 15,
-                speed: 400,
-                glare: true,
-                "max-glare": 0.3,
-            })
-            console.log('✅ VanillaTilt initialized for project cards')
-        } else {
-            console.warn('⚠️ VanillaTilt not available for 3D effects')
-        }
+        // No tilt effects needed for expertise-style cards
+        console.log('✅ Project cards created in expertise style')
     }
 
     function createProjectCard(project, index) {
         console.log(`🔨 Creating project card for: ${project.name}`)
 
         const card = document.createElement('div')
-        const isMobile = window.innerWidth <= 768
-        card.className = isMobile ? 'project-card' : 'project-card card-3d fade-in'
-        if (!isMobile) {
-            card.style.animationDelay = `${index * 0.1}s`
-        }
+        card.className = 'project-expertise-item'
 
         // Get appropriate icon based on project type
         const getProjectIcon = (projectName, skills) => {
@@ -540,40 +523,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const projectIcon = getProjectIcon(project.name, project.skills)
         console.log(`   - Icon selected: ${projectIcon}`)
 
-        // Create project card with lazy-loaded image; no overlay/3D on mobile
-        const overlayMarkup = isMobile ? '' : `
-                    <div class="project-overlay">
-                        <div class="project-overlay-content">
-                <i class="${projectIcon}"></i>
-                            <h4>${project.name}</h4>
-            </div>
-                    </div>`
-
+        // Create project card in expertise style - simple icon and title
         card.innerHTML = `
-            <div class="project-image-container">
-                <div class="project-image">
-                    <img data-src="${project.screenshot || 'images/app1.PNG'}" alt="${project.name}" class="lazy-load" onerror="this.src='app1.PNG'">
-                    ${overlayMarkup}
-                </div>
-            </div>
-            <div class="project-content">
-            <h3 class="project-title">${project.name}</h3>
-            <p class="project-description">${project.description}</p>
-            <div class="project-tags">
-                    ${project.tags ? project.tags.slice(0, 3).map(tag => `<span class="project-tag">${tag}</span>`).join('') : ''}
-                    ${project.skills ? project.skills.slice(0, 3).map(skill => `<span class="skill-tag">${skill}</span>`).join('') : ''}
-            </div>
-            <div class="project-actions">
-                    <a href="${project.codespace}" target="_blank" class="project-btn primary">
-                        <i class="fab fa-github"></i> Code
-                    </a>
-                    ${project.url && project.url !== '#' ? `
-                        <a href="${project.url}" target="_blank" class="project-btn secondary">
-                            <i class="fas fa-external-link-alt"></i> Demo
-                        </a>
-                    ` : ''}
-                </div>
-            </div>
+            <i class="${projectIcon}"></i>
+            <span>${project.name}</span>
         `
 
         // Add click event for project details
@@ -752,15 +705,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         console.log('Fallback projects displayed:', fallbackProjects.length)
 
-        // Initialize tilt effects for the new cards
-        if (typeof VanillaTilt !== 'undefined') {
-            VanillaTilt.init(document.querySelectorAll('.project-card.card-3d'), {
-                max: 15,
-                speed: 400,
-                glare: true,
-                "max-glare": 0.3,
-            })
-        }
+        // No tilt effects needed for expertise-style cards
+        console.log('✅ Fallback project cards created in expertise style')
     }
 
     function showProjectModal(project) {
