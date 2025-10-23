@@ -452,6 +452,12 @@ h6 {
     transform: scale(1.05);
 }
 
+@media (max-width: 992px) {
+    .hero-visual {
+        margin-bottom: 1.5rem;
+    }
+}
+
 .scroll-indicator {
     position: absolute;
     bottom: 2rem;
