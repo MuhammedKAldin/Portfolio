@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     "name": "AI-Powered E-Commerce Platform",
                     "screenshot": window.projectImages[1],
                     "features": [
-                        "Machine Learning Product Recommendations",
+                        "Gemini-powered Product Recommendations",
                         "Advanced Shopping Cart with Real-time Updates",
                         "Secure Payment Gateway Integration (Stripe)",
                         "Multi-tenant User & Admin Management",
@@ -513,7 +513,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 "name": "AI-Powered E-Commerce Platform",
                 "screenshot": window.projectImages[1],
                 "features": [
-                    "Machine Learning Product Recommendations",
+                    "Gemini-powered Product Recommendations",
                     "Advanced Shopping Cart with Real-time Updates",
                     "Secure Payment Gateway Integration (Stripe)",
                     "Multi-tenant User & Admin Management",
@@ -524,9 +524,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     "Modern Admin Panel (Filament)",
                     "Responsive Progressive Web App (PWA)"
                 ],
-                "tags": ["Fullstack", "Laravel 10", "AI/ML", "E-commerce", "Stripe", "PWA"],
-                "skills": ["Laravel", "Alpine.js", "TailwindCSS", "MySQL", "Stripe API", "Google Gemini AI", "Machine Learning", "PWA"],
-                "description": "Next-generation AI-powered e-commerce platform featuring machine learning recommendations, secure payment processing, real-time analytics, and modern PWA architecture for optimal user experience and conversion optimization.",
+                "tags": ["Fullstack", "Laravel 10", "AI", "E-commerce", "Stripe", "PWA"],
+                "skills": ["Laravel", "Alpine.js", "TailwindCSS", "MySQL", "Stripe API", "Google Gemini AI", "PWA"],
+                "description": "Next-generation AI-powered e-commerce platform featuring Gemini-based recommendations, secure payment processing, real-time analytics, and modern PWA architecture for optimal user experience and conversion optimization.",
                 "instructions": [
                     "Admin Account:",
                     "- Email: admin@smartshop.com / Password: password",
