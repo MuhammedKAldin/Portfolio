@@ -712,11 +712,6 @@ document.addEventListener('DOMContentLoaded', function () {
         modalBody.innerHTML = `
             <div class="row">
                 <div class="col-12 mb-4">
-                    <div class="project-modal-image">
-                        <img src="${project.screenshot || 'app1.PNG'}" alt="${project.name}" class="img-fluid rounded" onerror="this.src='app1.PNG'">
-                    </div>
-                </div>
-                <div class="col-12 mb-4">
                     <div class="project-modal-content">
                         <div class="project-modal-header mb-4">
                             <div class="project-modal-icon mb-3">
