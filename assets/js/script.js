@@ -486,8 +486,8 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('✅ All project cards created and added to container')
         console.log('🔍 Final container children count:', container.children.length)
 
-        // Initialize tilt effects for the new project cards
-        if (typeof VanillaTilt !== 'undefined') {
+        // Initialize tilt effects for the new project cards (desktop only)
+        if (typeof VanillaTilt !== 'undefined' && window.innerWidth > 768) {
             console.log('🎯 Initializing VanillaTilt for project cards...')
             const tiltCards = document.querySelectorAll('.project-card.card-3d')
             console.log('🎯 Found tilt cards:', tiltCards.length)
@@ -507,8 +507,11 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(`🔨 Creating project card for: ${project.name}`)
 
         const card = document.createElement('div')
-        card.className = 'project-card card-3d fade-in'
-        card.style.animationDelay = `${index * 0.1}s`
+        const isMobile = window.innerWidth <= 768
+        card.className = isMobile ? 'project-card' : 'project-card card-3d fade-in'
+        if (!isMobile) {
+            card.style.animationDelay = `${index * 0.1}s`
+        }
 
         // Get appropriate icon based on project type
         const getProjectIcon = (projectName, skills) => {
@@ -537,17 +540,20 @@ document.addEventListener('DOMContentLoaded', function () {
         const projectIcon = getProjectIcon(project.name, project.skills)
         console.log(`   - Icon selected: ${projectIcon}`)
 
-        // Create project card with lazy-loaded image and 3D effects
-        card.innerHTML = `
-            <div class="project-image-container">
-                <div class="project-image">
-                    <img data-src="${project.screenshot || 'images/app1.PNG'}" alt="${project.name}" class="lazy-load" onerror="this.src='app1.PNG'">
+        // Create project card with lazy-loaded image; no overlay/3D on mobile
+        const overlayMarkup = isMobile ? '' : `
                     <div class="project-overlay">
                         <div class="project-overlay-content">
                 <i class="${projectIcon}"></i>
                             <h4>${project.name}</h4>
             </div>
-                    </div>
+                    </div>`
+
+        card.innerHTML = `
+            <div class="project-image-container">
+                <div class="project-image">
+                    <img data-src="${project.screenshot || 'images/app1.PNG'}" alt="${project.name}" class="lazy-load" onerror="this.src='app1.PNG'">
+                    ${overlayMarkup}
                 </div>
             </div>
             <div class="project-content">
@@ -917,7 +923,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 navbar.style.background = 'rgba(10, 10, 10, 0.95)'
                 navbar.style.boxShadow = 'none'
             }
-        })
+        }, { passive: true })
     }
 
     // Lazy Loading for Images
@@ -960,7 +966,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const scrolled = window.pageYOffset
             const rate = scrolled * -0.5
             heroBg.style.transform = `translateY(${rate}px)`
-        })
+        }, { passive: true })
     }
 
     // Typing Effect for Hero Title
@@ -1002,7 +1008,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-    window.addEventListener('scroll', animateOnScroll)
+    window.addEventListener('scroll', animateOnScroll, { passive: true })
 
     // Skip floating particles for mobile performance
     function createFloatingParticles() {
@@ -1146,7 +1152,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    window.addEventListener('scroll', updateOnScroll)
+    window.addEventListener('scroll', updateOnScroll, { passive: true })
 
     // Add keyboard navigation
     document.addEventListener('keydown', (e) => {
@@ -1266,7 +1272,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-    window.addEventListener('scroll', revealSections)
+    window.addEventListener('scroll', revealSections, { passive: true })
     revealSections() // Initial check
 
     // Add CSS for revealed sections

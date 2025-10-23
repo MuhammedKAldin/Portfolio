@@ -2900,11 +2900,36 @@ html {
     }
 
     .project-card:hover {
-        transform: translateY(-10px) scale(1.01) rotateX(5deg) rotateY(5deg) translateZ(10px);
+        transform: none;
+        box-shadow: none;
     }
 
     .projects-grid {
         gap: 1.5rem;
+    }
+}
+
+/* Disable animations/effects inside Featured Projects on mobile */
+@media (max-width: 768px) {
+    .projects-section *,
+    .projects-section *::before,
+    .projects-section *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+    .projects-section .project-overlay {
+        display: none !important;
+    }
+    .projects-section .project-card {
+        box-shadow: none !important;
+        transform: none !important;
+    }
+    .projects-section .project-card:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+    .projects-section .project-image img {
+        transform: none !important;
     }
 }
 
