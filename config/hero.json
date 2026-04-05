@@ -1,12 +1,12 @@
 {
   "greeting": "Hello, I'm",
   "name": "Mohamed Kamal Aldin",
-  "title": "Full Stack Developer",
-  "experienceLabel": "4+ Years Experience",
-  "subtitle": "building scalable SaaS, e-commerce, and business platforms",
+  "title": "Full Stack Engineer (PHP/Laravel)",
+  "experienceLabel": "5+ Years Experience",
+  "subtitle": "building scalable SaaS, e-commerce, and enterprise platforms",
   "descriptions": [
-    "Specializing in Laravel, PHP, React, and Vue.js with a clean architecture mindset",
-    "Building multi-vendor, real-time, AI-enabled products across SaaS, ERP, and CRM domains"
+    "Specialized in high-performance backend systems, RESTful APIs, and AI-driven automation",
+    "Delivering production-grade systems across E-commerce, Logistics, CRM, HRM, WMS, EdTech, and multi-tenant architectures with real-time features and seamless integrations"
   ],
   "actions": [
     {

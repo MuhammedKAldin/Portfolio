@@ -1,39 +1,39 @@
 {
   "items": [
     {
-      "title": "Bachelor Degree",
+      "title": "Bachelor’s Degree",
       "institution": "Banha University",
       "location": "Banha, Egypt",
       "period": "From July 2016 to July 2020",
       "description": "Completed undergraduate studies at Banha University in Egypt."
     },
     {
-      "title": "CS50's C# Development Certificate",
+      "title": "CS50 C# Development Certificate",
       "institution": "edX / Harvard Online",
       "location": "Online",
       "period": "Completed",
-      "description": "Completed Harvard Online's CS50 C# development program through edX.",
+      "description": "Completed Harvard’s CS50 C# development program, covering core programming concepts, object-oriented design, and application development.",
       "badge": {
         "icon": "fas fa-certificate",
         "label": "Harvard Online Credential"
       }
     },
     {
-      "title": "Certified Full Stack Web Developer",
+      "title": "Full Stack Web Development Certification",
       "institution": "Mesmake",
       "location": "Egypt",
       "period": "Completed",
-      "description": "Completed a full-stack development program covering core frontend and backend technologies."
+      "description": "Completed a comprehensive full-stack program covering backend development, frontend technologies, and real-world project implementation."
     },
     {
-      "title": "Certified English Speaker Level 8/8",
+      "title": "English Proficiency Certification (Level 8/8)",
       "institution": "Berlitz Egypt",
       "location": "Egypt",
       "period": "Completed",
-      "description": "Achieved the highest English proficiency level certified by Berlitz Egypt.",
+      "description": "Achieved the highest level of English proficiency, demonstrating advanced communication skills in professional and technical contexts.",
       "badge": {
         "icon": "fas fa-star",
-        "label": "Level 8/8 - Native Proficiency"
+        "label": "Fluent / Professional Proficiency"
       }
     }
   ]

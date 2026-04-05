@@ -1,42 +1,31 @@
 {
   "items": [
     {
-      "title": "Fullstack Developer - Contract",
-      "company": "CMiles",
+      "title": "Full Stack Engineer",
+      "company": "Soft oio",
       "location": "Remote",
-      "period": "Since May 2025",
+      "period": "Since March 2023",
       "description": [
-        "Working on the company's SaaS product Klipbot and other MVP products.",
-        "Developed multivendor full-stack features including chatbots, customizable surveys, and real-time feedback handling.",
-        "Maintained analytics dashboards with sentiment alerts, data tracking, and report generation.",
-        "Integrated Meta APIs and AI-powered workflows while building scalable backend systems for complex business scenarios."
+        "Built and scaled AI-integrated full-stack systems using PHP (Laravel) across Ecommerce, Multivendor platforms, Transportation & Logistics systems, and business automation solutions.",
+        "Developed and optimized RESTful APIs and backend architectures ensuring high performance, scalability, and security.",
+        "Implemented AI-powered features including smart automation, chatbots, sentiment analysis, and real-time feedback processing.",
+        "Engineered enterprise systems such as CRM, HRM, WMS, Clinical, and Logistics platforms with advanced analytics, tracking, and automated reporting dashboards.",
+        "Integrated third-party services and APIs including Meta APIs, WhatsApp integrations, and external platforms for cross-platform communication and workflow automation.",
+        "Collaborated across teams to deliver end-to-end product development from system design and architecture to deployment and optimization."
       ],
-      "skills": ["SaaS", "Chatbots", "Surveys", "Analytics", "AI Integration", "Meta APIs"]
-    },
-    {
-      "title": "Fullstack Developer",
-      "company": "Bekia",
-      "location": "Cairo, Egypt",
-      "period": "From January 2024 to June 2025",
-      "description": [
-        "Worked on Bekia's GreenTech product and internal tools that supported workflow across sales, accounting, operations, and customer support.",
-        "Built and maintained systems such as Warehouse Management, Human Resources Management, and Point of Sale solutions.",
-        "Managed mobile APIs, the customer support dashboard serving more than 50K active users monthly, and CRM systems.",
-        "Worked with cross-functional teams to resolve product challenges and improve user experience."
-      ],
-      "skills": ["Laravel", "Spatie", "Vue.js", "Axios", "Postman"]
-    },
-    {
-      "title": "Back End Developer",
-      "company": "Almotahida Education Group",
-      "location": "Cairo, Egypt",
-      "period": "From March 2023 to December 2023",
-      "description": [
-        "Worked on the company's EdTech platform Yaqees, featuring score tracking, flashcards, and assessment dashboards.",
-        "Built tailored APIs, CMS, and CRM systems to support business and student-facing workflows.",
-        "Participated in developing the backend for educational courses and mobile API endpoints using Laravel and Passport."
-      ],
-      "skills": ["PHP", "Laravel", "JSON", "APIs", "MySQL"]
+      "skills": [
+        "Laravel",
+        "PHP",
+        "REST APIs",
+        "AI Integration",
+        "Chatbots",
+        "Automation",
+        "System Architecture",
+        "Scalability",
+        "Analytics",
+        "Meta APIs",
+        "WhatsApp Integration"
+      ]
     },
     {
       "title": "Software Developer",
@@ -44,11 +33,22 @@
       "location": "Cairo, Egypt",
       "period": "From February 2022 to March 2023",
       "description": [
-        "Developed engaging interactive experiences and simulations.",
-        "Drove products through production phases, from concept implementation to dynamic working solutions.",
-        "Managed backend endpoints built in PHP and integrated them into Unity applications."
+        "Built backend systems using PHP (Laravel) focusing on clean architecture, scalability, and maintainability.",
+        "Designed and consumed RESTful APIs for seamless system integrations and service communication.",
+        "Delivered production-ready platforms including Ecommerce (restaurant ordering systems), social networking platforms, LegalTech platforms, and EdTech / school management systems (LMS, KPIs, grading systems).",
+        "Developed interactive event booth experiences with real-time systems, user engagement features, and immersive applications."
       ],
-      "skills": ["C#", "JSON", "Postman", "Unity", "API", "PHP", "Git", "Networking"]
+      "skills": [
+        "PHP",
+        "Laravel",
+        "REST APIs",
+        "System Design",
+        "Clean Architecture",
+        "Scalability",
+        "Integration",
+        "MySQL",
+        "Git"
+      ]
     }
   ]
 }
