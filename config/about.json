@@ -1,0 +1,22 @@
+{
+  "heading": "Full Stack Web Developer",
+  "paragraphs": [
+    "I am a Full Stack Developer from Egypt with 4+ years of experience building robust PHP and Laravel backends for SaaS, e-commerce, and business platforms.",
+    "My work spans multi-vendor products, real-time features, payment integrations, AI-powered workflows, and internal systems such as ERP, CRM, WMS, and HRM platforms.",
+    "I build backend systems with Laravel and PHP, and deliver user-focused frontend experiences with React.js and Vue.js."
+  ],
+  "highlights": [
+    {
+      "icon": "fas fa-building",
+      "label": "Worked in 2 Companies"
+    },
+    {
+      "icon": "fas fa-globe",
+      "label": "Remote Work Ready"
+    },
+    {
+      "icon": "fas fa-code",
+      "label": "Clean Architecture Focus"
+    }
+  ]
+}

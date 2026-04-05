@@ -1,0 +1,54 @@
+{
+  "items": [
+    {
+      "title": "Fullstack Developer - Contract",
+      "company": "CMiles",
+      "location": "Remote",
+      "period": "Since May 2025",
+      "description": [
+        "Working on the company's SaaS product Klipbot and other MVP products.",
+        "Developed multivendor full-stack features including chatbots, customizable surveys, and real-time feedback handling.",
+        "Maintained analytics dashboards with sentiment alerts, data tracking, and report generation.",
+        "Integrated Meta APIs and AI-powered workflows while building scalable backend systems for complex business scenarios."
+      ],
+      "skills": ["SaaS", "Chatbots", "Surveys", "Analytics", "AI Integration", "Meta APIs"]
+    },
+    {
+      "title": "Fullstack Developer",
+      "company": "Bekia",
+      "location": "Cairo, Egypt",
+      "period": "From January 2024 to June 2025",
+      "description": [
+        "Worked on Bekia's GreenTech product and internal tools that supported workflow across sales, accounting, operations, and customer support.",
+        "Built and maintained systems such as Warehouse Management, Human Resources Management, and Point of Sale solutions.",
+        "Managed mobile APIs, the customer support dashboard serving more than 50K active users monthly, and CRM systems.",
+        "Worked with cross-functional teams to resolve product challenges and improve user experience."
+      ],
+      "skills": ["Laravel", "Spatie", "Vue.js", "Axios", "Postman"]
+    },
+    {
+      "title": "Back End Developer",
+      "company": "Almotahida Education Group",
+      "location": "Cairo, Egypt",
+      "period": "From March 2023 to December 2023",
+      "description": [
+        "Worked on the company's EdTech platform Yaqees, featuring score tracking, flashcards, and assessment dashboards.",
+        "Built tailored APIs, CMS, and CRM systems to support business and student-facing workflows.",
+        "Participated in developing the backend for educational courses and mobile API endpoints using Laravel and Passport."
+      ],
+      "skills": ["PHP", "Laravel", "JSON", "APIs", "MySQL"]
+    },
+    {
+      "title": "Software Developer",
+      "company": "Penta Value",
+      "location": "Cairo, Egypt",
+      "period": "From February 2022 to March 2023",
+      "description": [
+        "Developed engaging interactive experiences and simulations.",
+        "Drove products through production phases, from concept implementation to dynamic working solutions.",
+        "Managed backend endpoints built in PHP and integrated them into Unity applications."
+      ],
+      "skills": ["C#", "JSON", "Postman", "Unity", "API", "PHP", "Git", "Networking"]
+    }
+  ]
+}

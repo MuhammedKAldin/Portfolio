@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('DOM Content Loaded - Starting portfolio initialization...')
 
     // Initialize all components
+    initContentSections()
     initPreloader()
     initProjects3DBackground()
     initScrollAnimations()
@@ -27,6 +28,240 @@ document.addEventListener('DOMContentLoaded', function () {
                 }, 500)
             })
         }
+    }
+
+    async function initContentSections() {
+        const contentSections = [
+            {
+                filePath: 'config/hero.json',
+                render: renderHeroContent,
+                label: 'hero section',
+                onError: () => renderHeroError()
+            },
+            {
+                filePath: 'config/about.json',
+                render: renderAboutContent,
+                label: 'about section',
+                onError: () => renderAboutError()
+            },
+            {
+                filePath: 'config/work.json',
+                render: renderWorkExperience,
+                label: 'work experience',
+                onError: () => renderTimelineError('work-experience-list', 'Unable to load work experience')
+            },
+            {
+                filePath: 'config/education.json',
+                render: renderEducation,
+                label: 'education',
+                onError: () => renderTimelineError('education-list', 'Unable to load education')
+            }
+        ]
+
+        const results = await Promise.allSettled(contentSections.map(async (section) => {
+            const data = await fetchConfig(section.filePath)
+            section.render(data)
+            console.log(`✅ Loaded ${section.label} from ${section.filePath}`)
+        }))
+
+        results.forEach((result, index) => {
+            if (result.status === 'rejected') {
+                console.warn(`⚠️ Failed to load ${contentSections[index].label}.`, result.reason)
+                contentSections[index].onError()
+            }
+        })
+    }
+
+    async function fetchConfig(filePath) {
+        const response = await fetch(filePath, { cache: 'no-store' })
+
+        if (!response.ok) {
+            throw new Error(`Failed to load ${filePath}: ${response.status}`)
+        }
+
+        return response.json()
+    }
+
+    function escapeHtml(value) {
+        return String(value ?? '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;')
+    }
+
+    function renderHeroContent(data) {
+        const container = document.getElementById('hero-content')
+        if (!container || !data) return
+
+        const descriptions = Array.isArray(data.descriptions)
+            ? data.descriptions.map(paragraph => `
+                            <p>${escapeHtml(paragraph)}</p>`).join('')
+            : ''
+
+        const actions = Array.isArray(data.actions)
+            ? data.actions.map(action => `
+                            <a href="${escapeHtml(action.href || '#')}" class="${escapeHtml(action.className || 'btn btn-primary btn-lg')}">${escapeHtml(action.label || 'Learn More')}</a>`).join('')
+            : ''
+
+        container.innerHTML = `
+                        <h1 class="hero-title">
+                            <span class="greeting">${escapeHtml(data.greeting)}</span>
+                            <span class="name">${escapeHtml(data.name)}</span>
+                            <span class="title">${escapeHtml(data.title)}</span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            <span class="experience">${escapeHtml(data.experienceLabel)}</span> ${escapeHtml(data.subtitle)}
+                        </p>
+                        <div class="hero-description">${descriptions}
+                        </div>
+                        <div class="hero-actions">${actions}
+                        </div>
+                    `
+
+        initTypingEffect()
+    }
+
+    function renderHeroError() {
+        const container = document.getElementById('hero-content')
+        if (!container) return
+
+        container.innerHTML = `
+                        <h1 class="hero-title">
+                            <span class="title">Unable to load hero content</span>
+                        </h1>
+                        <p class="hero-subtitle">${escapeHtml(getJsonLoadErrorMessage())}</p>
+                    `
+    }
+
+    function renderAboutContent(data) {
+        const container = document.getElementById('about-content')
+        if (!container || !data) return
+
+        const paragraphs = Array.isArray(data.paragraphs)
+            ? data.paragraphs.map(paragraph => `
+                        <p class="about-text">${escapeHtml(paragraph)}</p>`).join('')
+            : ''
+
+        const highlights = Array.isArray(data.highlights) && data.highlights.length > 0
+            ? `
+                        <div class="experience-highlights">
+${data.highlights.map(highlight => `                            <div class="highlight-item">
+                                <i class="${escapeHtml(highlight.icon)}"></i>
+                                <span>${escapeHtml(highlight.label)}</span>
+                            </div>`).join('\n')}
+                        </div>`
+            : ''
+
+        container.innerHTML = `
+                        <h3>${escapeHtml(data.heading)}</h3>${paragraphs}
+${highlights}
+                    `
+    }
+
+    function renderAboutError() {
+        const container = document.getElementById('about-content')
+        if (!container) return
+
+        container.innerHTML = `
+                        <h3>Unable to load content</h3>
+                        <p class="about-text">${escapeHtml(getJsonLoadErrorMessage())}</p>
+                    `
+    }
+
+    function renderWorkExperience(data) {
+        const container = document.getElementById('work-experience-list')
+        if (!container || !data || !Array.isArray(data.items)) return
+
+        container.innerHTML = data.items.map(item => `
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h4>${escapeHtml(item.title)}</h4>
+                                    <div class="company">${escapeHtml(item.company)}</div>
+                                    <div class="timeline-meta">
+                                        <span class="location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            ${escapeHtml(item.location)}
+                                        </span>
+                                        <span class="period">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            ${escapeHtml(item.period)}
+                                        </span>
+                                    </div>
+                                    <ul class="timeline-description">
+${(Array.isArray(item.description) ? item.description : []).map(point => `                                        <li>${escapeHtml(point)}</li>`).join('\n')}
+                                    </ul>
+                                    <div class="skills-used">
+${(Array.isArray(item.skills) ? item.skills : []).map(skill => `                                        <span class="skill-tag">${escapeHtml(skill)}</span>`).join('\n')}
+                                    </div>
+                                </div>
+                            </div>
+        `).join('')
+    }
+
+    function renderEducation(data) {
+        const container = document.getElementById('education-list')
+        if (!container || !data || !Array.isArray(data.items)) return
+
+        container.innerHTML = data.items.map(item => {
+            const badge = item.badge && item.badge.label
+                ? `
+                                    <div class="credential-info">
+                                        <span class="credential-badge">
+                                            <i class="${escapeHtml(item.badge.icon || 'fas fa-certificate')}"></i>
+                                            ${escapeHtml(item.badge.label)}
+                                        </span>
+                                    </div>`
+                : ''
+
+            return `
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h4>${escapeHtml(item.title)}</h4>
+                                    <div class="institution">${escapeHtml(item.institution)}</div>
+                                    <div class="timeline-meta">
+                                        <span class="location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            ${escapeHtml(item.location)}
+                                        </span>
+                                        <span class="period">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            ${escapeHtml(item.period)}
+                                        </span>
+                                    </div>
+                                    <p class="education-description">
+                                        ${escapeHtml(item.description)}
+                                    </p>${badge}
+                                </div>
+                            </div>
+            `
+        }).join('')
+    }
+
+    function renderTimelineError(containerId, title) {
+        const container = document.getElementById(containerId)
+        if (!container) return
+
+        container.innerHTML = `
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h4>${escapeHtml(title)}</h4>
+                                    <p class="education-description">${escapeHtml(getJsonLoadErrorMessage())}</p>
+                                </div>
+                            </div>
+        `
+    }
+
+    function getJsonLoadErrorMessage() {
+        if (window.location.protocol === 'file:') {
+            return 'This page must be opened through a local web server to load external JSON files.'
+        }
+
+        return 'Check that the JSON file exists and contains valid JSON.'
     }
 
 

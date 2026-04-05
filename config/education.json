@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "title": "Bachelor Degree",
+      "institution": "Banha University",
+      "location": "Banha, Egypt",
+      "period": "From July 2016 to July 2020",
+      "description": "Completed undergraduate studies at Banha University in Egypt."
+    },
+    {
+      "title": "CS50's C# Development Certificate",
+      "institution": "edX / Harvard Online",
+      "location": "Online",
+      "period": "Completed",
+      "description": "Completed Harvard Online's CS50 C# development program through edX.",
+      "badge": {
+        "icon": "fas fa-certificate",
+        "label": "Harvard Online Credential"
+      }
+    },
+    {
+      "title": "Certified Full Stack Web Developer",
+      "institution": "Mesmake",
+      "location": "Egypt",
+      "period": "Completed",
+      "description": "Completed a full-stack development program covering core frontend and backend technologies."
+    },
+    {
+      "title": "Certified English Speaker Level 8/8",
+      "institution": "Berlitz Egypt",
+      "location": "Egypt",
+      "period": "Completed",
+      "description": "Achieved the highest English proficiency level certified by Berlitz Egypt.",
+      "badge": {
+        "icon": "fas fa-star",
+        "label": "Level 8/8 - Native Proficiency"
+      }
+    }
+  ]
+}
